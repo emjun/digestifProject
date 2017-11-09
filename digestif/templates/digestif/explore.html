@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Digestif</title>
+</head>
+<body>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./index.html">digestif</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
+                <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
+                <!-- <a class="nav-link" href="./create.html">Create</a> -->
+            </li>
+        </ul>
+        <span class="navbar-text">
+      [dee-zhe-<span class="font-weight-bold">steef</span>]: (noun) a tool to support researchers in making their research more digestible to participants
+    </span>
+    </div>
+</nav>
+  <div style="height:25px;"></div>
+
+  <div class="container">
+    <h1>Digestif</h1>
+    <p class="text-muted">Promoting a new best practice for online experiments</p>
+      <div class="row featurette">
+            <!-- TODO: -->
+            <!-- Default: show Overview of Pages, show that the button is pressed down -->
+            <!-- When click back and forth between two, show different divs with content -->
+            <button type="button" class="btn btn-primary btn-lg btn-block">Overview of Pages</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Specific Blocks of Content</button>
+      </div>
+
+      <!-- Div for Overview of Pages: show all -->
+      {% load static %}
+      <div id="overviewPagesDiv">
+        {% for cp in conclusion_pages %}
+            <!-- {% path_name = "digestif/" + cp.path_names['full'] %} -->
+            <img src="{% static path_name %}" alt=path_name />
+            <p>{% cp.cp_id %}</p>
+        {% endfor %}
+      </div>
+
+      <!-- Div for Specific Blocks of Content: shows specific blocks -->
+      {% load static %}
+      <div id="blocksDiv">
+        <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
+        <div id="acknowledgementsDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.acknowledgements != None %}
+                  path_name = "digestif/" + cp.path_names.acknowledgements
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="researchPurposeDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.research_purpose != None %}
+                  path_name = "digestif/" + cp.path_names.research_purpose
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="studySummaryDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.study_summary != None %}
+                  path_name = "digestif/" + cp.path_names.study_summary
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="scoreInterpretationDiv">
+          {% for cp in conclusion_pages%}
+              {% if cp.path_names.score_interpretation != None %}
+                  path_name = "digestif/" + cp.path_names.score_interpretation
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="personalizedResultsDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.personalized_results != None %}
+                  path_name = "digestif/" + cp.path_names.personalized_results
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="socialComparisonDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.social_comparison != None %}
+                  path_name = "digestif/" + cp.path_names.social_comparison
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="shareDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.share != None %}
+                  path_name = "digestif/" + cp.path_names.share
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="feedbackDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.feedback != None %}
+                  path_name = "digestif/" + cp.path_names.feedback
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="otherStudiesDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.other_studies != None %}
+                  path_name = "digestif/" + cp.path_names.other_studies
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+        <div id="additionalResourcesDiv">
+          {% for cp in conclusion_pages %}
+              {% if cp.path_names.additional_resources != None %}
+                  path_name = "digestif/" + cp.path_names.additional_resources
+                  <img src="{% static path_name %}" alt=path_name />
+              {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+</body>
