@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,18 +37,44 @@
             <!-- TODO: -->
             <!-- Default: show Overview of Pages, show that the button is pressed down -->
             <!-- When click back and forth between two, show different divs with content -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">Overview of Pages</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Specific Blocks of Content</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Experiment Platform</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Specific Blocks of Content</button>
       </div>
 
-      <!-- Div for Overview of Pages: show all -->
+      <!-- Div for Pages sorted by Platform: show all -->
       {% load static %}
-      <div id="overviewPagesDiv">
-        {% for cp in conclusion_pages %}
-            <!-- {% path_name = "digestif/" + cp.path_names['full'] %} -->
-            <img src="{% static path_name %}" alt=path_name />
-            <p>{% cp.cp_id %}</p>
-        {% endfor %}
+      <div id="platformsDiv">
+
+          ordered_cp = ConclusionPage.objects.orderby(platform)
+
+          Do first cp first/before this loop
+          for c in ordered_cp:
+            if c == curr_platform:
+              add a new image
+            else:
+              Insert a heading for the platform name
+              add a new div
+              set curr_platform == new platform
+
+
+          if have separate list of platforms....
+          while go through the list of platforms/there are platforms left:
+            add a heading
+            create a new div
+            search for all the cp that platform OR get a an ordered list and use the platforms as a check instead of compare platforms....
+
+
+          <div id="catTrackerDiv">
+          </div>
+          <div id="discoverMyProfileDiv">
+          </div>
+          {% for cp in conclusion_pages %}
+            {% if cp.path_names.full != None %}
+              {% with "digestif/"|add:cp.path_names.full as path_name %}
+                <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
+                {% endwith %}
+            {% endif %}
+          {% endfor %}
       </div>
 
       <!-- Div for Specific Blocks of Content: shows specific blocks -->
@@ -58,80 +84,90 @@
         <div id="acknowledgementsDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.acknowledgements != None %}
-                  path_name = "digestif/" + cp.path_names.acknowledgements
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.acknowledgements as path_name %}
+                  <img src="{% static path_name %}" alt="Acknowledgemets block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="researchPurposeDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.research_purpose != None %}
-                  path_name = "digestif/" + cp.path_names.research_purpose
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.research_purpose as path_name %}
+                  <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="studySummaryDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.study_summary != None %}
-                  path_name = "digestif/" + cp.path_names.study_summary
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.study_summary as path_name %}
+                  <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="scoreInterpretationDiv">
           {% for cp in conclusion_pages%}
               {% if cp.path_names.score_interpretation != None %}
-                  path_name = "digestif/" + cp.path_names.score_interpretation
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.score_interpretation as path_name %}
+                  <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="personalizedResultsDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.personalized_results != None %}
-                  path_name = "digestif/" + cp.path_names.personalized_results
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.personalized_results as path_name %}
+                  <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="socialComparisonDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.social_comparison != None %}
-                  path_name = "digestif/" + cp.path_names.social_comparison
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.social_comparison as path_name %}
+                  <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="shareDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.share != None %}
-                  path_name = "digestif/" + cp.path_names.share
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.share as path_name %}
+                  <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="feedbackDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.feedback != None %}
-                  path_name = "digestif/" + cp.path_names.feedback
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.feedback as path_name %}
+                  <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="otherStudiesDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.other_studies != None %}
-                  path_name = "digestif/" + cp.path_names.other_studies
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.other_studies as path_name %}
+                  <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
         <div id="additionalResourcesDiv">
           {% for cp in conclusion_pages %}
               {% if cp.path_names.additional_resources != None %}
-                  path_name = "digestif/" + cp.path_names.additional_resources
-                  <img src="{% static path_name %}" alt=path_name />
+                {% with "digestif/"|add:cp.path_names.additional_resources as path_name %}
+                  <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
