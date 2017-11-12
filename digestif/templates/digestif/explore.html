@@ -44,36 +44,19 @@
       <!-- Div for Pages sorted by Platform: show all -->
       {% load static %}
       <div id="platformsDiv">
-
-          ordered_cp = ConclusionPage.objects.orderby(platform)
-
-          Do first cp first/before this loop
-          for c in ordered_cp:
-            if c == curr_platform:
-              add a new image
-            else:
-              Insert a heading for the platform name
-              add a new div
-              set curr_platform == new platform
-
-
-          if have separate list of platforms....
-          while go through the list of platforms/there are platforms left:
-            add a heading
-            create a new div
-            search for all the cp that platform OR get a an ordered list and use the platforms as a check instead of compare platforms....
-
-
-          <div id="catTrackerDiv">
-          </div>
-          <div id="discoverMyProfileDiv">
-          </div>
-          {% for cp in conclusion_pages %}
-            {% if cp.path_names.full != None %}
-              {% with "digestif/"|add:cp.path_names.full as path_name %}
-                <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
-                {% endwith %}
-            {% endif %}
+          {% for p in platforms %}
+            {% with p.platform|add:"Div"|cut:" " as div_name %}
+              <div id={{div_name}}>
+                <h1>{{p.platform}}</h1>
+                  {% for cp in conclusion_pages %}
+                    {% if cp.platform == p.platform and cp.path_names.full != None %}
+                      {% with "digestif/"|add:cp.path_names.full as path_name %}
+                        <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
+                      {% endwith %}
+                    {% endif %}
+                  {% endfor %}
+              </div>
+            {% endwith %}
           {% endfor %}
       </div>
 
@@ -82,6 +65,7 @@
       <div id="blocksDiv">
         <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
         <div id="acknowledgementsDiv">
+          <h1>Acknowledgements</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.acknowledgements != None %}
                 {% with "digestif/"|add:cp.path_names.acknowledgements as path_name %}
@@ -91,6 +75,7 @@
           {% endfor %}
         </div>
         <div id="researchPurposeDiv">
+          <h1>Research Purpose</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.research_purpose != None %}
                 {% with "digestif/"|add:cp.path_names.research_purpose as path_name %}
@@ -100,6 +85,7 @@
           {% endfor %}
         </div>
         <div id="studySummaryDiv">
+          <h1>Study Summary</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.study_summary != None %}
                 {% with "digestif/"|add:cp.path_names.study_summary as path_name %}
@@ -109,6 +95,7 @@
           {% endfor %}
         </div>
         <div id="scoreInterpretationDiv">
+          <h1>Score Interpretation</h1>
           {% for cp in conclusion_pages%}
               {% if cp.path_names.score_interpretation != None %}
                 {% with "digestif/"|add:cp.path_names.score_interpretation as path_name %}
@@ -118,6 +105,7 @@
           {% endfor %}
         </div>
         <div id="personalizedResultsDiv">
+          <h1>Personalized Results</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.personalized_results != None %}
                 {% with "digestif/"|add:cp.path_names.personalized_results as path_name %}
@@ -127,6 +115,7 @@
           {% endfor %}
         </div>
         <div id="socialComparisonDiv">
+          <h1>Social Comparison</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.social_comparison != None %}
                 {% with "digestif/"|add:cp.path_names.social_comparison as path_name %}
@@ -136,6 +125,7 @@
           {% endfor %}
         </div>
         <div id="shareDiv">
+          <h1>Share</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.share != None %}
                 {% with "digestif/"|add:cp.path_names.share as path_name %}
@@ -145,6 +135,7 @@
           {% endfor %}
         </div>
         <div id="feedbackDiv">
+          <h1>Feedback</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.feedback != None %}
                 {% with "digestif/"|add:cp.path_names.feedback as path_name %}
@@ -154,6 +145,7 @@
           {% endfor %}
         </div>
         <div id="otherStudiesDiv">
+          <h1>Other Studies</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.other_studies != None %}
                 {% with "digestif/"|add:cp.path_names.other_studies as path_name %}
@@ -163,6 +155,7 @@
           {% endfor %}
         </div>
         <div id="additionalResourcesDiv">
+          <h1>Additional Resources</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.additional_resources != None %}
                 {% with "digestif/"|add:cp.path_names.additional_resources as path_name %}

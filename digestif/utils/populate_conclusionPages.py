@@ -17,7 +17,6 @@ from digestif.models import ConclusionPage
 #   None with the image file names for the path_names (full and blocks)
 # NOTE: There might be a more intelligent/less brute force way to do this.
 def populate():
-    print ("In populate!")
     ConclusionPage.objects.create(
         cp_id="ct_personality", # abbreviation for platform + study abbreviation
         platform="Cat Tracker",
@@ -53,10 +52,6 @@ def populate():
             'other_studies' : None,
             'additional_resources' : None
         })
-
-    cp_set = ConclusionPage.objects.all()
-    for cp in cp_set:
-        print cp.path_names['full']
 
 if __name__ == '__main__':
     populate()

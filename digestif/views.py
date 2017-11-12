@@ -12,8 +12,9 @@ def index(request):
 
 def explore(request):
     populate()
-    conclusion_pages = ConclusionPage.objects.all()
-    context = {'conclusion_pages' : conclusion_pages}
+    conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
+    platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
+    context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms}
     return render(request, 'digestif/explore.html', context)
 
 
