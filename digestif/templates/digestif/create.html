@@ -3,33 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.8/interact.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <style>
+     /*body {
+       min-width: 520px;
+     }*/
+     .column {
+       width: 170px;
+       float: left;
+       padding-bottom: 100px;
+     }
+     /*.portlet {
+       margin: 0 1em 1em 0;
+       padding: 0.3em;
+     }
+     .portlet-header {
+       padding: 0.2em 0.3em;
+       margin-bottom: 0.5em;
+       position: relative;
+     }
+     .portlet-toggle {
+       position: absolute;
+       top: 50%;
+       right: 0;
+       margin-top: -8px;
+     }
+     .portlet-content {
+       padding: 0.4em;
+     }*/
+     .portlet-placeholder {
+       border: 1px dotted black;
+       margin: 0 1em 1em 0;
+       height: 50px;
+     }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'digestif/style.css' %}">
   <script src="{% static 'digestif/create.js' %}"></script>
   <title>Digestif</title>
 </head>
 <body>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="./index.html">digestif</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
+                  <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
+                  <!-- <a class="nav-link" href="./create.html">Create</a> -->
+              </li>
+          </ul>
+          <span class="navbar-text">
+        [dee-zhe-<span class="font-weight-bold">steef</span>]: (noun) a tool to support researchers in making their research more digestible to participants
+      </span>
+      </div>
+  </nav>
+  <div style="height:25px;"></div>
   <div>
-  <div id="blockColumn">
-    <button id="yes-drop" class="draggable drag-drop">Drag me!</button>
+    <div class="row">
+      <div class="column col">
+          <div class="portlet">
+              <!-- <div class="portlet-header">Header</div> -->
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+          <div class="portlet">
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+          <div class="portlet">
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+          <div class="portlet">
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+          <div class="portlet">
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+          <div class="portlet">
+              <div class="portlet-content">For the conclusion page</div>
+          </div>
+
+      </div>
+      <div class="column col-6 container">
+        Main place to drop your blocks!
+      </div>
+      <div id="scratch" class="column col">
+          SCRATHPAD to save work along the way
+      </div>
+    </div>
+
   </div>
-  <div>
-    <div id="outer-dropzone" class="dropzone">
-        #dropzone 1!
-    </div>
-    <div id="outer-dropzone" class="dropzone">
-        #dropzone 2!
-    </div>
-    <div id="outer-dropzone" class="dropzone">
-        #dropzone 3!
-    </div>
-    <div id="outer-dropzone" class="dropzone">
-        #dropzone 4!
-    </div>
-    <div id="outer-dropzone" class="dropzone">
-        #dropzone 5!
-    </div>
-  </div>
-</div>
+
 </body>

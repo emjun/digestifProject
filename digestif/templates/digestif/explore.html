@@ -51,7 +51,12 @@
                   {% for cp in conclusion_pages %}
                     {% if cp.platform == p.platform and cp.path_names.full != None %}
                       {% with "digestif/"|add:cp.path_names.full as path_name %}
-                        <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
+                        <!-- <div id={{path_name}}> -->
+                        <!-- May want to do cp.path_names.full only?? Which would be better//easier-->
+                        <span id={{path_name}}>
+                          <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
+                        </span>
+                        <!-- </div> -->
                       {% endwith %}
                     {% endif %}
                   {% endfor %}
