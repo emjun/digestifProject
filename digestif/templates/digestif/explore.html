@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'digestif/style.css' %}">
+    <script src="{% static 'digestif/explore.js' %}"></script>
     <title>Digestif</title>
 </head>
 <body>
@@ -53,8 +59,15 @@
                       {% with "digestif/"|add:cp.path_names.full as path_name %}
                         <!-- <div id={{path_name}}> -->
                         <!-- May want to do cp.path_names.full only?? Which would be better//easier-->
-                        <span id={{path_name}}>
+                        <span id={{path_name}} width="100px" height="200px">
                           <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
+                          <!-- Start unfilled, on-click do something (local storage?) -->
+                          <div class="heart-particle-box" align="center">
+                            <button class="likes project-likes" id="heart-icon">
+                              <i class="heart-shaped fa fa-heart" style="display: line-block"></i>
+                              <i class="heart-shaped fa fa-heart-o" style="display: none"></i>
+                            </button>
+                          </div>
                         </span>
                         <!-- </div> -->
                       {% endwith %}

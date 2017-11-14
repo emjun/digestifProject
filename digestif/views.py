@@ -16,7 +16,7 @@ def explore(request):
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
     context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms}
     return render(request, 'digestif/explore.html', context)
-
+    # return render(request, 'digestif/explore.html')
 
 def create(request):
     return render(request, 'digestif/create.html')

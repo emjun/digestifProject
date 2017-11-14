@@ -32,7 +32,7 @@ def populate():
             'share' : None,
             'feedback' : None,
             'other_studies' : None,
-            'additional_resources' : None;
+            'additional_resources' : None
         })
     ConclusionPage.objects.create(
         cp_id="dmp_movies",
@@ -40,15 +40,15 @@ def populate():
         study="Movie Recommendation Study", # get full name of study from platform website
         path_names = {
             'full' : 'full/dmp_movies.png',
-            'acknowledgements' : 'acknowledgements/dmp_personality.png',
+            'acknowledgements' : None,
             'research_purpose' : None,
             'study_summary' : None,
             'score_interpretation' : None,
-            'personalized_results' : 'personalized_results/dmp_personality.png',
+            'personalized_results' : 'personalized_results/dmp_movies.png',
             'social_comparison' : None,
-            'share' : 'share/dmp_personality.png',
+            'share' : None,
             'feedback' : None,
-            'other_studies' : 'other_studies/dmp_personality.png',
+            'other_studies' : None,
             'additional_resources' : None
         })
     ConclusionPage.objects.create(
@@ -57,15 +57,15 @@ def populate():
         study="Short Personality Test",
         path_names = {
             'full' : 'full/dmp_personality.png',
-            'acknowledgements' : None,
+            'acknowledgements' : 'acknowledgements/dmp_personality.png',
             'research_purpose' : None,
             'study_summary' : None,
             'score_interpretation' : None,
-            'personalized_results' : 'personalized_results/dmp_movies',
+            'personalized_results' : 'personalized_results/dmp_personality',
             'social_comparison' : None,
-            'share' : None,
+            'share' : 'share/dmp_personality.png',
             'feedback' : None,
-            'other_studies' : None,
+            'other_studies' : 'other_studies/dmp_personality.png',
             'additional_resources' : None
         })
     ConclusionPage.objects.create(
@@ -146,8 +146,8 @@ def populate():
             'research_purpose' : 'research_purpose/mu_eyes.png',
             'study_summary' : 'study_summary/mu_eyes.png',
             'score_interpretation' : None,
-            'personalized_results' : 'personalized_results/mu_eyes.png ',
-            'social_comparison' : 'social_comparison/mu_eyes.png ',
+            'personalized_results' : 'personalized_results/mu_eyes.png',
+            'social_comparison' : 'social_comparison/mu_eyes.png',
             'share' : None,
             'feedback' : 'feedback/mu_eyes.png',
             'other_studies' : None,
@@ -181,7 +181,7 @@ def populate():
             'study_summary' : None,
             'score_interpretation' : 'score_interpretation/pi_genderCareer.png',
             'personalized_results' : 'personalized_results/pi_genderCareer.png',
-            'social_comparison' : 'social_comparison/pi_genderCareer.png ',
+            'social_comparison' : 'social_comparison/pi_genderCareer.png',
             'share' : 'share/pi_genderCareer.png',
             'feedback' : 'feedback/pi_genderCareer.png',
             'other_studies' : 'other_studies/pi_genderCareer.png',
@@ -270,7 +270,7 @@ def populate():
             'share' : 'share/vs_big5.png',
             'feedback' : 'feedback/vs_big5.png',
             'other_studies' : 'other_studies/vs_big5.png',
-            'additional_resources' : 'additional_resources/vs_big5.png '
+            'additional_resources' : 'additional_resources/vs_big5.png'
         })
     ConclusionPage.objects.create(
         cp_id="vs_cows",
