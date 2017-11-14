@@ -32,7 +32,7 @@ def populate():
             'share' : None,
             'feedback' : None,
             'other_studies' : None,
-            'additional_resources' : None;
+            'additional_resources' : None
         })
     ConclusionPage.objects.create(
         cp_id="dmp_movies",
