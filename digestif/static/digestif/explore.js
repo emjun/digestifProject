@@ -68,3 +68,13 @@ function mark_like(obj) {
 function mark_unlike(obj) {
   obj.style.backgroundColor = 'gray'
 }
+
+function sortByBlocks() {
+  $("#platformsDiv").toggle(false);
+  $("#blocksDiv").toggle(true);
+}
+
+function sortByPlatforms() {
+  $("#platformsDiv").toggle(true);
+  $("#blocksDiv").toggle(false);
+}

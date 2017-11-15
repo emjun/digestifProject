@@ -44,8 +44,8 @@
             <!-- TODO: -->
             <!-- Default: show Overview of Pages, show that the button is pressed down -->
             <!-- When click back and forth between two, show different divs with content -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Experiment Platform</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Specific Blocks of Content</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="sortByPlatforms()">Sorted by Experiment Platform</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="sortByBlocks()">Sorted by Specific Blocks of Content</button>
       </div>
 
       <!-- Div for Pages sorted by Platform: show all -->
@@ -75,7 +75,7 @@
 
       <!-- Div for Specific Blocks of Content: shows specific blocks -->
       {% load static %}
-      <div id="blocksDiv">
+      <div id="blocksDiv" style="display: none">
         <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
         <div id="acknowledgementsDiv">
           <h1>Acknowledgements</h1>
