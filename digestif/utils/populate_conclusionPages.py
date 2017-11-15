@@ -61,7 +61,7 @@ def populate():
             'research_purpose' : None,
             'study_summary' : None,
             'score_interpretation' : None,
-            'personalized_results' : 'personalized_results/dmp_personality',
+            'personalized_results' : 'personalized_results/dmp_personality.png',
             'social_comparison' : None,
             'share' : 'share/dmp_personality.png',
             'feedback' : None,

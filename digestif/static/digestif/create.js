@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    populate_favorites();
     $(".column").sortable({
       connectWith: ".column",
       // handle: ".portlet-header",
@@ -19,3 +20,19 @@ $(document).ready(function () {
         });
 
   });
+
+function populate_favorites() {
+  // pull from local storage
+  // var obj = JSON.parse(window.localStorage.liked_blocks);
+  //
+  // for loop through each array in obj && populate....
+  // MAYBE WE SHOULD DO THIS IN TEMPLATE??? using django syntax??
+
+
+}
+
+
+
+
+// add empty portlets
+// empty portlet -- could be a generic header and blank (no text)

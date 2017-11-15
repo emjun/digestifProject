@@ -75,8 +75,17 @@
   <div>
     <div class="row">
       <div class="column col">
-          <div class="portlet">
-              <!-- <div class="portlet-header">Header</div> -->
+        <div class="portlet" id="acknowledgementsDiv">
+            <div class="portlet-header">ACKNOWLEDGEMENTS</div>
+            {% for e in favorites.acknowledgements %}
+              {% if e.length > 0 %}
+                // create a portlets
+                <div class="portlet-content">For the conclusion page</div>
+              {% endif %}
+            {% endfor %}
+        </div>
+          <!-- <div class="portlet">
+              <div class="portlet-header">Header</div>
               <div class="portlet-content">For the conclusion page</div>
           </div>
           <div class="portlet">
@@ -92,9 +101,35 @@
               <div class="portlet-content">For the conclusion page</div>
           </div>
           <div class="portlet">
-              <!-- <div class="portlet-header">Header</div> -->
               <div class="portlet-content">For the conclusion page</div>
-          </div>
+          </div> -->
+        <div class="portlet" id="researchPurposeDiv">
+          <div class="portlet-header">RESEARCH PURPOSE</div>
+        </div>
+        <div class="portlet" id="studySummaryDiv">
+            <div class="portlet-header">STUDY SUMMARY</div>
+        </div>
+        <div class="portlet" id="scoreInterpretationDiv">
+          <div class="portlet-header">SCORE INTERPRETATION</div>
+        </div>
+        <div class="portlet" id="personalizedResultsDiv">
+            <div class="portlet-header">PERSONALIZED RESULTS</div>
+        </div>
+        <div class="portlet" id="socialComparisonDiv">
+          <div class="portlet-header">SOCIAL COMPARISON</div>
+        </div>
+        <div class="portlet" id="shareDiv">
+            <div class="portlet-header">SHARE</div>
+        </div>
+        <div class="portlet" id="feedbackDiv">
+          <div class="portlet-header">FEEDBACK</div>
+        </div>
+        <div class="portlet" id="otherStudiesDiv">
+            <div class="portlet-header">OTHER STUDIES</div>
+        </div>
+        <div class="portlet" id="additionalResourcesDiv">
+            <div class="portlet-header">ADDITIONAL RESOURCES</div>
+        </div>
 
       </div>
       <div class="column col-6 container">
@@ -104,12 +139,12 @@
           SCRATHPAD to save work along the way
       </div>
 
-      On load, populate side blocks from local storage;
+      <!-- On load, populate side blocks from local storage;
       If local storage is NULL, move on...
 
-      load empty blocks
+      load empty blocks -->
 
-      
+
     </div>
 
   </div>
