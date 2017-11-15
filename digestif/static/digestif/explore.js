@@ -12,26 +12,38 @@ var liked_blocks = {
   'additional_resources' : new Array()
 }
 
-function store(block, pathname, vote) {
+function store(block, pathname, vote, obj) {
   console.log(block);
   console.log(pathname);
   console.log(vote);
+  console.log(obj);
 
 
   // if not in a global array, add to global array
   if (vote === 'like') {
-      //add and to a copy of array
-      console.log(typeof(block));
-      console.log(typeof(liked_blocks[block]));
-      var added = liked_blocks[block].concat(pathname);
+      if (block === 'full') {
+        // call store recursively for each block
+        console.log('full if');
+        // search in ConclusionPages for all the path_names
+        // then call recursively on all the path_names...
+      }
+      else {
+        //add and to a copy of array
+        console.log(typeof(block));
+        console.log(typeof(liked_blocks[block]));
+        var added = liked_blocks[block].concat(pathname);
 
-      //remove duplicates (to ensure that remove is cleaner)
-      var unique = added.filter(function(value, index, self) {
-        return self.indexOf(value) === index;
-      })
+        //remove duplicates (to ensure that remove is cleaner)
+        var unique = added.filter(function(value, index, self) {
+          return self.indexOf(value) === index;
+        })
 
-      // atomic assignment
-      liked_blocks[block] = unique;
+        // atomic assignment
+        liked_blocks[block] = unique;
+      }
+
+      //TODO: somehow indicate to the user that it is liked
+      // ideas: change shape, color, etc.
   }
   else {
     //remove using splice
@@ -42,7 +54,17 @@ function store(block, pathname, vote) {
           return;
       }
     }
+
+    // TODO: indicate to user that it has been un-liked -- change back to neutral
   }
 
   window.localStorage.setItem('liked_blocks',JSON.stringify(liked_blocks))
+}
+
+function mark_like(obj) {
+  obj.style.backgroundColor = 'red'
+}
+
+function mark_unlike(obj) {
+  obj.style.backgroundColor = 'gray'
 }
