@@ -75,15 +75,33 @@
   <div>
     <div class="row">
       <div class="column col">
-        <div class="portlet" id="acknowledgementsDiv">
-            <div class="portlet-header">ACKNOWLEDGEMENTS</div>
-            {% for e in favorites.acknowledgements %}
-              {% if e.length > 0 %}
-                // create a portlets
-                <div class="portlet-content">For the conclusion page</div>
-              {% endif %}
-            {% endfor %}
-        </div>
+          <div id="acknowledgementsHeader" onclick="toggleBody('acknowledgementsBody')">ACKNOWLEDGEMENTS</div>
+          <div id="acknowledgementsBody" style="display : none">
+            <div class="portlet">
+              <div class="portlet-content">BLOCK 1</div>
+              <div class="portlet-content">BLOCK 2</div>
+            </div>
+            <div class="portlet">
+              <div class="portlet-content">BLOCK 3</div>
+            </div>
+
+          </div>
+          <div class="portlet">
+            <div class="portlet-content">BLOCK 4</div>
+          </div>
+      </div>
+      <div class="column col">
+        <ul id="acknowledgements">
+            <!-- <div>ACKNOWLEDGEMENTS</div>
+            <div class="portlet-content">TEXT</div>
+            <div class="portlet-content"><button>BUTTON</button></div> -->
+            <li class="ui-state-default">ACKNOWLEDGEMENTS</li>
+            <li class="ui-state-default ui-state-disabled">BLOCK</li>
+            <li class="ui-state-default">BLOCK</li>
+
+        </ul>
+        <div class="portlet-content">TEXT</div>
+        <div class="portlet-content"><button>BUTTON</button></div>
           <!-- <div class="portlet">
               <div class="portlet-header">Header</div>
               <div class="portlet-content">For the conclusion page</div>
