@@ -44,8 +44,8 @@
             <!-- TODO: -->
             <!-- Default: show Overview of Pages, show that the button is pressed down -->
             <!-- When click back and forth between two, show different divs with content -->
-            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Experiment Platform</button>
-            <button type="button" class="btn btn-primary btn-lg btn-block">Sorted by Specific Blocks of Content</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="sortByPlatforms()">Sorted by Experiment Platform</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="sortByBlocks()">Sorted by Specific Blocks of Content</button>
       </div>
 
       <!-- Div for Pages sorted by Platform: show all -->
@@ -61,10 +61,13 @@
                         <!-- <div id={{path_name}}> -->
                         <!-- May want to do cp.path_names.full only?? Which would be better//easier-->
                         <!-- <span id={{path_name}} width="100px" height="200px"> -->
-                          <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=100px height=200px/>
-                          <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="visibility: visible" onclick="store('full', '{{path_name}}', 'like', this)">+</button>                        <!-- </span> -->
+                        <div class="platformContainer" style="line-height: 200px; height:200px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                          <div class="imgContainer" style="height: 200px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                          <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                          </div>
+                          <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
                           <!-- <button id="redButton" class="w3-button w3-xlarge w3-circle w3-red" style="visibility: hidden" onclick="store('full', '{{path_name}}', 'unlike')">+</button> -->
-            </div>
+                        </div>
                       {% endwith %}
                     {% endif %}
                   {% endfor %}
@@ -75,14 +78,19 @@
 
       <!-- Div for Specific Blocks of Content: shows specific blocks -->
       {% load static %}
-      <div id="blocksDiv">
+      <div id="blocksDiv" style="display: none">
         <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
         <div id="acknowledgementsDiv">
           <h1>Acknowledgements</h1>
           {% for cp in conclusion_pages %}
               {% if cp.path_names.acknowledgements != None %}
                 {% with "digestif/"|add:cp.path_names.acknowledgements as path_name %}
-                  <img src="{% static path_name %}" alt="Acknowledgemets block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Acknowledgemets block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -92,7 +100,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.research_purpose != None %}
                 {% with "digestif/"|add:cp.path_names.research_purpose as path_name %}
-                  <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -102,7 +115,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.study_summary != None %}
                 {% with "digestif/"|add:cp.path_names.study_summary as path_name %}
-                  <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -112,7 +130,12 @@
           {% for cp in conclusion_pages%}
               {% if cp.path_names.score_interpretation != None %}
                 {% with "digestif/"|add:cp.path_names.score_interpretation as path_name %}
-                  <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -122,7 +145,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.personalized_results != None %}
                 {% with "digestif/"|add:cp.path_names.personalized_results as path_name %}
-                  <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -132,7 +160,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.social_comparison != None %}
                 {% with "digestif/"|add:cp.path_names.social_comparison as path_name %}
-                  <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -142,7 +175,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.share != None %}
                 {% with "digestif/"|add:cp.path_names.share as path_name %}
-                  <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>
                 {% endwith %}
               {% endif %}
           {% endfor %}
@@ -152,8 +190,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.feedback != None %}
                 {% with "digestif/"|add:cp.path_names.feedback as path_name %}
-                  <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
-                {% endwith %}
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
@@ -162,8 +204,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.other_studies != None %}
                 {% with "digestif/"|add:cp.path_names.other_studies as path_name %}
-                  <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
-                {% endwith %}
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
@@ -172,8 +218,12 @@
           {% for cp in conclusion_pages %}
               {% if cp.path_names.additional_resources != None %}
                 {% with "digestif/"|add:cp.path_names.additional_resources as path_name %}
-                  <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}."/>
-                {% endwith %}
+                <div class="blockContainer" style="line-height: 100px; height:100px; width: 300px; margin-right: 10px; margin-bottom: 10px; display: inline-block; vertical-align: top;">
+                  <div class="imgContainer" style="height: 100px; width: 200px; margin-right: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+                  <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." width=200px />
+                  </div>
+                  <button id="like_button" class="w3-button w3-xlarge w3-circle w3-gray" style="display: inline-block; height:50px; width: 50px; vertical-align: middle;" onclick="store('full', '{{path_name}}', 'like', this )">+</button>
+                </div>                {% endwith %}
               {% endif %}
           {% endfor %}
         </div>
