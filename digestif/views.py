@@ -19,6 +19,11 @@ def explore(request):
     return render(request, 'digestif/explore.html', context)
     # return render(request, 'digestif/explore.html')
 
+def detail(request, id):
+    conclusion_page = ConclusionPage.objects.get(cp_id=id)
+    context = {'conclusion_page': conclusion_page}
+    return render(request, 'digestif/detail.html', context);
+
 def create(request):
     # favorites = getFavorites()
     # context = {'favorites' : favorites}

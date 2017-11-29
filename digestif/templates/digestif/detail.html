@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'digestif/style.css' %}">
+  <!-- <script src="{% static 'digestif/detail.js' %}"></script> -->
+  <title>Digestif</title>
+  <script>
+      function loadReel() {
+        console.log('in load real function');
+        // load all the thumnails here
+        console.log({{conclusion_page}});
+      }
+  </script>
+</head>
+<body onload="loadReel()">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="{% url 'digestif:index' %}">digestif</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
+                  <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
+                  <!-- <a class="nav-link" href="./create.html">Create</a> -->
+              </li>
+          </ul>
+          <span class="navbar-text">
+        [dee-zhe-<span class="font-weight-bold">steef</span>]: (noun) a tool to support researchers in making their research more digestible to participants
+      </span>
+      </div>
+  </nav>
+  <br>
+  <div>
+    {% load static %}
+    {% if conclusion_page.path_names.full != None %}
+      {% with "digestif/"|add:conclusion_page.path_names.full as path_name %}
+        <div id="cpDiv" class="container">
+          <div class="row">
+            <div class="col-sm-1">
+              have a column of small thumbnails here
+              Use the pathnames somehow to create a vertical carousel of images
+              Need to size the images in some way, too
+
+            </div>
+            <div class="col-sm-8">
+              <!-- image of conclusion page -->
+              <img src="{% static path_name %}" alt="Full conclusion page from study {{conclusion_page.study}} on platform {{conclusion_page.platform}}." width="100%" />
+            </div>
+            <div class="col-sm-3">
+              <!-- INFO -->
+              <p><strong>Platform: </strong>{{conclusion_page.platform}}</p>
+              <p><strong>Study: </strong>{{conclusion_page.study}}</p>
+              <p><strong>Blocks used: </strong>should this have links to all the blocks??</p>
+              <ul>
+                <li><em>Block 1: </em>Explanation/benefits</li>
+                <li><em>Block 2: </em>Explanation/benefits</li>
+              </ul>
+              <p><strong>Other comments: </strong>Quote or something from researcher?</p>
+            </div>
+          </div>
+          <div class="clearfix">
+              Do something here
+          </div>
+        </div>
+      {% endwith %}
+    {% endif %}
+  </div>
+</body>
