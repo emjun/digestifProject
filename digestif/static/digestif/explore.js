@@ -12,7 +12,8 @@ var liked_blocks = {
   'additional_resources' : new Array()
 }
 
-function store(block, pathname, vote, obj) {
+function store(block, pathname, obj) {
+  var vote = $(obj).attr('value');
   console.log(block);
   console.log(pathname);
   console.log(vote);
@@ -20,7 +21,7 @@ function store(block, pathname, vote, obj) {
 
 
   // if not in a global array, add to global array
-  if (vote === 'like') {
+  if (vote === 'unlike') {
       if (block === 'full') {
         // call store recursively for each block
         console.log('full if');
@@ -44,37 +45,30 @@ function store(block, pathname, vote, obj) {
 
       //TODO: somehow indicate to the user that it is liked
       // ideas: change shape, color, etc.
-  }
-  else {
+      mark_like(obj);
+  } else {
     //remove using splice
-    for (i = 0; i < liked_blocks[block].length; ++i) {
-      if (liked_blocks[block][i] === pathname) {
-          var removed = liked_blocks[block].splice(i, 1);
-          liked_blocks[block] = removed
-          return;
-      }
-    }
+    //for (i = 0; i < liked_blocks[block].length; ++i) {
+    //  if (liked_blocks[block][i] === pathname) {
+    //      var removed = liked_blocks[block].splice(i, 1);
+    //      liked_blocks[block] = removed
+    //      return;
+  //    }
+  //  }
 
     // TODO: indicate to user that it has been un-liked -- change back to neutral
+    mark_unlike(obj);
   }
 
   window.localStorage.setItem('liked_blocks',JSON.stringify(liked_blocks))
 }
 
 function mark_like(obj) {
-  obj.style.backgroundColor = 'red'
+  $(obj).attr('class', 'btn btn-danger');
+  $(obj).attr('value', 'like');
 }
 
 function mark_unlike(obj) {
-  obj.style.backgroundColor = 'gray'
-}
-
-function sortByBlocks() {
-  $("#platformsDiv").toggle(false);
-  $("#blocksDiv").toggle(true);
-}
-
-function sortByPlatforms() {
-  $("#platformsDiv").toggle(true);
-  $("#blocksDiv").toggle(false);
+  $(obj).attr('class', 'btn btn-outline-danger');
+  $(obj).attr('value', 'unlike');
 }

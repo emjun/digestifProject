@@ -3,49 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <style>
-     /*body {
-       min-width: 520px;
-     }*/
-     .column {
-       width: 170px;
-       float: left;
-       padding-bottom: 100px;
-     }
-     /*.portlet {
-       margin: 0 1em 1em 0;
-       padding: 0.3em;
-     }
-     .portlet-header {
-       padding: 0.2em 0.3em;
-       margin-bottom: 0.5em;
-       position: relative;
-     }
-     .portlet-toggle {
-       position: absolute;
-       top: 50%;
-       right: 0;
-       margin-top: -8px;
-     }
-     .portlet-content {
-       padding: 0.4em;
-     }*/
-     .portlet-placeholder {
-       border: 1px dotted black;
-       margin: 0 1em 1em 0;
-       height: 50px;
-     }
+  .page_element_placed { width: 100px;}
+  .page_element {margin-bottom: 10px;}
   </style>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
-  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'digestif/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'digestif/create.css' %}">
   <script src="{% static 'digestif/create.js' %}"></script>
+  <script>
+	$( function() {
+		$("#resultsPage").sortable({
+			revert: "invalid",
+      start: function( event, ui ) {
+        $(ui.item).css("width", "400px");
+      },
+      beforeStop: function( event, ui ) {
+        $(".page_element_placed").css({"width": "100%", "margin-left": "0", "margin-right": "0", "margin-bottom": "10px"});
+      },
+      containment: "parent"
+		});
+    $("#trash").droppable({
+      accept: ".page_element",
+    });
+		$( ".element_getter .page_element" ).draggable({
+			connectToSortable: "#resultsPage",
+      helper: function() {
+        return $( "<div class='card page_element_placed' style='width: 400'><div class='card-header'>Block Type"+
+                  "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
+                  "<div class='card-body'>"+
+                  "<h4 class='card-title'>Title</h4>"+
+                  "<p class='card-text'>Text!</p></div></div>" );
+      },
+			revert: "invalid",
+      appendTo: "body"
+		});
+    $("#resultsPage .page_element").draggable({});
+	} );
+  </script>
   <title>Digestif</title>
 </head>
 <body>
@@ -72,99 +70,196 @@
       </div>
   </nav>
   <div style="height:25px;"></div>
-  <div>
-    <div class="row">
-      <div class="column col">
-          <div id="acknowledgementsHeader" onclick="toggleBody('acknowledgementsBody')">ACKNOWLEDGEMENTS</div>
-          <div style="display : none">
-            <div class="portlet acknowledgementsBody">
-              <div class="portlet-content">BLOCK 1</div>
-              <div class="portlet-content">BLOCK 2</div>
+  <div class="container">
+      <div class="row" style="height: 90%">
+        <div class="col-">
+          <h3 style="width: 300px;">Blocks</h3>
+          <p class="text-muted">Use these blocks to create your page</p>
+        </div>
+        <div class="col">
+          <h3>Your Page!</h3>
+          <p class="text-muted">Drop and edit your blocks here</p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-" style="overflow-y: scroll; height: 90%;">
+
+          <div id="accordion" role="tablist" style="width: 300px;">
+            <div class="card">
+              <div class="card-header" role="tab" id="acknowledgementsHeading">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" href="#acknowledgements" aria-expanded="true" aria-controls="acknowledgements">
+                    Acknowledgements
+                  </a>
+                </h5>
+              </div>
+
+              <div id="acknowledgements" class="collapse show" role="tabpanel" aria-labelledby="acknowledgementsHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
             </div>
-            <div class="portlet acknowledgementsBody">
-              <div class="portlet-content">BLOCK 3</div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="researchPurposeHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#researchPurpose" aria-expanded="false" aria-controls="researchPurpose">
+                    Research Purpose
+                  </a>
+                </h5>
+              </div>
+              <div id="researchPurpose" class="collapse" role="tabpanel" aria-labelledby="researchPurposeHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="studySummaryHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#studySummary" aria-expanded="false" aria-controls="studySummary">
+                    Study Summary
+                  </a>
+                </h5>
+              </div>
+              <div id="studySummary" class="collapse" role="tabpanel" aria-labelledby="studySummaryHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="scoreInterpretationHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#scoreInterpretation" aria-expanded="false" aria-controls="scoreInterpretation">
+                    Score Interpretation
+                  </a>
+                </h5>
+              </div>
+              <div id="scoreInterpretation" class="collapse" role="tabpanel" aria-labelledby="scoreInterpretationHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="personalizedResultsHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#personalizedResults" aria-expanded="false" aria-controls="personalizedResults">
+                    Personalized Results
+                  </a>
+                </h5>
+              </div>
+              <div id="personalizedResults" class="collapse" role="tabpanel" aria-labelledby="personalizedResultsHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="socialComparisonHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#socialComparison" aria-expanded="false" aria-controls="socialComparison">
+                    Social Comparison
+                  </a>
+                </h5>
+              </div>
+              <div id="socialComparison" class="collapse" role="tabpanel" aria-labelledby="socialComparisonHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="shareHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#share" aria-expanded="false" aria-controls="share">
+                    Share
+                  </a>
+                </h5>
+              </div>
+              <div id="share" class="collapse" role="tabpanel" aria-labelledby="shareHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="feedbackHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#feedback" aria-expanded="false" aria-controls="feedback">
+                    Feedback
+                  </a>
+                </h5>
+              </div>
+              <div id="feedback" class="collapse" role="tabpanel" aria-labelledby="feedbackHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="otherStudiesHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#otherStudies" aria-expanded="false" aria-controls="otherStudies">
+                    Other Studies
+                  </a>
+                </h5>
+              </div>
+              <div id="otherStudies" class="collapse" role="tabpanel" aria-labelledby="otherStudiesHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" role="tab" id="additionalResourcesHeading">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#additionalResources" aria-expanded="false" aria-controls="additionalResources">
+                    Additional Resources
+                  </a>
+                </h5>
+              </div>
+              <div id="additionalResources" class="collapse" role="tabpanel" aria-labelledby="additionalResourcesHeading" data-parent="#accordion">
+                <div class="card-body element_getter">
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                </div>
+              </div>
             </div>
 
           </div>
-          <div class="portlet acknowledgementsBody">
-            <div class="portlet-content">BLOCK 4</div>
-          </div>
-      </div>
-      <div class="column col">
-        <ul id="acknowledgements">
-            <!-- <div>ACKNOWLEDGEMENTS</div>
-            <div class="portlet-content">TEXT</div>
-            <div class="portlet-content"><button>BUTTON</button></div> -->
-            <li class="ui-state-default">ACKNOWLEDGEMENTS</li>
-            <li class="ui-state-default ui-state-disabled">BLOCK</li>
-            <li class="ui-state-default">BLOCK</li>
-
-        </ul>
-        <div class="portlet-content">TEXT</div>
-        <div class="portlet-content"><button>BUTTON</button></div>
-          <!-- <div class="portlet">
-              <div class="portlet-header">Header</div>
-              <div class="portlet-content">For the conclusion page</div>
-          </div>
-          <div class="portlet">
-              <div class="portlet-content">For the conclusion page</div>
-          </div>
-          <div class="portlet">
-              <div class="portlet-content">For the conclusion page</div>
-          </div>
-          <div class="portlet">
-              <div class="portlet-content">For the conclusion page</div>
-          </div>
-          <div class="portlet">
-              <div class="portlet-content">For the conclusion page</div>
-          </div>
-          <div class="portlet">
-              <div class="portlet-content">For the conclusion page</div>
-          </div> -->
-        <div class="portlet" id="researchPurposeDiv">
-          <div class="portlet-header">RESEARCH PURPOSE</div>
-        </div>
-        <div class="portlet" id="studySummaryDiv">
-            <div class="portlet-header">STUDY SUMMARY</div>
-        </div>
-        <div class="portlet" id="scoreInterpretationDiv">
-          <div class="portlet-header">SCORE INTERPRETATION</div>
-        </div>
-        <div class="portlet" id="personalizedResultsDiv">
-            <div class="portlet-header">PERSONALIZED RESULTS</div>
-        </div>
-        <div class="portlet" id="socialComparisonDiv">
-          <div class="portlet-header">SOCIAL COMPARISON</div>
-        </div>
-        <div class="portlet" id="shareDiv">
-            <div class="portlet-header">SHARE</div>
-        </div>
-        <div class="portlet" id="feedbackDiv">
-          <div class="portlet-header">FEEDBACK</div>
-        </div>
-        <div class="portlet" id="otherStudiesDiv">
-            <div class="portlet-header">OTHER STUDIES</div>
-        </div>
-        <div class="portlet" id="additionalResourcesDiv">
-            <div class="portlet-header">ADDITIONAL RESOURCES</div>
         </div>
 
-      </div>
-      <div class="column col-6 container">
-        Main place to drop your blocks!
-      </div>
-      <div id="scratch" class="column col">
-          SCRATHPAD to save work along the way
+        <div class="col" style="overflow-y: scroll; height: 90%;">
+          <div id="resultsPage" class="alert alert-success" style="min-height: 400px; width: 100%;"></div>
+        </div>
+
+        <!-- On load, populate side blocks from local storage;
+        If local storage is NULL, move on...
+
+        load empty blocks -->
       </div>
 
-      <!-- On load, populate side blocks from local storage;
-      If local storage is NULL, move on...
-
-      load empty blocks -->
-
-
-    </div>
 
   </div>
 
 </body>
+</html>
