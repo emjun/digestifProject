@@ -12,6 +12,8 @@ def index(request):
     return render(request, 'digestif/index.html') # show just plain index page
 
 def explore(request):
+    # TODO: Need to come up with a way to only allow populating the Blocks and
+        # Conclusion Pages DB only once
     # populate()
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
