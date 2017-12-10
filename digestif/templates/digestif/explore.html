@@ -9,32 +9,30 @@
     <title>Digestif</title>
 </head>
 <body>
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="./index.html">digestif</a>
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'digestif:index' %}">digestif</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
-                <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
-                <!-- <a class="nav-link" href="./create.html">Create</a> -->
-            </li>
-        </ul>
-        <span class="navbar-text">
-      [dee-zhe-<span class="font-weight-bold">steef</span>]: (noun) a tool to support researchers in making their research more digestible to participants
-    </span>
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
+              <a class="nav-link" href="{% url 'digestif:explore' %}" style="color:orange;">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
+              <!-- <a class="nav-link" href="./create.html">Create</a> -->
+          </li>
+      </ul>
     </div>
-</nav>
+  </nav>
+
   <div style="height:25px;"></div>
 
   <div class="container">
-    <h1>Explore</h1>
     <p class="text-muted">Explore our library of example conclusion pages, drawn from popular online platforms</p>
 
       <!-- Default: show Overview of Pages, show that the button is pressed down -->
@@ -53,7 +51,7 @@
             {% for p in platforms %}
               {% with p.platform|add:"Div"|cut:" " as div_name %}
                 <div id={{div_name}} style="width: 100%;">
-                  <h1>{{p.platform}}</h1>
+                  <h1 style="margin-top: 20px; margin-bottom: 15px;">{{p.platform}}</h1>
                     {% for cp in conclusion_pages %}
                       {% if cp.platform == p.platform and cp.path_names.full != None %}
                         {% with "digestif/"|add:cp.path_names.full as path_name %}
@@ -93,7 +91,7 @@
           <div id="blocksDiv">
             <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
             <div id="acknowledgementsDiv">
-              <h1>Acknowledgements</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgements</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.acknowledgements != None %}
                     {% with "digestif/"|add:cp.path_names.acknowledgements as path_name %}
@@ -117,7 +115,7 @@
               {% endfor %}
             </div>
             <div id="researchPurposeDiv">
-              <h1>Research Purpose</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Purpose</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.research_purpose != None %}
                     {% with "digestif/"|add:cp.path_names.research_purpose as path_name %}
@@ -141,7 +139,7 @@
               {% endfor %}
             </div>
             <div id="studySummaryDiv">
-              <h1>Study Summary</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Study Summary</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.study_summary != None %}
                     {% with "digestif/"|add:cp.path_names.study_summary as path_name %}
@@ -165,7 +163,7 @@
               {% endfor %}
             </div>
             <div id="scoreInterpretationDiv">
-              <h1>Score Interpretation</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Score Interpretation</h1>
               {% for cp in conclusion_pages%}
                   {% if cp.path_names.score_interpretation != None %}
                     {% with "digestif/"|add:cp.path_names.score_interpretation as path_name %}
@@ -189,7 +187,7 @@
               {% endfor %}
             </div>
             <div id="personalizedResultsDiv">
-              <h1>Personalized Results</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.personalized_results != None %}
                     {% with "digestif/"|add:cp.path_names.personalized_results as path_name %}
@@ -213,7 +211,7 @@
               {% endfor %}
             </div>
             <div id="socialComparisonDiv">
-              <h1>Social Comparison</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Social Comparison</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.social_comparison != None %}
                     {% with "digestif/"|add:cp.path_names.social_comparison as path_name %}
@@ -237,7 +235,7 @@
               {% endfor %}
             </div>
             <div id="shareDiv">
-              <h1>Share</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.share != None %}
                     {% with "digestif/"|add:cp.path_names.share as path_name %}
@@ -261,7 +259,7 @@
               {% endfor %}
             </div>
             <div id="feedbackDiv">
-              <h1>Feedback</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.feedback != None %}
                     {% with "digestif/"|add:cp.path_names.feedback as path_name %}
@@ -285,7 +283,7 @@
               {% endfor %}
             </div>
             <div id="otherStudiesDiv">
-              <h1>Other Studies</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.other_studies != None %}
                     {% with "digestif/"|add:cp.path_names.other_studies as path_name %}
@@ -309,7 +307,7 @@
               {% endfor %}
             </div>
             <div id="additionalResourcesDiv">
-              <h1>Additional Resources</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Additional Resources</h1>
               {% for cp in conclusion_pages %}
                   {% if cp.path_names.additional_resources != None %}
                     {% with "digestif/"|add:cp.path_names.additional_resources as path_name %}

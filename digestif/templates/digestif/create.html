@@ -48,26 +48,21 @@
 </head>
 <body>
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="./index.html">digestif</a>
+    <a class="navbar-brand" href="{% url 'digestif:index' %}">digestif</a>
 
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                  <!-- <a class="nav-link" href="./explore.html">Explore</a> -->
-                  <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
-                  <!-- <a class="nav-link" href="./create.html">Create</a> -->
-              </li>
-          </ul>
-          <span class="navbar-text">
-        [dee-zhe-<span class="font-weight-bold">steef</span>]: (noun) a tool to support researchers in making their research more digestible to participants
-      </span>
-      </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'digestif:explore' %}">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'digestif:create' %}" style="color:orange;">Create</a>
+        </li>
+      </ul>
+    </div>
   </nav>
   <div style="height:25px;"></div>
   <div class="container">
@@ -95,8 +90,7 @@
 
               <div id="acknowledgements" class="collapse show" role="tabpanel" aria-labelledby="acknowledgementsHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -111,8 +105,7 @@
               </div>
               <div id="researchPurpose" class="collapse" role="tabpanel" aria-labelledby="researchPurposeHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -127,8 +120,7 @@
               </div>
               <div id="studySummary" class="collapse" role="tabpanel" aria-labelledby="studySummaryHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -143,8 +135,7 @@
               </div>
               <div id="scoreInterpretation" class="collapse" role="tabpanel" aria-labelledby="scoreInterpretationHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -159,8 +150,7 @@
               </div>
               <div id="personalizedResults" class="collapse" role="tabpanel" aria-labelledby="personalizedResultsHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -175,8 +165,7 @@
               </div>
               <div id="socialComparison" class="collapse" role="tabpanel" aria-labelledby="socialComparisonHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -191,8 +180,7 @@
               </div>
               <div id="share" class="collapse" role="tabpanel" aria-labelledby="shareHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -207,8 +195,7 @@
               </div>
               <div id="feedback" class="collapse" role="tabpanel" aria-labelledby="feedbackHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -223,8 +210,7 @@
               </div>
               <div id="otherStudies" class="collapse" role="tabpanel" aria-labelledby="otherStudiesHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
@@ -239,8 +225,7 @@
               </div>
               <div id="additionalResources" class="collapse" role="tabpanel" aria-labelledby="additionalResourcesHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 1</h4></div></div>
-                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block 2</h4></div></div>
+                  <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
               </div>
             </div>
