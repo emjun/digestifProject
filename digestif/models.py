@@ -26,12 +26,11 @@ class Block(models.Model):
     """
 
     def __str__(self):
-        return self.block_type
-        # return "".join(self.path_name).join(block_type)
+        return "%s" % self.block_type
 
     def __repr__(self):
-        return self.block_type
-        # return "".join(self.path_name).join(block_type)
+        return "%s" % self.block_type
+
 
 
 class ConclusionPage(models.Model):
@@ -78,41 +77,8 @@ class ConclusionPage(models.Model):
         additional_resources
     """
 
-    # path_names = JSONField(default="NULL")
-    # """
-    #     path_names JSON object should have the following fields:
-    #
-    #     full
-    #     acknowledgements
-    #     research_purpose
-    #     study_summary
-    #     score_interpretation
-    #     personalized_results
-    #     social_comparison
-    #     share
-    #     feedback
-    #     other_studies
-    #     additional_resources
-    #
-    #     Each of these fields' values will be the file name of the static image
-    #     file that corresponds to each full page or block
-    # """
-
     def __str__(self):
-        # return self.cp_id
-        # return self.blocks.all()
-        tmp = ""
-        all_blocks = self.blocks.all()
-        for b in all_blocks:
-            tmp += "" + b + " "
+        return ",".join(b.block_type for b in self.blocks.all())
 
-        return tmp
     def __repr__(self):
-        # return self.cp_id
-        # return self.blocks.all()
-        tmp = ""
-        all_blocks = self.blocks.all()
-        for b in all_blocks:
-            tmp += "" + b + " "
-
-        return tmp
+        return "," .join(b.block_type for b in self.blocks.all())
