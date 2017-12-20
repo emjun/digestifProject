@@ -12,8 +12,8 @@ from django.utils.encoding import python_2_unicode_compatible
 class Block(models.Model):
     block_type = models.CharField(max_length=100)
     path_name = models.CharField(max_length=200)
-    block_layout = models.CharField(max_length=50)
-    content = JSONField(default="NULL")
+    # block_layout = models.CharField(max_length=50)
+    content = models.TextField()
     benefits = models.CharField(max_length=500)
     """
     block_type refers to the kind of block that it is (e.g., Acknowledgements, Research Purpose, etc.)
@@ -26,10 +26,12 @@ class Block(models.Model):
     """
 
     def __str__(self):
-        return "".join(self.path_name).join(block_type)
+        return self.block_type
+        # return "".join(self.path_name).join(block_type)
 
     def __repr__(self):
-        return "".join(self.path_name).join(block_type)
+        return self.block_type
+        # return "".join(self.path_name).join(block_type)
 
 
 class ConclusionPage(models.Model):
@@ -91,12 +93,26 @@ class ConclusionPage(models.Model):
     #     feedback
     #     other_studies
     #     additional_resources
-    # 
+    #
     #     Each of these fields' values will be the file name of the static image
     #     file that corresponds to each full page or block
     # """
 
     def __str__(self):
-        return self.cp_id
+        # return self.cp_id
+        # return self.blocks.all()
+        tmp = ""
+        all_blocks = self.blocks.all()
+        for b in all_blocks:
+            tmp += "" + b + " "
+
+        return tmp
     def __repr__(self):
-        return self.cp_id
+        # return self.cp_id
+        # return self.blocks.all()
+        tmp = ""
+        all_blocks = self.blocks.all()
+        for b in all_blocks:
+            tmp += "" + b + " "
+
+        return tmp
