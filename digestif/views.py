@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 from .models import ConclusionPage
-from .utils.populate_conclusionPages import populate
+from .utils.populate_cp_blocks import populate # populate the DB with full conclusion pages and blocks
 # from .utils.populate_favorites import getFavorites
 import json
 
@@ -21,10 +21,16 @@ def explore(request):
     return render(request, 'digestif/explore.html', context)
     # return render(request, 'digestif/explore.html')
 
-def detail(request, id):
+def cp_detail(request, id):
     conclusion_page = ConclusionPage.objects.get(cp_id=id)
     context = {'conclusion_page': conclusion_page}
-    return render(request, 'digestif/detail.html', context);
+    return render(request, 'digestif/cp_detail.html', context);
+
+def block_detail(request, id):
+    block = Block.objects.get(block_id=id)
+    conclusion_page = ConclusionPage.objects.get(blocks__contains=block);
+    context = {'block': block, 'conclusion_page': conclusion_page}
+    return render(request, 'digestif/block_detail.html', context);
 
 def create(request):
     # favorites = getFavorites()

@@ -8,8 +8,10 @@ app_name = 'digestif'
 urlpatterns = [
     # /digestif/
     url(r'^$', views.index, name='index'),
-    #/digestif/explore/page_id/
-    url(r'^explore/(?P<id>[a-z]*_[a-z]*)/$', views.detail, name='detail'),
+    #/digestif/explore/cp_id/
+    url(r'^explore/(?P<id>cp_[a-z]*_[a-z]*)/$', views.cp_detail, name='cp_detail'),
+    #/digestif/explore/block_id/
+    url(r'^explore/(?P<id>block_[a-z]*_[a-z]*)/$', views.block_detail, name='block_detail'),
     # /digestif/explore/
     url(r'explore/$', views.explore, name='explore'),
     # /digestif/create/
