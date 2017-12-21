@@ -323,6 +323,91 @@ def populate():
             'other_studies' : 'other_studies/vs_traveling.png',
             'additional_resources' : None
         })
+    ConclusionPage.objects.create(
+        cp_id="litw_thinkingStyle-pr+other",
+        platform="Lab in the Wild",
+        study="What is Your Thinking Style?",
+        path_names = {
+            'full' : 'full/litw_thinkingStyle-pr+other.png',
+            'acknowledgements' : 'acknowledgements/litw-acknowledgements.png',
+            'research_purpose' : None,
+            'study_summary' : None,
+            'score_interpretation' : 'score_interpretation/litw_thinkingStyle-pr+other.png',
+            'personalized_results' : 'personalized_results/litw_thinkingStyle-pr+other.png',
+            'social_comparison' : None,
+            'share' : 'share/litw_thinkingStyle-pr+other.png',
+            'feedback' : 'feedback/litw_feedback.png',
+            'other_studies' : 'other_studies/litw_thinkingStyle-pr+other.png',
+            'additional_resources' : None
+        })
+    ConclusionPage.objects.create(
+        cp_id="litw_mealtime",
+        platform="Lab in the Wild",
+        study="Where in the World Should You Have a Meal?",
+        path_names = {
+            'full' : 'full/litw-mealtime.png',
+            'acknowledgements' : 'acknowledgements/litw-acknowledgements.png',
+            'research_purpose' : None,
+            'study_summary' : None,
+            'score_interpretation' : None,
+            'personalized_results' : 'personalized_results/litw-mealtime.png',
+            'social_comparison' : None,
+            'share' : 'share/litw_share.png',
+            'feedback' : 'feedback/litw_feedback.png',
+            'other_studies' : 'other_studies/litw-mealtime.png',
+            'additional_resources' : None
+        })
+    ConclusionPage.objects.create(
+        cp_id="litw_geometric-pr+other",
+        platform="Lab in the Wild",
+        study="???",
+        path_names = {
+            'full' : 'full/litw_geometric-pr+other.png',
+            'acknowledgements' : 'acknowledgements/litw-acknowledgements.png',
+            'research_purpose' : None,
+            'study_summary' : None,
+            'score_interpretation' : 'score_interpretation/litw_geometric-pr+other.png',
+            'personalized_results' : 'personalized_results/litw_geometric-pr+other.png',
+            'social_comparison' : 'social_comparison/litw_geometric-pr+other.png',
+            'share' : 'share/litw_geometric-pr+other.png',
+            'feedback' : 'feedback/litw_feedback.png',
+            'other_studies' : 'other_studies/litw_geometric-pr+other.png',
+            'additional_resources' : None
+        })
+    ConclusionPage.objects.create(
+        cp_id="litw_nutrition",
+        platform="Lab in the Wild",
+        study="How Good is Your Nutrition Knowledge?",
+        path_names = {
+            'full' : 'full/litw_nutrition.png',
+            'acknowledgements' : 'acknowledgements/litw-acknowledgements.png',
+            'research_purpose' : None,
+            'study_summary' : None,
+            'score_interpretation' : None,
+            'personalized_results' : 'personalized_results/litw_nutrition.png',
+            'social_comparison' : 'social_comparison/litw_nutrition.png',
+            'share' : 'share/litw_share.png',
+            'feedback' : 'feedback/litw_feedback.png',
+            'other_studies' : 'other_studies/litw_nutrition.png',
+            'additional_resources' : None
+        })
+    ConclusionPage.objects.create(
+        cp_id="litw_nutrition",
+        platform="Lab in the Wild",
+        study="How Good is Your Nutrition Knowledge?",
+        path_names = {
+            'full' : 'full/litw_nutrition.png',
+            'acknowledgements' : 'acknowledgements/litw-acknowledgements.png',
+            'research_purpose' : None,
+            'study_summary' : None,
+            'score_interpretation' : None,
+            'personalized_results' : 'personalized_results/litw_nutrition.png',
+            'social_comparison' : 'social_comparison/litw_nutrition.png',
+            'share' : 'share/litw_share.png',
+            'feedback' : 'feedback/litw_feedback.png',
+            'other_studies' : 'other_studies/litw_nutrition.png',
+            'additional_resources' : None
+        })
 
 if __name__ == '__main__':
     populate()
