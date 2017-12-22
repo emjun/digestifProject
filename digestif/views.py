@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 from .models import ConclusionPage
+from .models import Block
 from .utils.populate_cp_blocks import populate # populate the DB with full conclusion pages and blocks
 # from .utils.populate_favorites import getFavorites
 import json
@@ -12,12 +13,26 @@ def index(request):
     return render(request, 'digestif/index.html') # show just plain index page
 
 def explore(request):
-    # TODO: Need to come up with a way to only allow populating the Blocks and
+    # TODO: Need to come up with a way to only allow populating the Block and
         # Conclusion Pages DB only once
     # populate()
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
-    context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms}
+    acknowledgements = Block.objects.filter(block_type='acknowledgements')
+    research_purpose = Block.objects.filter(block_type='research_purpose')
+    study_summary = Block.objects.filter(block_type='study_summary')
+    score_interpretation = Block.objects.filter(block_type='score_interpretation')
+    personalized_results = Block.objects.filter(block_type='personalized_results')
+    social_comparison = Block.objects.filter(block_type='social_comparison')
+    share = Block.objects.filter(block_type='share')
+    feedback = Block.objects.filter(block_type='feedback')
+    other_studies = Block.objects.filter(block_type='other_studies')
+    additional_resources = Block.objects.filter(block_type='additional_resources')
+    context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms,
+                'additional_resources' : additional_resources, 'research_purpose' : research_purpose,
+                'study_summary' : study_summary, 'score_interpretation' : score_interpretation,
+                'personalized_results' : personalized_results, 'social_comparison' : social_comparison,
+                'share' : share, 'feedback' : feedback, 'other_studies' : other_studies, 'additional_resources' : additional_resources}
     return render(request, 'digestif/explore.html', context)
     # return render(request, 'digestif/explore.html')
 

@@ -53,8 +53,8 @@
                 <div id={{div_name}} style="width: 100%;">
                   <h1 style="margin-top: 20px; margin-bottom: 15px;">{{p.platform}}</h1>
                     {% for cp in conclusion_pages %}
-                      {% if cp.platform == p.platform and cp.path_names.full != None %}
-                        {% with "digestif/"|add:cp.path_names.full as path_name %}
+                      {% if cp.platform == p.platform and cp.full_page != None %}
+                        {% with "digestif/"|add:cp.full_page as path_name %}
                           <!-- <div id={{path_name}}> -->
                           <!-- May want to do cp.path_names.full only?? Which would be better//easier-->
                           <!-- <span id={{path_name}} width="100px" height="200px"> -->
@@ -92,9 +92,9 @@
             <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
             <div id="acknowledgementsDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgements</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.acknowledgements != None %}
-                    {% with "digestif/"|add:cp.path_names.acknowledgements as path_name %}
+              {% for b in acknowledgements %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Acknowledgemets block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -102,7 +102,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{b.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -116,9 +116,9 @@
             </div>
             <div id="researchPurposeDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Purpose</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.research_purpose != None %}
-                    {% with "digestif/"|add:cp.path_names.research_purpose as path_name %}
+              {% for b in research_purpose %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -126,7 +126,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                              <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -140,9 +140,9 @@
             </div>
             <div id="studySummaryDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Study Summary</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.study_summary != None %}
-                    {% with "digestif/"|add:cp.path_names.study_summary as path_name %}
+              {% for b in study_summary %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -150,7 +150,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -164,9 +164,9 @@
             </div>
             <div id="scoreInterpretationDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Score Interpretation</h1>
-              {% for cp in conclusion_pages%}
-                  {% if cp.path_names.score_interpretation != None %}
-                    {% with "digestif/"|add:cp.path_names.score_interpretation as path_name %}
+              {% for b in score_interpretation %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -174,7 +174,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -188,9 +188,9 @@
             </div>
             <div id="personalizedResultsDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.personalized_results != None %}
-                    {% with "digestif/"|add:cp.path_names.personalized_results as path_name %}
+              {% for b in personalized_results %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -198,7 +198,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -212,9 +212,9 @@
             </div>
             <div id="socialComparisonDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Social Comparison</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.social_comparison != None %}
-                    {% with "digestif/"|add:cp.path_names.social_comparison as path_name %}
+              {% for b in social_comparison %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -222,7 +222,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -236,9 +236,9 @@
             </div>
             <div id="shareDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.share != None %}
-                    {% with "digestif/"|add:cp.path_names.share as path_name %}
+              {% for b in share %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -246,7 +246,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -260,9 +260,9 @@
             </div>
             <div id="feedbackDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.feedback != None %}
-                    {% with "digestif/"|add:cp.path_names.feedback as path_name %}
+              {% for b in feedback %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -270,7 +270,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -284,9 +284,9 @@
             </div>
             <div id="otherStudiesDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.other_studies != None %}
-                    {% with "digestif/"|add:cp.path_names.other_studies as path_name %}
+              {% for b in other_studies %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -294,7 +294,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
@@ -308,9 +308,9 @@
             </div>
             <div id="additionalResourcesDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Additional Resources</h1>
-              {% for cp in conclusion_pages %}
-                  {% if cp.path_names.additional_resources != None %}
-                    {% with "digestif/"|add:cp.path_names.additional_resources as path_name %}
+              {% for b in additional_resources %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                       <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
                         <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
@@ -318,7 +318,7 @@
                       <div class="card-body">
                         <div class="row">
                           <div class="col">
-                            <h4 class="card-title">{{cp.study}}</h4>
+                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
                           </div>
                           <div class="col-sm-auto">
                             <button type="button" class="btn btn-outline-danger" onclick="store('full', '{{path_name}}', this )" value="unlike">&#9829;</button>
