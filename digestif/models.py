@@ -14,7 +14,7 @@ class Block(models.Model):
     path_name = models.CharField(max_length=200)
     # block_layout = models.CharField(max_length=50)
     content = models.TextField()
-    benefits = models.CharField(max_length=500)
+    # benefits = models.CharField(max_length=500)
     """
     block_type refers to the kind of block that it is (e.g., Acknowledgements, Research Purpose, etc.)
     block_layout refers to the basic layout of the block (used to populate a drag/drop elt, default block, etc.)

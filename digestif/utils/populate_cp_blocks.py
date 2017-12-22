@@ -50,7 +50,7 @@ def populate():
             path_name = row[2],
             # block_layout = row[3],
             content = row[3],
-            benefits = row[4],
+            # benefits = row[4],
             block_id = 'block_' + cp.cp_id + '_' + block_type
         )
 

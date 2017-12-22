@@ -1,2 +1,7 @@
-ct_personality|acknowledgements|pathname|<h1>Thank you for participating in this survey!</h1><p>In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p>|outreach
-ct_personality|research_purpose|pathname|<p>Thank you for completing this survey! You answers will help us to understand domestic cats in the United States.</p>|debrief and outreach
+cp_ct_personality|acknowledgements|pathname|<h1>Thank you for participating in this survey!</h1><p>In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p>
+cp_ct_personality|research_purpose|pathname|<p>Thank you for completing this survey! You answers will help us to understand domestic cats in the United States.</p>
+
+cp = ConclusionPage.objects.get(pk=row[0])
+block_type = row[1],
+path_name = row[2],
+content = row[3],
