@@ -3,58 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
   <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
-  <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
-  <style>
-  .page_element_placed { width: 100px;}
-  .page_element {margin-bottom: 10px;}
-  </style>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'digestif/create.css' %}">
-  <script src="{% static 'digestif/create.js' %}"></script>
-
-  <script>
-  var editors = [];
-
-	$( function() {
-		$("#resultsPage").sortable({
-			revert: "invalid",
-      start: function( event, ui ) {
-        $(ui.item).css("width", "400px");
-      },
-      beforeStop: function( event, ui ) {
-        $(".page_element_placed").css({"width": "100%", "margin-left": "0", "margin-right": "0", "margin-bottom": "10px"});
-      },
-      containment: "parent"
-		});
-		$( ".element_getter .page_element" ).draggable({
-			connectToSortable: "#resultsPage",
-      helper: function() {
-        return $( "<div class='card page_element_placed' style='width: 400; height: auto;'><div class='card-header ui-draggable-handle'>Block Type"+
-                  "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
-                  "<div id='no" + editors.length + "' style='height: 100px; border: none;'>hi</div>" +
-                  "</div>" );
-      },
-      start: function() {
-        var id = '#no' + editors.length;
-        var quill = new Quill(id, {
-         theme: 'snow'
-        });
-        editors.push(quill);
-      },
-			revert: "invalid",
-      appendTo: "body"
-		});
-    $("#resultsPage .page_element").draggable({});
-	} );
-
-  </script>
-
   <title>Digestif</title>
 </head>
 <body>
@@ -91,15 +42,31 @@
 
           <div id="accordion" role="tablist" style="width: 300px;">
             <div class="card">
+              <div class="card-header" role="tab" id="fullHeading">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" href="#full" aria-expanded="true" aria-controls="full">
+                    Full
+                  </a>
+                </h5>
+              </div>
+
+              <div id="full" class="collapse show" role="tabpanel" aria-labelledby="fullHeading" data-parent="#accordion"><div class="card-body element_getter">
+                  <div class="page_element card" style="margin-bottom: 10px;"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card">
               <div class="card-header" role="tab" id="acknowledgementsHeading">
                 <h5 class="mb-0">
-                  <a data-toggle="collapse" href="#acknowledgements" aria-expanded="true" aria-controls="acknowledgements">
+                  <a data-toggle="collapse" href="#acknowledgements" aria-expanded="false" aria-controls="acknowledgements">
                     Acknowledgements
                   </a>
                 </h5>
               </div>
 
-              <div id="acknowledgements" class="collapse show" role="tabpanel" aria-labelledby="acknowledgementsHeading" data-parent="#accordion">
+              <div id="acknowledgements" class="collapse" role="tabpanel" aria-labelledby="acknowledgementsHeading" data-parent="#accordion">
                 <div class="card-body element_getter">
                   <div class="page_element card"><div class="card-body"><h4 class="card-title">Block</h4></div></div>
                 </div>
@@ -258,4 +225,10 @@
   </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>
+<script src="{% static 'digestif/create.js' %}"></script>
 </html>

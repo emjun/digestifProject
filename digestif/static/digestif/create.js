@@ -1,5 +1,11 @@
+var liked_blocks;
+var blocks = new Array('full', 'acknowledgements', 'researchPurpose',
+'studySummary', 'scoreInterpretation', 'personalizedResults', 'socialComparison',
+'share', 'feedback', 'otherStudies', 'additionalResources');
+
 $(document).ready(function () {
-    populate_favorites();
+  liked_blocks = new Map();
+  populate_favorites();
 });
 
 function removeEl(obj) {
@@ -12,18 +18,55 @@ function elementHelper( event ) {
 
 function populate_favorites() {
   // pull from local storage
-  var obj = JSON.parse(window.localStorage.liked_blocks);
-  console.log(obj);
-  console.log(obj.acknowledgements);
-  console.log(obj['acknowledgements']);
-
-  // populate_block('acknowledgements', obj.acknowledgements);
-  // populate_block('research_purpose', obj.research_purpose);
-
-  // for loop through each array in obj && populate....
-  // MAYBE WE SHOULD DO THIS IN TEMPLATE??? using django syntax??
-  // Do it here because it is about view front end not view back end!!!
+  for(type of blocks) {
+    var blocklist = window.localStorage.getItem(type);
+    if(blocklist != null){
+      var cards = "";
+      var b = JSON.parse(blocklist);
+      for (let item of b) {
+        liked_blocks.set(item.id, item.contents);
+        cards += "<div id='" + item.id + "' class='page_element card' style='margin-bottom: 10px;'><img class='card-img-top' src='" + item.path + "'><div class='card-body'><h4 class='card-title'>" + item.name + "</h4></div></div>";
+      }
+      console.log(document.getElementById(type).firstChild);
+      document.getElementById(type).firstChild.innerHTML += cards;
+    }
+  }
 }
+
+var editors = [];
+
+$( function() {
+  $("#resultsPage").sortable({
+    revert: "invalid",
+    start: function( event, ui ) {
+      $(ui.item).css("width", "400px");
+    },
+    beforeStop: function( event, ui ) {
+      $(".page_element_placed").css({"width": "100%", "margin-left": "0", "margin-right": "0", "margin-bottom": "10px"});
+    },
+    containment: "parent"
+  });
+  $( ".element_getter .page_element" ).draggable({
+    connectToSortable: "#resultsPage",
+    helper: function() {
+      console.log(liked_blocks);
+      console.log($(this).attr('id'));
+      return $( "<div class='card page_element_placed' style='width: 400; height: auto;'><div class='card-header ui-draggable-handle'>Block Type"+
+                "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
+                "<div id='no" + editors.length + "' style='height: 100px; border: none;'>" + liked_blocks.get($(this).attr('id')) +"</div></div>");
+    },
+    start: function( event, ui ) {
+      var id = '#no' + editors.length;
+      var quill = new Quill(id, {
+       theme: 'snow'
+      });
+      editors.push(quill);
+    },
+    revert: "invalid",
+    appendTo: "body"
+  });
+  $("#resultsPage .page_element").draggable({});
+} );
 
 
 // function populate_block(name, arr) {

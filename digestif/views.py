@@ -29,7 +29,7 @@ def explore(request):
     other_studies = Block.objects.filter(block_type='other_studies')
     additional_resources = Block.objects.filter(block_type='additional_resources')
     context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms,
-                'additional_resources' : additional_resources, 'research_purpose' : research_purpose,
+                'acknowledgements' : acknowledgements, 'research_purpose' : research_purpose,
                 'study_summary' : study_summary, 'score_interpretation' : score_interpretation,
                 'personalized_results' : personalized_results, 'social_comparison' : social_comparison,
                 'share' : share, 'feedback' : feedback, 'other_studies' : other_studies, 'additional_resources' : additional_resources}
