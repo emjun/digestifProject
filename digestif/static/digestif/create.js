@@ -27,7 +27,6 @@ function populate_favorites() {
         liked_blocks.set(item.id, item.contents);
         cards += "<div id='" + item.id + "' class='page_element card' style='margin-bottom: 10px;'><img class='card-img-top' src='" + item.path + "'><div class='card-body'><h4 class='card-title'>" + item.name + "</h4></div></div>";
       }
-      console.log(document.getElementById(type).firstChild);
       document.getElementById(type).firstChild.innerHTML += cards;
     }
   }
@@ -44,14 +43,13 @@ $( function() {
     beforeStop: function( event, ui ) {
       $(".page_element_placed").css({"width": "100%", "margin-left": "0", "margin-right": "0", "margin-bottom": "10px"});
     },
+    handle: ".handle",
     containment: "parent"
   });
   $( ".element_getter .page_element" ).draggable({
     connectToSortable: "#resultsPage",
     helper: function() {
-      console.log(liked_blocks);
-      console.log($(this).attr('id'));
-      return $( "<div class='card page_element_placed' style='width: 400; height: auto;'><div class='card-header ui-draggable-handle'>Block Type"+
+      return $( "<div class='card page_element_placed' style='width: 400;'><div class='card-header handle'>"+
                 "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
                 "<div id='no" + editors.length + "' style='height: 100px; border: none;'>" + liked_blocks.get($(this).attr('id')) +"</div></div>");
     },
@@ -65,7 +63,6 @@ $( function() {
     revert: "invalid",
     appendTo: "body"
   });
-  $("#resultsPage .page_element").draggable({});
 } );
 
 

@@ -26,7 +26,6 @@ function store(type, id, name, path, contents, obj) {
   // if not in a global array, add to global array
   var item = {"id": id, "name": name, "path": path, "contents": contents};
   if (vote === 'unlike') {
-    console.log(liked_blocks.get(type));
     liked_blocks.get(type).add(item);
 
     // somehow indicate to the user that it is liked
@@ -42,9 +41,6 @@ function store(type, id, name, path, contents, obj) {
     mark_unlike(obj);
   }
   window.localStorage.setItem(type, JSON.stringify(Array.from(liked_blocks.get(type))));
-  console.log(liked_blocks.get(type));
-  console.log(JSON.parse(JSON.stringify(liked_blocks.get(type))));
-  console.log(JSON.parse(window.localStorage.getItem(type)));
 }
 
 function mark_like(obj) {
