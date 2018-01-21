@@ -6,6 +6,7 @@ var blocks = new Array('full', 'acknowledgements', 'researchPurpose',
 $(document).ready(function () {
   liked_blocks = new Map();
   populate_favorites();
+  populate_editor();
 });
 
 function removeEl(obj) {
@@ -32,6 +33,14 @@ function populate_favorites() {
   }
 }
 
+function populate_editor() {
+  if("page" in window.localStorage) {
+    document.getElementById("resultsPage").innerHTML = window.localStorage.getItem("page");
+  } else {
+    window.localStorage.setItem("count", 0);
+  }
+}
+
 var editors = [];
 
 $( function() {
@@ -43,18 +52,22 @@ $( function() {
     beforeStop: function( event, ui ) {
       $(".page_element_placed").css({"width": "100%", "margin-left": "0", "margin-right": "0", "margin-bottom": "10px"});
     },
+    stop: function( event, ui ) {
+      window.localStorage.setItem("page", document.getElementById("resultsPage").innerHTML);
+    },
     handle: ".handle",
     containment: "parent"
   });
   $( ".element_getter .page_element" ).draggable({
     connectToSortable: "#resultsPage",
     helper: function() {
+      window.localStorage.setItem("count", window.localStorage.getItem("count") + 1);
       return $( "<div class='card page_element_placed' style='width: 400;'><div class='card-header handle'>"+
                 "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
-                "<div id='no" + editors.length + "' style='height: 100px; border: none;'>" + liked_blocks.get($(this).attr('id')) +"</div></div>");
+                "<div id='no" + window.localStorage.getItem("count") + "' style='height: 100px; border: none;'>" + liked_blocks.get($(this).attr('id')) +"</div></div>");
     },
     start: function( event, ui ) {
-      var id = '#no' + editors.length;
+      var id = '#no' + window.localStorage.getItem("count");
       var quill = new Quill(id, {
        theme: 'snow'
       });
