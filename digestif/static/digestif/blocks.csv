@@ -1,6 +1,9 @@
-
-cp_ct_personality|acknowledgements|pathname|<h1>Thank you for participating in this survey!</h1><p>In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p>
-cp_ct_personality|research_purpose|pathname|<p>Thank you for completing this survey! You answers will help us to understand domestic cats in the United States.</p>
+ct_personality|acknowledgements|acknowledgements/cattracker_personality.png|<h1>Thank you for participating in this survey!</h1><p>In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p>
+ct_personality|personalized_results|personalized_results/cattracker_personality.png|<p>In order to recieve your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p><p>Please enter your email address:</p><p>Please confirm your email address:</p><p>If you do not have an email address, how can we contact you?</p>
+ct_personality|research_purpose|research_purpose/cattracker_personality.png|<p>Thank you for completing this survey! You answers will help us to understand domestic cats in the United States.</p>
+dmp_movies|personalized_results|personalized_results/dmp_movies.png|<h3>Here are the Top 10 recommended movies for you</h3><img src="image_default.png">
+dmp_personality|acknowledgements|acknowledgements/dmp_personality.png|<h3>Thank you!</h3><p>Thank you for participating in the Short Personality Test test.</p>
+dmp_personality|personalized_results|personalized_results/dmp_personality.png|<h5>Your personality</h5><p>Openness:</p><Conscientiousness:</p><p>Extraversion</p><p>Agreeableness:</p><p>Neuroticism</p><h3>Openness</h3><p>This trait refers to the extent to which people prefer novelty versus convention</p>
 
 cp = ConclusionPage.objects.get(pk=row[0])
 block_type = row[1],

@@ -43,6 +43,15 @@ function store(type, id, name, path, contents, obj) {
   window.localStorage.setItem(type, JSON.stringify(Array.from(liked_blocks.get(type))));
 }
 
+function show_detail(platform, study, block, path) {
+  document.getElementById('detailModalBody').innerHTML =
+    "<div class='row'><div class='col'><p>Platform: " + platform +
+    "</p><p>Study: " + study + "</p><p>Block: " + block + "</p></div></div>" +
+    "<div class='row'><div class='col'><img src='" + path +
+    "' style='width:100%'></div></div>";
+  $('#detailModal').modal('show');
+}
+
 function mark_like(obj) {
   $(obj).attr('class', 'btn btn-danger');
   $(obj).attr('value', 'like');

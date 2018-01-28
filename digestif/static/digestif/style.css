@@ -1,81 +1,13 @@
-.heart-particle-box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  left: 30%;
+.modalLink:hover {
+  color: orange;
+  cursor: default;
 }
 
-#heart-icon {
-  margin-top: 150px;
-  color: #f55567;
-  font-size: 16px;
-  border: 1px;
-  opacity: 1;
-  background: none;
-  transition: .3s ease-in-out;
-}
-
-#heart-icon:focus {
-  outline: 0;
-  border: 1px;
-}
-
-.heart-particle {
-  padding: 26px;
-  opacity: 1;
-  position: absolute;
-  display: none;
-}
-
-.heart-particle i {
-  position: absolute;
-  margin-left: 52px;
-  opacity: .4;
-  font-size: 16px;
-}
-
-
-.like_button {
-  background-color: gray;
-}
-
-#heart {
-    position: relative;
-    width: 100px;
-    height: 90px;
-}
-#heart:before,
-#heart:after {
-    position: absolute;
-    content: "";
-    left: 50px;
-    top: 0;
-    width: 50px;
-    height: 80px;
-    background: red;
-    -moz-border-radius: 50px 50px 0 0;
-    border-radius: 50px 50px 0 0;
-    -webkit-transform: rotate(-45deg);
-       -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-         -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-    -webkit-transform-origin: 0 100%;
-       -moz-transform-origin: 0 100%;
-        -ms-transform-origin: 0 100%;
-         -o-transform-origin: 0 100%;
-            transform-origin: 0 100%;
-}
-#heart:after {
-    left: 0;
-    -webkit-transform: rotate(45deg);
-       -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-         -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-    -webkit-transform-origin: 100% 100%;
-       -moz-transform-origin: 100% 100%;
-        -ms-transform-origin: 100% 100%;
-         -o-transform-origin: 100% 100%;
-            transform-origin :100% 100%;
+/* Maximize the main wrappers on the screen */
+.modal-dialog {
+	left: 20px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+  max-width: 1200px;
 }
