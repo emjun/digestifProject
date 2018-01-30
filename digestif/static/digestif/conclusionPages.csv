@@ -1,22 +1,22 @@
-ct_personality,Cat Tracker,Personality Survey,cattracker_personality.png
-dmp_movies,Discover My Profile,Movie Recommendation Study,dmp_movies.png
-dmp_personality,Discover My Profile,Short Personality Test,dmp_personality.png
-gww_whichEnglish,Games With Words,Which English,gww_whichEnglish.png
-litw_aestheticPreference,Lab in the Wild,Where in the World Does Your Taste Live?,litw_aestheticPreference.png
-litw_colorPerception,Lab in the Wild,What is your Color Perception Score?,litw_colorPerception.png
-litw_geometric-pr+other,Lab in the Wild,What is Your Thinking Style [not correct title]?,litw_geometric-pr+other.png
-litw_multitasking,Lab in the Wild,Multitasking Test,litw_multitasking.png
-msb_emotion,My Social Brain,Predict Emotion Durations,msb_emotion.png
-msb_writing,My Social Brain,Who Do You Write Like?,msb_writing.png
-mu_brainType,The Musical Universe,Your Brain Type,mu_brainType.png
-mu_eyes,The Musical Universe,Empathy and Listening Quiz,mu_eyes.png
-perfectPitch_thePerfectPitchStudy,Perfect Pitch,The Perfect Pitch Study,perfectPitch_thePerfectPitchStudy.png
-pi_genderCareer,Project Implicit,Gender-Career Implicit Attitude Test,pi_genderCareer.png
-ps_rating,Project Soothe,Survey,ps_rating.png
-tmb_cognitiveSpeed,Test My Brain,Cognitive Speed,tmb_cognitiveSpeed.png
-tmb_famousFaces,Test My Brain,Famous Faces,tmb_famousFaces.png
-vs_band,Volunteer Science,Which Band Member are You?,vs_band.png
-vs_big5,Volunteer Science,Big Five Personality,vs_big5.png
-vs_cows,Volunteer Science,Three Cows,vs_cows.png
-vs_individualism,Volunteer Science,Collectivism-Individualism,vs_individualism.png
-vs_traveling,Volunteer Science,Traveling Salesperson,vs_traveling.png
+ct_personality|Cat Tracker|Personality Survey|cattracker_personality.png
+dmp_movies|Discover My Profile|Movie Recommendation Study|dmp_movies.png
+dmp_personality|Discover My Profile|Short Personality Test|dmp_personality.png
+gww_whichEnglish|Games With Words|Which English|gww_whichEnglish.png
+litw_aestheticPreference|Lab in the Wild|Where in the World Does Your Taste Live?|litw_aestheticPreference.png
+litw_colorPerception|Lab in the Wild|What is your Color Perception Score?|litw_colorPerception.png
+litw_geometric-pr+other|Lab in the Wild|What is Your Thinking Style [not correct title]?|litw_geometric-pr+other.png
+litw_multitasking|Lab in the Wild|Multitasking Test|litw_multitasking.png
+msb_emotion|My Social Brain|Predict Emotion Durations|msb_emotion.png
+msb_writing|My Social Brain|Who Do You Write Like?|msb_writing.png|msb_writing.csv
+mu_brainType|The Musical Universe|Your Brain Type|mu_brainType.png|mu_brainType.csv
+mu_eyes|The Musical Universe|Empathy and Listening Quiz|mu_eyes.png|mu_eyes.csv
+perfectPitch_thePerfectPitchStudy|Perfect Pitch|The Perfect Pitch Study|perfectPitch_thePerfectPitchStudy.png|perfectPitch_thePerfectPitchStudy.csv
+pi_genderCareer|Project Implicit|Gender-Career Implicit Attitude Test|pi_genderCareer.png|pi_genderCareer.csv
+ps_rating|Project Soothe|Survey|ps_rating.png|ps_rating.csv
+tmb_cognitiveSpeed|Test My Brain|Cognitive Speed|tmb_cognitiveSpeed.png|tmb_cognitiveSpeed.csv
+tmb_famousFaces|Test My Brain|Famous Faces|tmb_famousFaces.png|tmb_famousFaces.csv
+vs_band|Volunteer Science|Which Band Member are You?|vs_band.png|vs_band.csv
+vs_big5|Volunteer Science|Big Five Personality|vs_big5.png|vs_big5.csv
+vs_cows|Volunteer Science|Three Cows|vs_cows.png
+vs_individualism|Volunteer Science|Collectivism-Individualism|vs_individualism.png| Your Results!|vs_individualism.csv
+vs_traveling|Volunteer Science|Traveling Salesperson|vs_traveling.png|

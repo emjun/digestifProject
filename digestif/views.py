@@ -9,13 +9,18 @@ from .utils.populate_cp_blocks import populate # populate the DB with full concl
 # from .utils.populate_favorites import getFavorites
 import json
 
+# global variable so that database is populated only once (to avoid duplicates)
+# already_populated = 0;
+
 def index(request):
     return render(request, 'digestif/index.html') # show just plain index page
 
 def explore(request):
-    # TODO: Need to come up with a way to only allow populating the Block and
-        # Conclusion Pages DB only once
-    # populate()
+    # if (not already_populated):
+    #      populate()
+    #      already_populated = 1
+
+    populate()
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
     acknowledgements = Block.objects.filter(block_type='acknowledgements')

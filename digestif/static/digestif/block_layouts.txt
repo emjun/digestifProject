@@ -1,0 +1,46 @@
+This outlines the different layout "classes" for different block types.
+Acknowledgements:
+ack_header
+ack_headerBody
+
+Research Purpose
+rp_headerBody
+rp_body
+
+Study Summary
+ss_qa -- in create: multiple headerBody && list of headers and list of bodies (consistent order!)
+ss_header
+ss_headerBody
+
+
+Score Interpretation
+si_qa
+si_header
+si_headerBody
+
+Personalized Results
+pr_header
+pr_headerGraph
+
+Social Comparison
+sc_header
+sc_headerGraph
+
+Share
+s_button
+s_headerButton -- Pass list of sharr buttons and parse through to identify which to auto-select
+
+Feedback
+f_commmentBox
+f_email
+f_survey (??)
+
+Other Studies
+os_homepage
+os_list
+os_bodyList
+
+Additional Resources
+ar_buttons
+ar_body
+ar_embeddedMedia
