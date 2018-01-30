@@ -5,9 +5,11 @@ var blocks = new Array('full', 'acknowledgements', 'researchPurpose',
 var editors = [];
 
 $(document).ready(function () {
+  prequestion()
   liked_blocks = new Map();
   populate_favorites();
   populate_editor();
+  $('[data-toggle="popover"]').popover();
 });
 
 function removeEl(obj) {
@@ -16,6 +18,24 @@ function removeEl(obj) {
 
 function elementHelper( event ) {
   return '<div class="draggableHelper"></div>';
+}
+
+function prequestion() {
+  var target = window.localStorage.getItem("target");
+  if(target == null) {
+    $('#preQuestionModal').modal('show');
+  } else {
+    document.getElementById("target").innerHTML = target;
+  }
+}
+
+function start(opt, knowledge) {
+  $("#target-img").attr("src", "../../static/digestif/create/person" + opt + ".png");
+  $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  $('#preQuestionModal').modal('hide');
+  window.localStorage.setItem("target", document.getElementById("target").innerHTML);
+  $('[data-toggle="popover"]').popover();
+  $('#pop').popover('show');
 }
 
 function populate_favorites() {
