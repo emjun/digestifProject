@@ -24,12 +24,15 @@ def populate():
 
     for row in reader_cp:
 
-        READ IN THE CONTENT FROM THE CSV 
+        # Read content from TXT file that contains all the content for the conclusion page
+        file_content = open('digestif/static/digestif/content/full/' + row[4], "r")
+
         cp = ConclusionPage(
             cp_id = 'cp_' + row[0],
             platform = row[1],
             study = row[2],
-            full_page = 'full/' + row[3]
+            full_page = 'full/' + row[3],
+            content = file_content.read()
         )
 
         cp.save()
@@ -44,7 +47,7 @@ def populate():
     # Read a CSV file row by row
     for row in reader:
         # row[0] is the cp_id name for the ConclusionPage
-        cp = ConclusionPage.objects.get(pk=row[0])
+        cp = ConclusionPage.objects.get(pk='cp_' + row[0])
 
         # Use the elements in the columns of each row to construct a Block instance
         block = Block(
