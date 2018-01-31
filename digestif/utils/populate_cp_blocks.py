@@ -14,7 +14,7 @@ f_cp = open('digestif/static/digestif/conclusionPages.csv');
 reader_cp = csv.reader(f_cp, delimiter='|');
 
 f_blocks = open('digestif/static/digestif/blocks.csv');
-reader = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
+reader_blocks = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
 
 def populate():
     # {load static}
@@ -25,14 +25,20 @@ def populate():
     for row in reader_cp:
 
         # Read content from TXT file that contains all the content for the conclusion page
-        file_content = open('digestif/static/digestif/content/full/' + row[4], "r")
+        f_content = open('digestif/static/digestif/content/full/' + row[4], "r")
+        cp_content = f_content.read().splitlines()
+        # cp_content.replace("\n", "")
+        # print(cp_content)
+        content_string = ""
+        for i in cp_content:
+            content_string += i
 
         cp = ConclusionPage(
             cp_id = 'cp_' + row[0],
             platform = row[1],
             study = row[2],
             full_page = 'full/' + row[3],
-            content = file_content.read()
+            content = content_string
         )
 
         cp.save()
@@ -44,23 +50,24 @@ def populate():
     # reader = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
     # row_count = 0 # keeps track of the number of rows read for a particular group of Blocks on the same conclusion page
 
+"""
     # Read a CSV file row by row
-    for row in reader:
+    for row in reader_blocks:
         # row[0] is the cp_id name for the ConclusionPage
         cp = ConclusionPage.objects.get(pk='cp_' + row[0])
 
         # Use the elements in the columns of each row to construct a Block instance
         block = Block(
+            # block_id = 'block_' + cp.cp_id + '_' + row[1],
             block_type = row[1],
             path_name = row[2],
             # block_layout = row[3],
-            content = row[3],
-            # benefits = row[4],
-            block_id = 'block_' + cp.cp_id + '_' + block_type
-        )
+            content = row[3])
+            # benefits = row[4],        )
 
         block.save()
         cp.blocks.add(block)
+        """
 
         # What happens if a conclusion page does not have all the blocks??
         # What does querying for it do? How should we go about taking care of these cases?

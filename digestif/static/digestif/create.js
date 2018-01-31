@@ -71,12 +71,12 @@ function populate_editor() {
         ]},
         placeholder: "This is an empty block. Fill it in however you'd like!",
         theme: 'snow'}));
-      editors[count].on('text-change', function(delta, oldDelta, source) {
-        save_page();
-        $( "#resultsPage" ).sortable( "refresh" );
-      });
-      count++;
-      console.log(editors);
+        editors[count].on('text-change', function(delta, oldDelta, source) {
+          save_page();
+          $( "#resultsPage" ).sortable( "refresh" );
+        });
+        count++;
+        console.log(editors);
     }
   }
   window.localStorage.setItem("count", count);

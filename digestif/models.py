@@ -10,6 +10,7 @@ from django.utils.encoding import python_2_unicode_compatible
 # Also stores references to the Blocks that store more detailed information and comprise the conclusion page
 @python_2_unicode_compatible
 class Block(models.Model):
+    # block_id = models.CharField(max_length=255, primary_key=True)
     block_type = models.CharField(max_length=100)
     path_name = models.CharField(max_length=200)
     # block_layout = models.CharField(max_length=50)
@@ -50,6 +51,7 @@ class ConclusionPage(models.Model):
     # feedback = models.ForeignKey('Block', on_delete=models.CASCADE,)
     # other_studies = models.ForeignKey('Block', on_delete=models.CASCADE,)
     # additional_resources = models.ForeignKey('Block', on_delete=models.CASCADE,)
+    content = models.TextField()
 
     """
     cp_id refers to the primary key id used for this conclusion page instance

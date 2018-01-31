@@ -67,7 +67,7 @@
                                   <h4 class="card-title modalLink" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', 'Full Page', '{% static path_name %}')">{{cp.study}}</h4>
                                 </div>
                                 <div class="col-sm-auto">
-                                  <button type="button" id="#{{cp.cp_id}}btn" class="btn btn-outline-danger" onclick="store('full', '{{cp.cp_id}}', '{{cp.study}}', '{% static path_name %}', 'test', this )" value="unlike">&#9829;</button>
+                                  <button type="button" id="#{{cp.cp_id}}btn" class="btn btn-outline-danger" onclick="store('full', '{{cp.cp_id}}', '{{cp.study}}', '{% static path_name %}', '{{cp.content}}', this )" value="unlike">&#9829;</button>
                                 </div>
                               </div>
                             </div>

@@ -2,10 +2,10 @@ ct_personality|Cat Tracker|Personality Survey|cattracker_personality.png|cattrac
 dmp_movies|Discover My Profile|Movie Recommendation Study|dmp_movies.png|dmp_movies.txt
 dmp_personality|Discover My Profile|Short Personality Test|dmp_personality.png|dmp_personality.txt
 gww_whichEnglish|Games With Words|Which English|gww_whichEnglish.png|gww_whichEnglish.txt
-litw_aestheticPreference|Lab in the Wild|Where in the World Does Your Taste Live?|litw_aestheticPreference.png
-litw_colorPerception|Lab in the Wild|What is your Color Perception Score?|litw_colorPerception.png
-litw_geometric-pr+other|Lab in the Wild|What is Your Thinking Style [not correct title]?|litw_geometric-pr+other.png
-litw_multitasking|Lab in the Wild|Multitasking Test|litw_multitasking.png
+litw_aestheticPreference|Lab in the Wild|Where in the World Does Your Taste Live?|litw_aestheticPreference.png|litw_aestheticPreference.txt
+litw_colorPerception|Lab in the Wild|What is your Color Perception Score?|litw_colorPerception.png|litw_colorPerception.txt
+litw_geometric-pr+other|Lab in the Wild|What is Your Thinking Style [not correct title]?|litw_geometric-pr+other.png|litw_geometric.txt
+litw_multitasking|Lab in the Wild|Multitasking Test|litw_multitasking.png|litw_multitasking.txt
 msb_emotion|My Social Brain|Predict Emotion Durations|msb_emotion.png|msb_emotion.txt
 msb_writing|My Social Brain|Who Do You Write Like?|msb_writing.png|msb_writing.txt
 mu_brainType|The Musical Universe|Your Brain Type|mu_brainType.png|mu_brainType.txt
@@ -17,6 +17,6 @@ tmb_cognitiveSpeed|Test My Brain|Cognitive Speed|tmb_cognitiveSpeed.png|tmb_cogn
 tmb_famousFaces|Test My Brain|Famous Faces|tmb_famousFaces.png|tmb_famousFaces.txt
 vs_band|Volunteer Science|Which Band Member are You?|vs_band.png|vs_band.txt
 vs_big5|Volunteer Science|Big Five Personality|vs_big5.png|vs_big5.txt
-vs_cows|Volunteer Science|Three Cows|vs_cows.png
-vs_individualism|Volunteer Science|Collectivism-Individualism|vs_individualism.png| Your Results!|vs_individualism.txt
-vs_traveling|Volunteer Science|Traveling Salesperson|vs_traveling.png
+vs_cows|Volunteer Science|Three Cows|vs_cows.png|vs_cows.txt
+vs_individualism|Volunteer Science|Collectivism-Individualism|vs_individualism.png|vs_individualism.txt
+vs_traveling|Volunteer Science|Traveling Salesperson|vs_traveling.png|vs_traveling.txt
