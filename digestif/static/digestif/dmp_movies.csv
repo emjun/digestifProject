@@ -1,0 +1,22 @@
+Here are the Top 10 recommended movies for you
+1. Star Wars (1977)
+2. Air Force One (1997)
+3. Pulp Fiction (1994)
+4. Godfather, The (1972)
+5. Full Monty, The (1997)
+6. L.A. Confidential (1997)
+7. Fargo (1996)
+8. Schindler's List (1993)
+9. Empire Strikes Back, The (1980)
+10. Wag the Dog (1997)
+
+Evaluation Scheme
+26 movies were selected and rated by you.
+The UBCF algorithm was selected to train the model
+
+Comparing Top N recommendations based on 400 randomly selected participants and 42934 ratings
+ROC curves
+VISUALIZATION
+
+Precision/Recall curves
+VISUALIZATION

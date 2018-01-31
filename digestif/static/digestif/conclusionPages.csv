@@ -1,12 +1,12 @@
-ct_personality|Cat Tracker|Personality Survey|cattracker_personality.png
-dmp_movies|Discover My Profile|Movie Recommendation Study|dmp_movies.png
-dmp_personality|Discover My Profile|Short Personality Test|dmp_personality.png
-gww_whichEnglish|Games With Words|Which English|gww_whichEnglish.png
+ct_personality|Cat Tracker|Personality Survey|cattracker_personality.png|cattracker_personality.csv
+dmp_movies|Discover My Profile|Movie Recommendation Study|dmp_movies.png|dmp_movies.csv
+dmp_personality|Discover My Profile|Short Personality Test|dmp_personality.png|dmp_personality.csv
+gww_whichEnglish|Games With Words|Which English|gww_whichEnglish.png|gww_whichEnglish.csv
 litw_aestheticPreference|Lab in the Wild|Where in the World Does Your Taste Live?|litw_aestheticPreference.png
 litw_colorPerception|Lab in the Wild|What is your Color Perception Score?|litw_colorPerception.png
 litw_geometric-pr+other|Lab in the Wild|What is Your Thinking Style [not correct title]?|litw_geometric-pr+other.png
 litw_multitasking|Lab in the Wild|Multitasking Test|litw_multitasking.png
-msb_emotion|My Social Brain|Predict Emotion Durations|msb_emotion.png
+msb_emotion|My Social Brain|Predict Emotion Durations|msb_emotion.png|msb_emotion.csv
 msb_writing|My Social Brain|Who Do You Write Like?|msb_writing.png|msb_writing.csv
 mu_brainType|The Musical Universe|Your Brain Type|mu_brainType.png|mu_brainType.csv
 mu_eyes|The Musical Universe|Empathy and Listening Quiz|mu_eyes.png|mu_eyes.csv

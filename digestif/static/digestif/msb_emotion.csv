@@ -1,0 +1,56 @@
+PREDICT EMOTION DURATIONS
+MY RESULTS
+Thank you for participating in this study!
+
+WHAT WAS THE PURPOSE OF THIS STUDY?
+The purpose of this study was to measure people's implicit beliefs about how long various emotions and other mental states last. We were interested in both how long you thought each emotion lasts on average, and what type of statistical distribution best reflects your responses. We were also interested in determining whether people's beliefs about emotions are associated with other social-cognitive traits, a question we could assess if you completed this and other studies on the site while logged in to an account.
+
+WHAT WERE OUR HYPOTHESES?
+We hypothesized that people reason about the durations of emotions in an approximately Bayesian (LINK) way. In particular we assumed that you made educated guesses in the experiment by combining your prior knowledge of how long emotions last with the evidence provided (how long an emotion has lasted so far) to make a rational inference about its likely total duration. Using this assumption, we could reverse-engineer your beliefs about the durations of emotions, and determine how these differed between different mental states. We hypothesized that these beliefs might be associated with other social cognitive traits such as emotional stability, with high stability individuals thinking that states las for longer than low stability individuals.
+
+HOW WAS THIS STUDY CONDUCTED?
+On each trial of the task, we provided you with the name of some emotion or mental state, such as "happiness." We also told you how long a certain person had been experiencing that state so far. We then asked you to guess how long that state would last in total (including the time elapsed). We could correlate the duration-to-date that we provided you with how much longer you thought the state would last. This allows us to determine which of three types of statistical distribution your responses reflect.
+VISUALIZATION
+As you can see in the image above, different statistical distributions imply different prediction rules. If you think that emotion durations follow a power law (LINK) distribution - that is, with many very short emotional experiences, but a handful of extremely long ones - then you likely used a multiplicative rule to determine your responses (not necessarily consciously). Under this rule, your guesses would be some constant multiple of the durations-to-date that we provided you. In contrast, your responses might have come from a distribution like the Erlang (LINK), which has fewer very short states relative to a power law but still has many long emotion experiences. Erlang distributions are known as "memory-less" because how long one has been in a state does not relate to how much longer it will last (unlike a power law, where the longer a state has gone on, the longer it is likely to go). Thus the appropriate predication rule for Erlang distributions is to add a constant value to the durations we provided you. Finally, your implicit beliefs about emotions could reflect a normal-distribution of durations. Normal or Gaussian (LINK) distributions have a mean value around which their statistical "mass" is distributed. Thus both very long and very short values are unlikely to occur. The Bayesian prediction rule for a normal distribution is to guess the mean (or average) until that value is almost reached, and then guess a number increasingly smaller than the current value.
+
+DID WE TELL YOU EVERYTHING?
+We never lie to participants on MySocialBrain.org: active deception is not a part of our any of our research. However, in some studies we make use of "incomplete disclosure" - meaning that we do not tell you about some aspects of a study in advance. Typically this takes the form of not disclosing our experimental manipulation or research hypotheses. We do this primarily to avoid biasing your responses with demand characteristics (LINK). In the case of the current study, we did not provide you with the detailed description of distributions and prediction rules beforehand because we wanted to respond intuitively rather than consciously selecting one of these rules to follow. We also did not emphasize that were interested in differences between states, as well as between participants.
+
+WHY IS THIS STUDY IMPORTANT?
+People's beliefs about emotions guide many decisions about themselves and others. For example, if someone believes that sadness regret is an inherently brief feeling, they may be more likely to engage in activities which are likely to cause them to feel regret. Similarly, if people believe that hate is a long lasting emotion, they may be hesitant to risk eliciting it from others. As yet relatively little work has characterized what people believe about specific emotions. While some research has elicited explicit judgments, these may be biased for a number of reasons, thus making it important to look for convergent evidence for a partially implicit measure such as this one. Furthermore, we aim to characterize not just the mean duration that people think different emotions last, but what statistical distribution of durations they think reflects each state.
+
+
+WHAT DO MY RESULTS MEAN?
+The results below reflect our best guess about your beliefs regarding the durations of emotions. To simplify calculations for the web browser, we use a rule of thumb to determine which of the three distributions described above your responses most likely come from.
+This approach is not perfect, especially with only 20 trials, so there is a chance our that classification is mistaken and/or that you will get a different response if you participate in this experiment again.
+The donut chart reflects the results of other people who previously participated in this experiment, and is provided to contextualize how common your results. Receiving a more or less common result is not necessarily a good or bad thing, since the common belief may or may not be accurate or useful.
+
+Your prediction rule: Erlang/additive
+Your responses in the experiment suggest that you implicitly believe that emotions follow an Erlang distribution. This means that how long an emotion has gone on so far is unrelated to how long it will last. Thus, whether a mental state has lasted for 1 hour or 10 hours, you will predict that the remaining duration of the state is about the same. In general, you probably think that there are few extremely short emotional states and some very long emotional experiences.
+Other's results:
+VISUALIZATION
+
+Return Home (LINK) & Share Experiment (LINK)
+
+
+RESEARCH
+Academic Research & Web-based data collection & Data Protection
+IMAGE
+SOCIAL COGNITIVE NEUROSCIENCE
+The primary focus of our research is social cognitive neuroscience: understanding how the brain allows people to make sense of each other. To that end we use functional magnetic resonance imaging (fMRI (LINK)) to examine the neural basis of diverse social phenomena. To learn more about our research, see the list of recent publications (LINK) below or check out our lab website (LINK).
+
+IMAGE
+THE MIND ON THE WEB
+We use large scale web research to complement the fine-grained work we do with fMRI. MySocialBrain.org (LINK) is a platform for wide variety of social cognitive experiments. It allows us to study much larger and more diverse groups of people than we would otherwise be able to. From the participants' point of view, it offers engaging, interactive experiments with personalized feedback to a broad audience.
+
+IMAGE
+INDIVIDUAL DIFFERENCES IN SOCIAL ABILITIES
+One of the major goals of this site has less to do with any one study than with the correlations of multiple studies. Research on "individual differences" - the psychological properties that make people different from one another, such as personality or intelligence - requires very large sample sizes for meaningful results. That's where our account system comes in. By registering (LINK), you allow us to correlate your (deidentified) data across studies, and thereby answer exciting new questions.
+
+
+CONTACT US
+How to contact the researcher.
+If you have any questions about your participation or want to request a summary of research findings, please contact the lead researcher, Mark Thornton, at researcher@mysocialbrain.org (LINK). If you wish to join our mailing list to learn about new studies, or to unsubscribe, you may do so here (LINK).
+
+Whom to contact about your rights as a participant in this research.
+Whom to contact about your rights in this research, for questions, concerns, suggestions, or complaints that are not being addressed by the researcher, or research-related harm: Office of Research Integrity and Assurance, Human Research Protection Program, Assistant Director. Phone: (609)258-0865. E-mail: irb@princeton.edu (LINK).
