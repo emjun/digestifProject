@@ -2,12 +2,12 @@ Your Results
 
 Famous Faces
 Research purpose
-In this test, you had to identify famous people from images where hair and other nonface information were removed. Face recognition is much harder when one doesn't have these external cues, and tests like this are very challenging for people who suffer from a condition called prosopagnosia (also known as faceblindness).
+In this test, you had to identify famous people from images where hair and other nonface information were removed. Face recognition is much harder when one doesnt have these external cues, and tests like this are very challenging for people who suffer from a condition called prosopagnosia (also known as faceblindness).
 
 Understanding results
-There are some limitations you should keep in mind as you look at your feedback. Each of these experiments represents an area of active research - until we have gathered many results from people like you, we can't conclude anything about what volunteers' results mean. Furthermore, these kinds of results are only meaningful at the group level - that is, they may reflect patterns that apply on average and not necessarily to any one person. For example, let's say we decided to do a study examining gender and hair length. We might find that, on average, women have longer hair than men. However, having long hair doesn't make you female and being female doesn't give you long hair. In other words, females have longer hair on average, but this logic cannot be applied to individuals.
+There are some limitations you should keep in mind as you look at your feedback. Each of these experiments represents an area of active research - until we have gathered many results from people like you, we cant conclude anything about what volunteers results mean. Furthermore, these kinds of results are only meaningful at the group level - that is, they may reflect patterns that apply on average and not necessarily to any one person. For example, lets say we decided to do a study examining gender and hair length. We might find that, on average, women have longer hair than men. However, having long hair doesnt make you female and being female doesnt give you long hair. In other words, females have longer hair on average, but this logic cannot be applied to individuals.
 
-If you are surprised by your results on any of these tests, you shouldn't be concerned. There are many reasons why scores on this task might differ. For instance, differences in computer systems or distractions while doing the task can affect results. This task was not designed to specifically assess you, and the scores can vary widely among the people who complete it.
+If you are surprised by your results on any of these tests, you shouldnt be concerned. There are many reasons why scores on this task might differ. For instance, differences in computer systems or distractions while doing the task can affect results. This task was not designed to specifically assess you, and the scores can vary widely among the people who complete it.
 
 If you have questions about these or any of your results, please contact us (LINK) at testmybrain@gmail.com (LINK).
 

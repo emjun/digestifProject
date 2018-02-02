@@ -1,24 +1,24 @@
-<strong>Thank you and further information</strong>
+<p><strong><u>Thank you and further information</u></strong></p>
 
-Thank you for participating in this survey!
-In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.
+<p><strong>Thank you for participating in this survey!</strong></p>
+<p>In order to receive your results for the personality survey, please provide your email address below. We ask that you please allow for up to 3 months for the survey results to arrive.</p>
+<br>
+<p>Please enter your email address:
+<br>FORM</p>
 
-Please enter your email address:
-FORM
+<p>Please confirm your email address:
+<br>FORM</p>
 
-Please confirm your email address:
-FORM
+<p>If you do not have an email address, how can we contact you?
+<br>FORM</p>
 
-If you do not have an email address, how can we contact you?
-FORM
+<p>Are you already a participant in Cat Tracker?
+<br>FORM</p>
 
-Are you already a participant in Cat Tracker?
-FORM
+<p>How did you find out about this survey?
+<br>FORM</p>
 
-How did you find out about this survey?
-FORM
+<p>Do you have any other comments?
+<br>FORM</p>
 
-Do you have any other comments?
-FORM
-
-Thank you for completing this survey! Your answers will help us to understand domestic cats in the United States.
+<br><p>Thank you for completing this survey! Your answers will help us to understand domestic cats in the United States.</p>

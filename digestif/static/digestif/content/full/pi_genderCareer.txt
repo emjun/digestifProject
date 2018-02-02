@@ -11,16 +11,16 @@ Disclaimer: The results are not a definitive assessment of your implicit prefere
 
 How Does The IAT Work?
 The IAT measures the strength of associations between concepts (e.g., Female/Male and Career/Family). The main idea is that making a response is easier when closely related items share the same response key.
-We would say that one has an implicit association between Male and 'Career' relative to Female and 'Career' if they are faster to categorize words when Male and 'Career' share a response key relative to when Female and 'Career' share a response key.
+We would say that one has an implicit association between Male and Career relative to Female and Career if they are faster to categorize words when Male and Career share a response key relative to when Female and Career share a response key.
 
 Why Should I Care About My IAT Score?
 Implicit preferences can predict behavior. Implicit preferences are related to discrimination in hiring and promotion, medical treatment, and decisions related to criminal justice.
 
 What Can I Do About an Implicit Preference That I Do Not Want?
-Right now, there is not enough research to say for sure that implicit biases can be reduced, let alone eliminated. Packaged 'diversity trainings' generally do not use evidence-based methods of reducing implicit biases. Therefore, we encourage people to instead focus on strategies that deny implicit biases the change to operate, such as blind auditions and well-designed "structured" decision processes.
+Right now, there is not enough research to say for sure that implicit biases can be reduced, let alone eliminated. Packaged diversity trainings generally do not use evidence-based methods of reducing implicit biases. Therefore, we encourage people to instead focus on strategies that deny implicit biases the change to operate, such as blind auditions and well-designed "structured" decision processes.
 
-Other People's Results
-The summary of other people's results shows that most people implicitly associate male with career - i.e., they are faster sorting when career words and male words go with the same key. Notably, about a third of the people included in this graph resort associating the two groups equally with the concepts of career and family.
+Other Peoples Results
+The summary of other peoples results shows that most people implicitly associate male with career - i.e., they are faster sorting when career words and male words go with the same key. Notably, about a third of the people included in this graph resort associating the two groups equally with the concepts of career and family.
 VISUALIZATION
 
 What About Order Effects?
@@ -30,6 +30,6 @@ I Still Have Questions About The IAT
 If you have questions about your IAT performance or score, please consult the links at the top of the page, where you will find answers to frequently asked questions, links to related research, and additional information about implicit associations. You may also email us (LINK) with questions or comments.
 
 Your Participation And Financial Support Are Important!
-Thank you again for participating in this research! We have learned so much from people like you taking the time to be part of our work. If you have time, please consider taking another test by clicking the button below. As a non-profit organization, we would also appreciate your financial support. Since establishment in 2005, we have educated more than a million visitors each year about implicit biases concerning race, gender, sexual orientation, and other topics. Your donation supports Project Implicit's educational, scientific, and public service missions. Click here to donate (LINK).
+Thank you again for participating in this research! We have learned so much from people like you taking the time to be part of our work. If you have time, please consider taking another test by clicking the button below. As a non-profit organization, we would also appreciate your financial support. Since establishment in 2005, we have educated more than a million visitors each year about implicit biases concerning race, gender, sexual orientation, and other topics. Your donation supports Project Implicits educational, scientific, and public service missions. Click here to donate (LINK).
 
 Donate to Project Implicit (LINK) & Take another test (LINK)

@@ -1,1 +1,25 @@
-LITW AESTHETIC PREFRENCE CONTENT 
+<h1>Your aesthetic taste matches up with Finland.</h1>
+<br>
+<p>We calculated your visual preferences based on the visual complexity and colorfulness of the websites you rated.
+Every screenshot you rated has such values attached, so we can tell on average what score is related to websites you liked most.
+Your preference compared to the average preference in your home country is shown in the graph below.<strong>How did you do that? (LINK)</strong></p>
+<p>VISUALIZATION</p>
+<br>
+<p>Our database holds different website screenshots and the related aesthetic calculations. Based on your input, the website below matches your taste.</p>
+<p>IMAGE</p>
+<p>Do you like it?
+<br>FORM</p>
+<br>
+<p><strong>Have you liked this? Would you like to engage further?</strong></p>
+<p>Please let us know by participating in our survey on the future of the LabintheWild community.<strong>Take me to the Survey</strong></p>
+<br>
+<h2>Join the Wilderness</h2>
+<p>FACEBOOK_LINK</p>
+<p>TWITTER_LINK</p>
+<p>TUMBLR_LINK</p>
+<br>
+<p>Thought that was fun? Try another test on LabintheWild!</p>
+<p><strong>Where in the world should you have a meal?</strong>
+<br>IMAGE</p>
+<p><strong>Do you have the reaction time of a cheetah?</strong>
+<br>IMAGE</p>

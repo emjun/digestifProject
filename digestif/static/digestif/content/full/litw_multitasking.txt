@@ -1,1 +1,29 @@
-LITW MULTITASKING CONTENT HERE 
+<h1>Thank you!</h1>
+<h2>Here are your results</h2>
+<p><strong>Speed: </strong>On average, you took <strong>3.2 seconds</strong> to find and select an item. Other participants needed 3.22 seconds on average.</p>
+<p>More interestingly, however, when you had to remember lots of symbols, you <strong>got faster by 15.59%.</strong> Others slowed down by 0.21%.</p>
+<p><strong>Memory: </strong>On average, you made <strong>0.3 mistake(s)</strong> when remembering memorized symbols. Other people made 0.14 mistakes on average.</p>
+<p><strong>Attention on the clicking task: </strong> We also measured how much attention you paid to the clicking task (sorry, we cannot tell you how we did it right now because we do not want others to game the test).
+<strong>Your attention score was the highest when you had to remember 6 symbol(s) and lowest when you had to remember 1 symbol(s).</strong> On average, other participants had the highest attention scores when they had to remember 2 symbols and lowest when they had to remember 6 symbols.</p>
+<p>As you can see in the graph below, people do best on the clicking task when their mind is occupied just a little and they do less well when their minds are completely bored or busy.
+<br>VISUALIZATION</p>
+<p>When computing your results, we excluded the first three clicks in each part (we assume you were just warming up). We also excluded any clicks where it took you longer than 7 seconds to respond (we assume you got distracted there).</p>
+<br>
+<h1>If you enjoyed this test</h1>
+<ol>
+  <li>Tell your friends about it
+      <p>TWITTER_LINK</p>
+      <p>FACEBOOK_LINK</p>
+      <p>LINKEDIN_LINK</p>
+      <p>PINTEREST_LINK</p>
+      <p>GOOGLEPLUS_LINK</p>
+  <li>Follow us on Facebook (LINK) to see results of our studies and to be among the first to hear about new tests.
+  <li>And check out LabintheWild (LINK) for more tests:
+      <p><strong>Food Intelligence Test</strong>
+        <br>IMAGE
+        <br>Can you tell just by looking at a meal whether it is a significant source of protein, fat, or carbohydrates?
+        <br>The test typically takes 10 minutes. <strong>Try it! (LINK)</strong></p>
+      <p><strong>What is your thinking style?</strong>
+        <br>IMAGE
+        <br>Find out how your thinking style compares to others.
+        <br>This experiment takes around 5 minutes. <strong>Try it!</strong></p>

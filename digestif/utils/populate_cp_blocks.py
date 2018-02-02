@@ -26,7 +26,7 @@ def populate():
 
         # Read content from TXT file that contains all the content for the conclusion page
         f_content = open('digestif/static/digestif/content/full/' + row[4], "r")
-        cp_content = f_content.read().splitlines()
+        cp_content = f_content.read().splitlines() #strip all new lines
         # cp_content.replace("\n", "")
         # print(cp_content)
         content_string = ""

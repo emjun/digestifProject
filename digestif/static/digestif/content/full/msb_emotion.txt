@@ -3,7 +3,7 @@ MY RESULTS
 Thank you for participating in this study!
 
 WHAT WAS THE PURPOSE OF THIS STUDY?
-The purpose of this study was to measure people's implicit beliefs about how long various emotions and other mental states last. We were interested in both how long you thought each emotion lasts on average, and what type of statistical distribution best reflects your responses. We were also interested in determining whether people's beliefs about emotions are associated with other social-cognitive traits, a question we could assess if you completed this and other studies on the site while logged in to an account.
+The purpose of this study was to measure peoples implicit beliefs about how long various emotions and other mental states last. We were interested in both how long you thought each emotion lasts on average, and what type of statistical distribution best reflects your responses. We were also interested in determining whether peoples beliefs about emotions are associated with other social-cognitive traits, a question we could assess if you completed this and other studies on the site while logged in to an account.
 
 WHAT WERE OUR HYPOTHESES?
 We hypothesized that people reason about the durations of emotions in an approximately Bayesian (LINK) way. In particular we assumed that you made educated guesses in the experiment by combining your prior knowledge of how long emotions last with the evidence provided (how long an emotion has lasted so far) to make a rational inference about its likely total duration. Using this assumption, we could reverse-engineer your beliefs about the durations of emotions, and determine how these differed between different mental states. We hypothesized that these beliefs might be associated with other social cognitive traits such as emotional stability, with high stability individuals thinking that states las for longer than low stability individuals.
@@ -17,7 +17,7 @@ DID WE TELL YOU EVERYTHING?
 We never lie to participants on MySocialBrain.org: active deception is not a part of our any of our research. However, in some studies we make use of "incomplete disclosure" - meaning that we do not tell you about some aspects of a study in advance. Typically this takes the form of not disclosing our experimental manipulation or research hypotheses. We do this primarily to avoid biasing your responses with demand characteristics (LINK). In the case of the current study, we did not provide you with the detailed description of distributions and prediction rules beforehand because we wanted to respond intuitively rather than consciously selecting one of these rules to follow. We also did not emphasize that were interested in differences between states, as well as between participants.
 
 WHY IS THIS STUDY IMPORTANT?
-People's beliefs about emotions guide many decisions about themselves and others. For example, if someone believes that sadness regret is an inherently brief feeling, they may be more likely to engage in activities which are likely to cause them to feel regret. Similarly, if people believe that hate is a long lasting emotion, they may be hesitant to risk eliciting it from others. As yet relatively little work has characterized what people believe about specific emotions. While some research has elicited explicit judgments, these may be biased for a number of reasons, thus making it important to look for convergent evidence for a partially implicit measure such as this one. Furthermore, we aim to characterize not just the mean duration that people think different emotions last, but what statistical distribution of durations they think reflects each state.
+Peoples beliefs about emotions guide many decisions about themselves and others. For example, if someone believes that sadness regret is an inherently brief feeling, they may be more likely to engage in activities which are likely to cause them to feel regret. Similarly, if people believe that hate is a long lasting emotion, they may be hesitant to risk eliciting it from others. As yet relatively little work has characterized what people believe about specific emotions. While some research has elicited explicit judgments, these may be biased for a number of reasons, thus making it important to look for convergent evidence for a partially implicit measure such as this one. Furthermore, we aim to characterize not just the mean duration that people think different emotions last, but what statistical distribution of durations they think reflects each state.
 
 
 WHAT DO MY RESULTS MEAN?
@@ -27,7 +27,7 @@ The donut chart reflects the results of other people who previously participated
 
 Your prediction rule: Erlang/additive
 Your responses in the experiment suggest that you implicitly believe that emotions follow an Erlang distribution. This means that how long an emotion has gone on so far is unrelated to how long it will last. Thus, whether a mental state has lasted for 1 hour or 10 hours, you will predict that the remaining duration of the state is about the same. In general, you probably think that there are few extremely short emotional states and some very long emotional experiences.
-Other's results:
+Others results:
 VISUALIZATION
 
 Return Home (LINK) & Share Experiment (LINK)
@@ -41,11 +41,11 @@ The primary focus of our research is social cognitive neuroscience: understandin
 
 IMAGE
 THE MIND ON THE WEB
-We use large scale web research to complement the fine-grained work we do with fMRI. MySocialBrain.org (LINK) is a platform for wide variety of social cognitive experiments. It allows us to study much larger and more diverse groups of people than we would otherwise be able to. From the participants' point of view, it offers engaging, interactive experiments with personalized feedback to a broad audience.
+We use large scale web research to complement the fine-grained work we do with fMRI. MySocialBrain.org (LINK) is a platform for wide variety of social cognitive experiments. It allows us to study much larger and more diverse groups of people than we would otherwise be able to. From the participants point of view, it offers engaging, interactive experiments with personalized feedback to a broad audience.
 
 IMAGE
 INDIVIDUAL DIFFERENCES IN SOCIAL ABILITIES
-One of the major goals of this site has less to do with any one study than with the correlations of multiple studies. Research on "individual differences" - the psychological properties that make people different from one another, such as personality or intelligence - requires very large sample sizes for meaningful results. That's where our account system comes in. By registering (LINK), you allow us to correlate your (deidentified) data across studies, and thereby answer exciting new questions.
+One of the major goals of this site has less to do with any one study than with the correlations of multiple studies. Research on "individual differences" - the psychological properties that make people different from one another, such as personality or intelligence - requires very large sample sizes for meaningful results. Thats where our account system comes in. By registering (LINK), you allow us to correlate your (deidentified) data across studies, and thereby answer exciting new questions.
 
 
 CONTACT US

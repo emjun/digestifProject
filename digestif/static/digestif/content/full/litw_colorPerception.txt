@@ -1,1 +1,43 @@
-LITW COLOR PERCEPTION CONTENT HERE 
+<center>
+<p>Your color perception score is...
+<br>
+100 IMAGE</p>
+</center>
+<br>
+<p>Your score of 100 out of 100 was higher than the average score of 92.</p>
+<p>Your score indicates how close your tiles were to where they should go if they are sorted with 100% accuracy.</p>
+<br>
+
+<h1>Color Perception on the Spectrum</h1>
+<h2>Which colors could you discriminate well or poorly?</h2>
+<p>On the spectrum below you will see a chart showing how well you were at discriminating different colors.</p>
+<p>Where the line is <strong>higher</strong>, you placed colors closer to their correct position.</p>
+<p>Where the line is <strong>lower</strong>, you placed colors further away from their correct position.</p>
+<br>
+<center><strong>Your Spectrum</strong>
+<br>VISUALIZATION
+</center>
+<br>
+<h2>How did the average use do?</h2>
+<p>On the spectrum below you will see a chart showing how well the average user was at discriminating different colors.</p>
+<center><strong>Average User Spectrum</strong>
+<br>VISUALIZATION
+</center>
+<br>
+<h1>Color Names</h1>
+<p>Thank you for naming colors for us! Those names are not part of your color perception score. Instead, we will use them as part of a research study on how colors are named in different languages, which is why we could not give you examples color names or hints.</p>
+<p>If you would like to see the results from the color naming task, enter your email below and we will email you when the study is finished. Your email address will be kept separately from the data you entered.</p>
+<p>Email address: FORM </p>
+<br>
+<p>Share your results!</p>
+<p>TWITTER_LINK</p>
+<p>FACEBOOK_LINK</p>
+<p>GOOGLEPLUS_LINK</p>
+<p>WEIBO_LINK</p>
+<br>
+<p>Thanks again! Thought that was fun?</p>
+<p>Consider taking some of our other tests:
+<br>IMAGE
+<br>What is your thinking style?
+<br>Find out how your thinking style compares to others. This experiment takes around 5 minutes. Participate now! (LINK)</p>
+<p>Or Return to the Wild! (LINK)</p>

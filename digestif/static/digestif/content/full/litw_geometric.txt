@@ -1,1 +1,40 @@
-LITW GEOMETRIC CONTENT HERE
+<h1>Results</h1>
+<p>In this experiment you were asked to reproduce a line in a box relative to the size of the box, or a line independent of the size of the box.
+  We are interested in finding out whether people are better in one of these two tasks, and whether this relates to their cultural background.</p>
+<p>Please see your results on this test below. If you have any questions about these results, please email us at info@labinthewild.org.</p>
+<br>
+<h2>Your results:</h2>
+<p>In your First Task, you drew a line <i>independent</i> of the size of the given box.
+<br>VISUALIZATION</p>
+<p>In your Second Task, you drew a line <i>relative</i> to the size of the given box.
+<br>VISUALIZATION</p>
+<br>
+<p>Share your results!</p>
+<p>TWITTER_LINK</p>
+<p>FACEBOOK_LINK</p>
+<p>GOOGLEPLUS_LINK</p>
+<p>WEIBO_LINK</p>
+<br>
+<p>Based on your performance on this test, you are <b>equally competent</b> at perceiving the foreground and the background.
+   You are a <i>holistic</i> person who has a consideration for both the details and the bigger picture.</p>
+<p>*This experiment was first introduced in Kitayama, S., Duffy, S., Kawamura, T., & Larsen, J.T. (2003). Perceiving an object and its context in different cultures: A cultural look at the New Look.<i>  Psychological Science, 14</i>, 201–206.</p>
+<br>
+<p><strong>Have you liked this? Would you like to engage further?</strong></p>
+<p>Please let us know by participating in our survey on the future of the LabintheWild community. LINK</p>
+<br>
+<br>
+<p>Thanks again! Thought that was fun?</p>
+<p>Tell your friends:</p>
+<p>TWITTER_LINK</p>
+<p>FACEBOOK_LINK</p>
+<p>GOOGLEPLUS_LINK</p>
+<p>WEIBO_LINK</p>
+<br>
+<p>And consider taking some of our other tests:
+<br>IMAGE
+<br>What is your thinking style?
+<br>Find out how your thinking style compares to others. This experiment takes around 5 minutes. LINK</p>
+<br>IMAGE
+<br>Can we guess your age?
+<br>Test how old you are based on how well you can distinguish between colors! This test will take around 5 minutes. LINK</p>
+<p>Or Return to the Wild! (LINK)</p>
