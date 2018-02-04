@@ -32,17 +32,277 @@
   <div style="height:25px;"></div>
 
   <div class="container">
-    <h5> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block, its content will be available for you to use on the create page.</h5>
+    <h5> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block, its <strong style="color:rgb(204, 68, 74);">content</strong> will be available for you to use on the create page.</h5>
 
       <!-- Default: show Overview of Pages, show that the button is pressed down -->
       <!-- When click back and forth between two, show different divs with content -->
 
       <nav class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 20px;">
-        <a class="nav-item nav-link active" id="nav-platform-tab" data-toggle="tab" href="#nav-platform" role="tab" aria-controls="nav-platform" aria-selected="true">View by Platform</a>
-        <a class="nav-item nav-link" id="nav-block-tab" data-toggle="tab" href="#nav-block" role="tab" aria-controls="nav-block" aria-selected="false">View by Block</a>
+        <a class="nav-item nav-link active" id="nav-block-tab" data-toggle="tab" href="#nav-block" role="tab" aria-controls="nav-block" aria-selected="true">View by Block</a>
+        <a class="nav-item nav-link" id="nav-platform-tab" data-toggle="tab" href="#nav-platform" role="tab" aria-controls="nav-platform" aria-selected="false">View by Platform</a>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-platform" role="tabpanel" aria-labelledby="nav-platform-tab">
+
+        <div class="tab-pane fade show active" id="nav-block" role="tabpanel" aria-labelledby="nav-block-tab">
+
+          <!-- Div for Specific Blocks of Content: shows specific blocks -->
+          {% load static %}
+          <div id="blocksDiv">
+            <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
+            <div id="acknowledgementsDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgements</h1>
+              <p class="text-muted">Acknowledgement blocks thank the participant for their time.</p>
+              {% for b in acknowledgements %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Acknowledgements block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('acknowledgements', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="researchPurposeDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Purpose</h1>
+              <p class="text-muted">Research purpose blocks educate participants about why the research is being done.</p>
+              {% for b in research_purpose %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('researchPurpose', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="studySummaryDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Study Summary</h1>
+              <p class="text-muted">Study summary blocks tell participants how their data contributes to a research goal.</p>
+              {% for b in study_summary %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('studySummary', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="scoreInterpretationDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Score Interpretation</h1>
+              <p class="text-muted">Score interpretation blocks explain to participants how their performance was scored and what this means: they often address the limitations of the experimental design that could compromise the accuracy of scores and/or how prescriptive the studies are.</p>
+              {% for b in score_interpretation %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('scoreInterpretation', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="personalizedResultsDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
+              <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give something back for their contribution. These generated results are often used to advertise the study.</p>
+              {% for b in personalized_results %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('personalizedResults', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="socialComparisonDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Social Comparison</h1>
+              <p class="text-muted">Social comparison blocks compare the performance of participants to their peers. By comparing participants to the average, social comparison can incentivize participants to put their full effort into the tasks.</p>
+              {% for b in social_comparison %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('socialComparison', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="shareDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
+              <p class="text-muted">Share blocks allow participants to share their participation on social media, which can generate traffic for the study.</p>
+              {% for b in share %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('share', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="feedbackDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
+              <p class="text-muted">Feedback blocks allow participants to provide feedback on the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
+              {% for b in feedback %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('feedback', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="otherStudiesDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
+              <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation in other studies.</p>
+              {% for b in other_studies %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('otherStudies', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+            <div id="additionalResourcesDiv">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Additional Resources</h1>
+              <p class="text-muted">Additional resources blocks allow researchers to share about their fields and previous research findings.</p>
+              {% for b in additional_resources %}
+                  {% if b.path_name != None %}
+                    {% with "digestif/"|add:b.path_name as path_name %}
+                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                      <div class="card-img-top modalLink"  onclick="show_detail('{{b.platform}}', '{{b.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 100px; overflow: hidden; background-color: gray;">
+                        <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col">
+                            <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
+                          </div>
+                          <div class="col-sm-auto">
+                            <button type="button" class="btn btn-outline-danger" onclick="store('additionalResources', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endwith %}
+                  {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-platform" role="tabpanel" aria-labelledby="nav-platform-tab">
 
         <!-- Div for Pages sorted by Platform: show all -->
         {% load static %}
@@ -58,13 +318,13 @@
                           <!-- May want to do cp.path_names.full only?? Which would be better//easier-->
                           <!-- <span id={{path_name}} width="100px" height="200px"> -->
                           <div class="platformContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                            <div class="card-img-top" style="height: 200px; overflow: hidden; background-color: gray;">
+                            <div class="card-img-top modalLink" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')" style="height: 200px; overflow: hidden; background-color: gray;">
                               <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%;">
                             </div>
                             <div class="card-body">
                               <div class="row">
                                 <div class="col">
-                                  <h4 class="card-title modalLink" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', 'Full Page', '{% static path_name %}')">{{cp.study}}</h4>
+                                  <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', 'Full Page', '{% static path_name %}')">{{cp.study}}</h4>
                                 </div>
                                 <div class="col-sm-auto">
                                   <button type="button" id="#{{cp.cp_id}}btn" class="btn btn-outline-danger" onclick="store('full', '{{cp.cp_id}}', '{{cp.study}}', '{% static path_name %}', '{{cp.content}}', this )" value="unlike">&#9829;</button>
@@ -81,255 +341,6 @@
             {% endfor %}
         </div>
 
-        </div>
-
-        <div class="tab-pane fade" id="nav-block" role="tabpanel" aria-labelledby="nav-block-tab">
-
-          <!-- Div for Specific Blocks of Content: shows specific blocks -->
-          {% load static %}
-          <div id="blocksDiv">
-            <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
-            <div id="acknowledgementsDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgements</h1>
-              {% for b in acknowledgements %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Acknowledgements block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <h4 class="card-title modalLink" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', '{{b.block_type}}', '{% static path_name %}')">{{cp.study}}</h4>
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('acknowledgements', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="researchPurposeDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Purpose</h1>
-              {% for b in research_purpose %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Research purpose block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                              <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('researchPurpose', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="studySummaryDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Study Summary</h1>
-              {% for b in study_summary %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Study summary block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('studySummary', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="scoreInterpretationDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Score Interpretation</h1>
-              {% for b in score_interpretation %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Score interpretation block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('scoreInterpretation', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="personalizedResultsDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
-              {% for b in personalized_results %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('personalizedResults', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="socialComparisonDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Social Comparison</h1>
-              {% for b in social_comparison %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Social comparison block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('socialComparison', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="shareDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
-              {% for b in share %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Share block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('share', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="feedbackDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
-              {% for b in feedback %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('feedback', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="otherStudiesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
-              {% for b in other_studies %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('otherStudies', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-            <div id="additionalResourcesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Additional Resources</h1>
-              {% for b in additional_resources %}
-                  {% if b.path_name != None %}
-                    {% with "digestif/"|add:b.path_name as path_name %}
-                    <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
-                      <div class="card-img-top" style="height: 100px; overflow: hidden; background-color: gray;">
-                        <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%" />
-                      </div>
-                      <div class="card-body">
-                        <div class="row">
-                          <div class="col">
-                            <!-- <h4 class="card-title">{{cp.study}}</h4> -->
-                          </div>
-                          <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('additionalResources', '{{b.cp_id}}', '{{b.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    {% endwith %}
-                  {% endif %}
-              {% endfor %}
-            </div>
-          </div>
         </div>
 
         </div>
@@ -349,8 +360,7 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script></body>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="{% static 'digestif/explore.js' %}"></script>
 </html>

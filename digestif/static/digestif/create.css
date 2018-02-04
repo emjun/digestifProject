@@ -5,3 +5,11 @@
 .ql-editor {
   height: auto;
 }
+
+#pop {
+  cursor:pointer;
+}
+
+#target-img {
+  cursor:pointer;
+}
