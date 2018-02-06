@@ -16,11 +16,7 @@ def index(request):
     return render(request, 'digestif/index.html') # show just plain index page
 
 def explore(request):
-    # if (not already_populated):
-    #      populate()
-    #      already_populated = 1
-
-    populate()
+    #populate()
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
     acknowledgements = Block.objects.filter(block_type='acknowledgements')

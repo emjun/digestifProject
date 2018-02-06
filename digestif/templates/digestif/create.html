@@ -33,12 +33,13 @@
           <h3 style="width: 300px;">Blocks</h3>
           <p class="text-muted">Use these blocks to create your page</p>
         </div>
-        <div class="col-sm-auto">
+        <div class="col">
           <h3>Your Page!</h3>
           <p class="text-muted">Drop and edit your blocks here</p>
         </div>
-        <div id="target" class="col">
-          <a tabindex="0" id="pop" class="btn" role="button" data-toggle="popover" data-placement="right" data-trigger="focus" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:50px;width=50px;"/></a>
+        <div id="target" class=".col-" style="width=70px;text-align: center;">
+          <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
+          <p class="text-muted" style="display: block;">Hi, I'm your target user</p>
         </div>
         <div class=".col-" style="padding-right: 15px; padding-left: 15px;">
           <button type="button" class="btn btn-outline-primary btn-lg" onclick="download_page()">Download</button>
@@ -233,7 +234,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header" style="background-color:rgb(44,126,246);">
-          <h5 class="modal-title" style="color:white;">Answer these questions before you begin...</h5>
+          <h5 class="modal-title" style="color:white;">Select a target audience...</h5>
         </div>
         <div class="modal-body">
 

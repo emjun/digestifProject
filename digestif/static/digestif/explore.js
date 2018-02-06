@@ -19,6 +19,7 @@ $(document).ready(function () {
       liked_blocks.set(type, new Set());
     }
   }
+  //$('[data-toggle="popover"]').popover( { trigger: 'manual' } );
 });
 
 function store(type, id, name, path, contents, obj) {
@@ -29,7 +30,7 @@ function store(type, id, name, path, contents, obj) {
     liked_blocks.get(type).add(item);
 
     // somehow indicate to the user that it is liked
-    mark_like(obj);
+    mark_like(obj, name);
   } else {
     liked_blocks.get(type).forEach(function(todel){
       if(todel.id = id){
@@ -38,8 +39,10 @@ function store(type, id, name, path, contents, obj) {
     });
 
     // indicate to user that it has been un-liked
-    mark_unlike(obj);
+    mark_unlike(obj, name);
   }
+  $(obj).popover('show');
+  setTimeout(function(){ $(obj).popover('hide'); }, 1500);
   window.localStorage.setItem(type, JSON.stringify(Array.from(liked_blocks.get(type))));
 }
 
@@ -52,12 +55,14 @@ function show_detail(platform, study, block, path) {
   $('#detailModal').modal('show');
 }
 
-function mark_like(obj) {
+function mark_like(obj, name) {
   $(obj).attr('class', 'btn btn-danger');
   $(obj).attr('value', 'like');
+  $(obj).attr('data-content', "The content of " + name + " has been saved for your use on the create page");
 }
 
-function mark_unlike(obj) {
+function mark_unlike(obj, name) {
   $(obj).attr('class', 'btn btn-outline-danger');
   $(obj).attr('value', 'unlike');
+  $(obj).attr('data-content', "You have unsaved " + name);
 }

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'digestif/index.css' %}">
     <title>Digestif</title>
 </head>
 <body>
@@ -42,6 +44,14 @@
       <div class="col">
 
         <div id="digestifCarousel" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#digestifCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#digestifCarousel" data-slide-to="1"></li>
+            <li data-target="#digestifCarousel" data-slide-to="2"></li>
+            <li data-target="#digestifCarousel" data-slide-to="3"></li>
+            <li data-target="#digestifCarousel" data-slide-to="4"></li>
+            <li data-target="#digestifCarousel" data-slide-to="5"></li>
+          </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="carousel-caption">
@@ -86,6 +96,14 @@
               </div>
             </div>
           </div>
+          <a class="carousel-control-prev" href="#digestifCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#digestifCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
       </div>
     </div>

@@ -23,10 +23,14 @@ function elementHelper( event ) {
 function prequestion() {
   var target = window.localStorage.getItem("target");
   if(target == null) {
-    $('#preQuestionModal').modal('show');
+    change_target();
   } else {
     document.getElementById("target").innerHTML = target;
   }
+}
+
+function change_target() {
+  $('#preQuestionModal').modal('show');
 }
 
 function start(opt, knowledge) {
@@ -36,6 +40,8 @@ function start(opt, knowledge) {
   window.localStorage.setItem("target", document.getElementById("target").innerHTML);
   $('[data-toggle="popover"]').popover();
   $('#pop').popover('show');
+  setTimeout(function(){ $('#pop').popover('hide'); }, 1500);
+
 }
 
 function populate_favorites() {
