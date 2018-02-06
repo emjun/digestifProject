@@ -1,8 +1,9 @@
-Thank you for participating!
+<h1>Thank you for participating!</h1>
 
-Here are your results. You received 1 point for each correct response, and .75 for each response that was off by a semitone. The maximum score is 24 for each timbre. The goal of the study is to determine whether AP differs systematically for different timbres, and if the pitch of voices is particularly difficult to identify.
-
-- Sine Wave Score: 0
-- Piano Score: 4.75
-- Voice Score: 6
-- Synthesized Voice Score: 0
+<p>Here are your results. You received 1 point for each correct response, and .75 for each response that was off by a semitone. The maximum score is 24 for each timbre. The goal of the study is to determine whether AP differs systematically for different timbres, and if the pitch of voices is particularly difficult to identify.</p>
+<ul>
+  <li>Sine Wave Score: 0</li>
+  <li>Piano Score: 4.75</li>
+  <li>Voice Score: 6</li>
+  <li>Synthesized Voice Score: 0</li>
+</ul>

@@ -1,1 +1,12 @@
-VS COWS CONTENT HERE 
+<h1>Youre playing: Three Cows HTML 5</h1>
+<p>IMAGE</p>
+<p>Youve saved $95.00 for science!</p>
+<p>FACEBOOK_LINK</p>
+<p>REDDIT_LINK</p>
+<p>TWITTER_LINK</p>
+
+<br>
+<br>
+<p>Submit Feedback</p>
+<p>Play Again</p>
+<p>More Games</p>

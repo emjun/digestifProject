@@ -1,14 +1,17 @@
-Thank you for completing this survey. Your participation is key to the success of the Volunteer Science project. Your score is included below:
+<p>Thank you for completing this survey. Your participation is key to the success of the Volunteer Science project. Your score is included below:</p>
 
-Extroversion (Range 5-40): 19
-Agreeableness (Range 5-45): 35
-Conscientiousness (Range 5-45): 24
-Emotional Stability (Range 5-40): 25
-Openness (Range 5-50): 35
+<p><strong>Extroversion</strong> (Range 5-40): 19
+<br><strong>Agreeableness</strong> (Range 5-45): 35
+<br><strong>Conscientiousness</strong> (Range 5-45): 24
+<br><strong>Emotional Stability</strong> (Range 5-40): 25
+<br><strong>Openness</strong> (Range 5-50): 35</p>
 
-FACEBOOK_LINK & TWITTER_LINK
+<p>FACEBOOK_LINK</p>
+<p>TWITTER_LINK</p>
 
-Learn more about your score and the Big Five test (LINK)
-Watch this wonderful 3 Minute introduction to the Big Five about how it works and what it means.
-VIDEO_LINK
-You can find more videos on the YouTube Channel for the Big Five (LINK).
+<br>
+<br>
+<p>Learn more about your score and the Big Five test (LINK)</p>
+<p>Watch this wonderful 3 Minute introduction to the Big Five about how it works and what it means.</p>
+<p>VIDEO_LINK</p>
+<p>You can find more videos on the YouTube Channel for the Big Five (LINK).</p>
