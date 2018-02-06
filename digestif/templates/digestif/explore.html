@@ -51,7 +51,7 @@
             <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
             <div id="acknowledgementsDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgements</h1>
-              <p class="text-muted">Acknowledgement blocks thank the participant for their time.</p>
+              <p class="text-muted">Acknowledgement blocks thank the participant for their time and data contribution.</p>
               {% for b in acknowledgements %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -151,7 +151,8 @@
             </div>
             <div id="personalizedResultsDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
-              <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give something back for their contribution. These generated results are often used to advertise the study.</p>
+              <!-- <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give something back for their contribution. These generated results are often used to advertise the study.</p> -->
+              <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give some insight into their performance/data to give them something back for contributing data. Personalized results are often used to advertise the study.</p>
               {% for b in personalized_results %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -226,7 +227,7 @@
             </div>
             <div id="feedbackDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
-              <p class="text-muted">Feedback blocks allow participants to provide feedback on the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
+              <p class="text-muted">Feedback blocks allow participants to provide suggestions, ideas, and concerns about the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
               {% for b in feedback %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -251,7 +252,7 @@
             </div>
             <div id="otherStudiesDiv">
               <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
-              <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation in other studies.</p>
+              <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation to other studies.</p>
               {% for b in other_studies %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
