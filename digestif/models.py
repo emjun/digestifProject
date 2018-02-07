@@ -80,7 +80,9 @@ class ConclusionPage(models.Model):
     """
 
     def __str__(self):
-        return ",".join(b.block_type for b in self.blocks.all())
+        # return ",".join(b.block_type for b in self.blocks.all())
+        return "%s" % self.cp_id
 
     def __repr__(self):
-        return "," .join(b.block_type for b in self.blocks.all())
+        # return "," .join(b.block_type for b in self.blocks.all())
+        return "%s" % self.cp_id

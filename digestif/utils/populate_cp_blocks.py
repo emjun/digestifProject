@@ -50,7 +50,6 @@ def populate():
     # reader = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
     # row_count = 0 # keeps track of the number of rows read for a particular group of Blocks on the same conclusion page
 
-"""
     # Read a CSV file row by row
     for row in reader_blocks:
         # row[0] is the cp_id name for the ConclusionPage
@@ -67,7 +66,7 @@ def populate():
 
         block.save()
         cp.blocks.add(block)
-        """
+
 
         # What happens if a conclusion page does not have all the blocks??
         # What does querying for it do? How should we go about taking care of these cases?
