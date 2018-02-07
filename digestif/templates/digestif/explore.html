@@ -75,9 +75,9 @@
               {% endfor %}
             </div>
             <div id="researchPurposeDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Purpose</h1>
-              <p class="text-muted">Research purpose blocks educate participants about why the research is being done.</p>
-              {% for b in research_purpose %}
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Experimental Design</h1>
+              <p class="text-muted">CHANGE THISScore interpretation blocks explain to participants how their performance was scored and what this means: they often address the limitations of the experimental design that could compromise the accuracy of scores and/or how prescriptive the studies are.</p>
+              {% for b in experimental_design%}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -100,9 +100,9 @@
               {% endfor %}
             </div>
             <div id="studySummaryDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Study Summary</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
               <p class="text-muted">Study summary blocks tell participants how their data contributes to a research goal.</p>
-              {% for b in study_summary %}
+              {% for b in feedback %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -125,9 +125,9 @@
               {% endfor %}
             </div>
             <div id="scoreInterpretationDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Score Interpretation</h1>
-              <p class="text-muted">Score interpretation blocks explain to participants how their performance was scored and what this means: they often address the limitations of the experimental design that could compromise the accuracy of scores and/or how prescriptive the studies are.</p>
-              {% for b in score_interpretation %}
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
+              <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation to other studies.</p>
+              {% for b in other_studies %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -176,9 +176,9 @@
               {% endfor %}
             </div>
             <div id="socialComparisonDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Social Comparison</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Previous Research</h1>
               <p class="text-muted">Social comparison blocks compare the performance of participants to their peers. By comparing participants to the average, social comparison can incentivize participants to put their full effort into the tasks.</p>
-              {% for b in social_comparison %}
+              {% for b in previous_research %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -201,9 +201,9 @@
               {% endfor %}
             </div>
             <div id="shareDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Goals</h1>
               <p class="text-muted">Share blocks allow participants to share their participation on social media, which can generate traffic for the study.</p>
-              {% for b in share %}
+              {% for b in research_goals %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -226,9 +226,9 @@
               {% endfor %}
             </div>
             <div id="feedbackDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Motivations</h1>
               <p class="text-muted">Feedback blocks allow participants to provide suggestions, ideas, and concerns about the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
-              {% for b in feedback %}
+              {% for b in research_motivations %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -251,9 +251,9 @@
               {% endfor %}
             </div>
             <div id="otherStudiesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
-              <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation to other studies.</p>
-              {% for b in other_studies %}
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
+              <p class="text-muted"></p>
+              {% for b in share %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
@@ -276,9 +276,9 @@
               {% endfor %}
             </div>
             <div id="additionalResourcesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Additional Resources</h1>
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Community Building</h1>
               <p class="text-muted">Additional resources blocks allow researchers to share about their fields and previous research findings.</p>
-              {% for b in additional_resources %}
+              {% for b in community_building %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
                     <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
