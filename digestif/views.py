@@ -20,20 +20,22 @@ def explore(request):
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
     acknowledgements = Block.objects.filter(block_type='acknowledgements')
-    research_purpose = Block.objects.filter(block_type='research_purpose')
-    study_summary = Block.objects.filter(block_type='study_summary')
-    score_interpretation = Block.objects.filter(block_type='score_interpretation')
-    personalized_results = Block.objects.filter(block_type='personalized_results')
-    social_comparison = Block.objects.filter(block_type='social_comparison')
-    share = Block.objects.filter(block_type='share')
+    community_building = Block.objects.filter(block_type='community_building')
+    experimental_design = Block.objects.filter(block_type='experimental_design')
     feedback = Block.objects.filter(block_type='feedback')
     other_studies = Block.objects.filter(block_type='other_studies')
-    additional_resources = Block.objects.filter(block_type='additional_resources')
+    personalized_results = Block.objects.filter(block_type='personalized_results')
+    previous_research = Block.objects.filter(block_type='previous_research')
+    research_goals = Block.objects.filter(block_type='research_goals')
+    research_motivations = Block.objects.filter(block_type='research_motivations')
+    share = Block.objects.filter(block_type='share')
     context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms,
-                'acknowledgements' : acknowledgements, 'research_purpose' : research_purpose,
-                'study_summary' : study_summary, 'score_interpretation' : score_interpretation,
-                'personalized_results' : personalized_results, 'social_comparison' : social_comparison,
-                'share' : share, 'feedback' : feedback, 'other_studies' : other_studies, 'additional_resources' : additional_resources}
+                'acknowledgements' : acknowledgements, 'community_building' : community_building,
+                'experimental_design' : experimental_design, 'feedback' : feedback,
+                'other_studies' : other_studies, 'personalized_results' : personalized_results,
+                'previous_research' : previous_research, 'research_goals' : research_goals,
+                'research_motivations' : research_motivations, 'share' : share
+                }
     return render(request, 'digestif/explore.html', context)
     # return render(request, 'digestif/explore.html')
 

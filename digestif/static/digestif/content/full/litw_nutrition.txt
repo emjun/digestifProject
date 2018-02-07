@@ -1,0 +1,33 @@
+<h1>Thank you! Here are your Results</h1>
+<p>According to our expert nutritionist, you got <strong>67%</strong> questions correct.
+Others, on average, got 69% questions correct.</p>
+<p>Here are your results presented separately for each macronutrient:</p>
+<p><strong>Carbohydrates</strong>
+<br>You got 83% questions correct.</p>
+<p><strong>Protein</strong>
+<br>You got 67% questions correct.</p>
+<p><strong>Fat</strong>
+<br>You got 67% questions correct.</p>
+<p><strong>Fiber</strong>
+<br>You got 50% questions correct.</p>
+<br>
+<h1>Click here to see the questions you didnt get quite right (LINK)</h1>
+<h1>Enjoyed this study?</h1>
+<p>If so...</p>
+<ol>
+  <li>You can follow us on Facebook (LINK) to see results of our studies and to be among the first to hear about new tests.
+  <li>Please tell your friends about this test
+      <ul>
+        <li>TWITTER_LINK
+        <li>FACEBOOK_LINK
+        <li>LINKEDIN_LINK
+        <li>PINTEREST_LINK
+        <li>GOOGLEPLUS_LINK
+      </ul>
+ <li>And check out LabintheWild (LINK) for more test!
+    <ul>
+      <li><div><strong>Multitasking Test</strong><br>IMAGE<br>How well can you multitask? Compare yourself to others by taking this test!<br>The test typically takes 10 minutes. <strong>Try it! (LINK)</strong></div></li>
+    </ul>
+</ol>
+<br>
+<p>If you have any additional thoughts youd like to share about this test, please email kgajos@eecs.harvard.edu (LINK).</p>

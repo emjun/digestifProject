@@ -1,49 +1,58 @@
-WHO DO YOU WRITE LIKE?
-MY RESULTS
-Thank you for participating in this study!
+<center>
+<h2>WHO DO YOU WRITE LIKE?</h2>
+<h2>MY RESULTS</h2>
+<p>Thank you for participating in this study!</p>
+</center>
 
-WHAT WAS THE PURPOSE OF THIS STUDY?
-The purpose of this study was to enable research on the links between writing style and social cognition. Specifically, we are interested in whether aspects of the way people write, such as use of personal pronouns, reliably predicts aspects of the way people think about others minds. Secondarily, we are also interested in whether and how writing styles differ between different genres.
+<br>
 
-WHAT WERE OUR HYPOTHESES?
-We hope to learn how people with different writing styles perform on other social cognitive tasks. For example, research suggests that some people try to use bigger words to appear intelligence. However, this strategy has the ironic effect (LINK) or actually lowering others estimates of the writers intelligence. This effect can be thought of as a social prediction error, and thus we might expect that people with more complex writing actually make more mistakes on other social task. Participants who took part in this study and others on this site allow us to test for the presence of such correlations.
+<h2>WHAT WAS THE PURPOSE OF THIS STUDY?</h2>
+<p>The purpose of this study was to enable research on the links between writing style and social cognition. Specifically, we are interested in whether aspects of the way people write, such as use of personal pronouns, reliably predicts aspects of the way people think about others minds. Secondarily, we are also interested in whether and how writing styles differ between different genres.</p>
 
-HOW WAS THIS STUDY CONDUCTED?
-We first counted the total number of characters in your text sample, then broke up the sample into words and sentences and counted these as well. In addition to these aggregate counts, we also measured how many times the sample contained particular "stop words (LINK)" - grammatical words with little or no content. Finally, we counted the use of different punctuation marks throughout the sample. Previously we applied the same analysis to the works of a number of famous writers, allowing us to correlate your results with their and thereby measure their similarity to your style.
+<h2>WHAT WERE OUR HYPOTHESES?</h2>
+<p>We hope to learn how people with different writing styles perform on other social cognitive tasks. For example, research suggests that some people try to use bigger words to appear intelligence. However, this strategy has the ironic effect (LINK) or actually lowering others estimates of the writers intelligence. This effect can be thought of as a social prediction error, and thus we might expect that people with more complex writing actually make more mistakes on other social task. Participants who took part in this study and others on this site allow us to test for the presence of such correlations.</p>
 
-DID WE TELL YOU EVERYTHING?
-We never lie to participants on MySocialBrain.org: active deception is not a part of our any of our research. However, in some studies we make use of "incomplete disclosure" - meaning that we do not tell you about some aspects of a study in advance. Typically this takes the form of not disclosing our experimental manipulation or research hypotheses. We do this primarily to avoid biasing your responses with demand characteristics (LINK). In the case of the "Who do you write like" study, there was no experimental manipulation and our hypothesis was general - we predicted that the survey results might correlated with some other measures of social cognition.
+<h2>HOW WAS THIS STUDY CONDUCTED?</h2>
+<p>We first counted the total number of characters in your text sample, then broke up the sample into words and sentences and counted these as well. In addition to these aggregate counts, we also measured how many times the sample contained particular "stop words (LINK)" - grammatical words with little or no content. Finally, we counted the use of different punctuation marks throughout the sample. Previously we applied the same analysis to the works of a number of famous writers, allowing us to correlate your results with their and thereby measure their similarity to your style.</p>
 
-WHY IS THIS STUDY IMPORTANT?
-Measuring peoples psychological traits and social abilities can be time-consuming and effortful for both the participant and the researcher. By identifying correlations between such measures and aspects of writing style, we hope to be able to build algorithms that can automatically infer participants abilities from their writing. This would make it much easier to measure peoples traits and abilities since participants could simply provide a writing sample rather than engage in hours of survey and tasks. We hope this this will ultimately benefit both individuals who participate in research and the research itself.
+<h2>DID WE TELL YOU EVERYTHING?</h2>
+<p>We never lie to participants on MySocialBrain.org: active deception is not a part of our any of our research. However, in some studies we make use of "incomplete disclosure" - meaning that we do not tell you about some aspects of a study in advance. Typically this takes the form of not disclosing our experimental manipulation or research hypotheses. We do this primarily to avoid biasing your responses with demand characteristics (LINK). In the case of the "Who do you write like" study, there was no experimental manipulation and our hypothesis was general - we predicted that the survey results might correlated with some other measures of social cognition.</p>
 
-WHAT DO MY RESULTS MEAN?
-Below you may see the result of your stylistic analysis of your text sample. The horizontal bars indicate the similarity of your style with those of the famous authors listed. Higher values (bars further right) indicate larger greater similarity between your style and theirs. Note that some of this similarity is likely due to incidental factors such as the genre of the writing and the recency of the authors work. For example, Lewis Clark (LINK), in addition to writing Alice in Wonderland, was also a mathematician. His numerous academic text - featuring much formal notation - are included in his stylistic profile. Thus he consistently ends up as one of the least similar writers in the bunch. The writers in the list were selected to be both famous and prolific, with the latter helping to ensure that their style could be precisely estimated. However, you may note that most of them wrote more than half a century ago. This is because to measure their textual similarity we used text from Project Gutenberg (LINK), an organization devoted to digitizing public domain books and providing them free to the public. Since the vast majority of the books available from Project Gutenberg are in the public domain, relatively few recent writers are included. You can click on the names of any of the writers below to view their words on Project Gutenberg.
+<h2>WHY IS THIS STUDY IMPORTANT?</h2>
+<p>Measuring peoples psychological traits and social abilities can be time-consuming and effortful for both the participant and the researcher. By identifying correlations between such measures and aspects of writing style, we hope to be able to build algorithms that can automatically infer participants abilities from their writing. This would make it much easier to measure peoples traits and abilities since participants could simply provide a writing sample rather than engage in hours of survey and tasks. We hope this this will ultimately benefit both individuals who participate in research and the research itself.</p>
 
-Please note: if you have taken this study multiple times, the results below refer only to the most recent text sample you submitted.
-VISUALIZATION
+<h2>WHAT DO MY RESULTS MEAN?</h2>
+<p>Below you may see the result of your stylistic analysis of your text sample. The horizontal bars indicate the similarity of your style with those of the famous authors listed. Higher values (bars further right) indicate larger greater similarity between your style and theirs. Note that some of this similarity is likely due to incidental factors such as the genre of the writing and the recency of the authors work. For example, Lewis Clark (LINK), in addition to writing Alice in Wonderland, was also a mathematician. His numerous academic text - featuring much formal notation - are included in his stylistic profile. Thus he consistently ends up as one of the least similar writers in the bunch. The writers in the list were selected to be both famous and prolific, with the latter helping to ensure that their style could be precisely estimated. However, you may note that most of them wrote more than half a century ago. This is because to measure their textual similarity we used text from Project Gutenberg (LINK), an organization devoted to digitizing public domain books and providing them free to the public. Since the vast majority of the books available from Project Gutenberg are in the public domain, relatively few recent writers are included. You can click on the names of any of the writers below to view their words on Project Gutenberg.</p>
 
-Return Home (LINK) & Share Experiment (LINK)
+<p>Please note: if you have taken this study multiple times, the results below refer only to the most recent text sample you submitted.</p>
+<p>VISUALIZATION</p>
 
+<p>Return Home (LINK)</p>
+<p>Share Experiment (LINK)</p>
 
-RESEARCH
-Academic Research & Web-based data collection & Data Protection
-IMAGE
-SOCIAL COGNITIVE NEUROSCIENCE
-The primary focus of our research is social cognitive neuroscience: understanding how the brain allows people to make sense of each other. To that end we use functional magnetic resonance imaging (fMRI (LINK)) to examine the neural basis of diverse social phenomena. To learn more about our research, see the list of recent publications (LINK) below or check out our lab website (LINK).
+<br>
+<h1>RESEARCH</h1>
+<p><strong>Academic Research</strong></p>
+<p><strong>Web-based data collection</strong></p>
+<p><strong>Data Protection</strong></p>
+<br>
 
-IMAGE
-THE MIND ON THE WEB
-We use large scale web research to complement the fine-grained work we do with fMRI. MySocialBrain.org (LINK) is a platform for wide variety of social cognitive experiments. It allows us to study much larger and more diverse groups of people than we would otherwise be able to. From the participants point of view, it offers engaging, interactive experiments with personalized feedback to a broad audience.
+<p>IMAGE</p>
+<h2>SOCIAL COGNITIVE NEUROSCIENCE</h2>
+<p>The primary focus of our research is social cognitive neuroscience: understanding how the brain allows people to make sense of each other. To that end we use functional magnetic resonance imaging (fMRI (LINK)) to examine the neural basis of diverse social phenomena. To learn more about our research, see the list of recent publications (LINK) below or check out our lab website (LINK).</p>
 
-IMAGE
-INDIVIDUAL DIFFERENCES IN SOCIAL ABILITIES
-One of the major goals of this site has less to do with any one study than with the correlations of multiple studies. Research on "individual differences" - the psychological properties that make people different from one another, such as personality or intelligence - requires very large sample sizes for meaningful results. Thats where our account system comes in. By registering (LINK), you allow us to correlate your (deidentified) data across studies, and thereby answer exciting new questions.
+<p>IMAGE</p>
+<h2>THE MIND ON THE WEB</h2>
+<p>We use large scale web research to complement the fine-grained work we do with fMRI. MySocialBrain.org (LINK) is a platform for wide variety of social cognitive experiments. It allows us to study much larger and more diverse groups of people than we would otherwise be able to. From the participants point of view, it offers engaging, interactive experiments with personalized feedback to a broad audience.</p>
 
+<p>IMAGE</p>
+<h2>INDIVIDUAL DIFFERENCES IN SOCIAL ABILITIES</h2>
+<p>One of the major goals of this site has less to do with any one study than with the correlations of multiple studies. Research on "individual differences" - the psychological properties that make people different from one another, such as personality or intelligence - requires very large sample sizes for meaningful results. Thats where our account system comes in. By registering (LINK), you allow us to correlate your (deidentified) data across studies, and thereby answer exciting new questions.</p>
+<br>
+<br>
+<h1>CONTACT US</h1>
+<h2>How to contact the researcher.</h2>
+<p>If you have any questions about your participation or want to request a summary of research findings, please contact the lead researcher, Mark Thornton, at researcher@mysocialbrain.org (LINK). If you wish to join our mailing list to learn about new studies, or to unsubscribe, you may do so here (LINK).</p>
 
-CONTACT US
-How to contact the researcher.
-If you have any questions about your participation or want to request a summary of research findings, please contact the lead researcher, Mark Thornton, at researcher@mysocialbrain.org (LINK). If you wish to join our mailing list to learn about new studies, or to unsubscribe, you may do so here (LINK).
-
-Whom to contact about your rights as a participant in this research.
-Whom to contact about your rights in this research, for questions, concerns, suggestions, or complaints that are not being addressed by the researcher, or research-related harm: Office of Research Integrity and Assurance, Human Research Protection Program, Assistant Director. Phone: (609)258-0865. E-mail: irb@princeton.edu (LINK).
+<h2>Whom to contact about your rights as a participant in this research.</h2>
+<p>Whom to contact about your rights in this research, for questions, concerns, suggestions, or complaints that are not being addressed by the researcher, or research-related harm: Office of Research Integrity and Assurance, Human Research Protection Program, Assistant Director. Phone: (609)258-0865. E-mail: irb@princeton.edu (LINK).</p>

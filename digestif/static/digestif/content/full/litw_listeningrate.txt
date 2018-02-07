@@ -1,1 +1,21 @@
-LISTENING RATE TEXT HERE!!
+<center>
+<p>Your Listening Rate is <strong>71 out of 100</strong>, which is as fast or faster than <strong>87%</strong> of all participants!</p>
+<p>Here is a sample of  your Listening Rate:
+<br>AUDIO
+<p>Here is how you compare to everybody else:</p>
+<br>
+<p><strong>Fastest Speed Somebody Understood</strong>
+<br>100 out of 100
+<br>AUDIO</p>
+<p><strong>Average Speed Participants Understood</strong>
+<br>57 out of 100
+<br>AUDIO</p>
+<br>
+<p>What does that mean?</p>
+<p>This test is one measure of your <strong>listening rate</strong>.
+Millions of people around the world use software that converts visual information on screens into speech (called <i>screen readers</i>) due to visual impairment.
+It has been observed that the typical speed that screen reader users use is far faster than is intelligible to non-screen reader users.</p>
+<br>
+<p>The Listening Rates experiment measures listening speed of rhyming, statements, and yes/no questions.
+If you are a <strong>fast listener</strong>, you may be able to understand speech at the rate of typical screen reader users!<p>
+</center>

@@ -1,13 +1,16 @@
-Your Results!
+<h2>Your Results!</h2>
 
-Horizontal Individualism (scale 4-36): 28
-Vertical Individualism (scale 4-36): 35
-Horizontal Collectivism (scale 4-36): 31
-Vertical Collectivism (scale 4-36): 20
+<p><u>Horizontal Individualism</u> (scale 4-36): 28
+<br><u>Vertical Individualism</u> (scale 4-36): 35
+<br><u>Horizontal Collectivism</u> (scale 4-36): 31
+<br><u>Vertical Collectivism</u> (scale 4-36): 20</p>
 
-FACEBOOK_LINK && TWITTER_LINK
+<p>FACEBOOK_LINK</p>
+<p>TWITTER_LINK</p>
 
-You can learn more about Collectivism-Individualism in comparative context (LINK) and about the vertical and horizontal (LINK) axis.
+<br>
+<br>
+<p>You can learn more about Collectivism-Individualism in comparative context (LINK) and about the vertical and horizontal (LINK) axis.</p>
 
-You can also watch this introduction:
-VIDEO_LINK
+<p>You can also watch this introduction:</p>
+<p>VIDEO_LINK</p>

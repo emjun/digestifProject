@@ -1,1 +1,41 @@
-THINKINT STYLE TEXT
+<h1>Lets see how you did!</h1>
+<h2>Whats your thinking style?</h2>
+<p>VISUALIZATION</p>
+<p>Share your results!</p>
+<p>TWITTER_LINK</p>
+<p>FACEBOOK_LINK</p>
+<p>GOOGLEPLUS_LINK</p>
+<p>WEIBO_LINK</p>
+<p>Based on your results, your thinking style appears to be <strong>strongly intuitive.</strong> When tackling a problem, you may tend to look at the bigger picture and examine functional relationships.</p>
+<br>
+<h2>How did we determine your result?</h2>
+<p>This test measured your thinking style. Its based on two previous studies that found cultural differences in the way people group information [1,2] (see references below).
+<br /><br />First, we tested whether you prefer to group words by their analytic category or by their holistic function, as below:
+<p><strong>Analytic combination</strong>
+<br>IMAGE<br>
+Seagull and dog both belong to the same abstract category: animals.</p>
+<p><strong>Holistic combination</strong>
+<br>IMAGE<br>
+Seagull and sky, however, are grouped together by their function: seagulls fly in the sky.</p>
+ <br>
+ <p>We also measured whether you judge similarities based on a single specific feature, or whether you judge similarities based on a set of broader, thematic features, as below:</p>
+ <p><strong>Specific feature</strong>
+ <br>IMAGE<br>
+ In this set of images, the larger flower shares a specific feature (a curved stem) with all flowers in the group.</p>
+ <p><strong>Thematic features</strong>
+ <br>IMAGE<br>
+ In this set of images, the larger flower shares several features (pointed petals, a leafless stem, an orange center) with three of the four flowers in the group, but does not share any one feature with all of the flowers in the group.</p>
+ <p>[1]  Ji, L., Nisbett, R.E., & Zhang, Z. (2005).  Is it culture or is it language:  Examination of language effects in cross-cultural research on categorization.  Journal of Personality and Social Psychology, 87, 57-65</p>
+ <p>[2]  Norenzayan, A., Smith, E.E., Kim, B. J., & Nisbett, R.E. (2002).  Cultural preferences for formal versus intuitive reasoning.  Cognition Science, 26, 653-684.</p>
+ <br>
+ <p><strong>Have you liked this? Would you like to engage further?</strong></p>
+ <p>Please let us know by participating in our survey on the future of the LabintheWild community: LINK</p>
+ <br>
+ <p>And consider taking some of our other tests:
+ <br>IMAGE
+ <br>What is your natural risk preference?
+ <br>Help us understand how peoples natural risk tendency affects their behavior online. This experiment takes around 15 minutes. Participate now! (LINK)</p>
+ <br>IMAGE
+ <br>How fast can you process words?
+ <br>Have you ever wondered how quickly you can process spoken information? Put your listening skills to the test in this 5-minute experiment! Participate now! (LINK)</p>
+ <p>Or Return to the Wild! (LINK)</p>

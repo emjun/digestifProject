@@ -1,1 +1,4 @@
-VS TRAVELING CONTENT HERE 
+<h1>Youre playing: Traveling Sales Person</h1>
+<h2>Here is how you compare to the optimal solution</h2>
+<p>IMAGE (Participant)</p>
+<p>IMAGE (Optimal solution)</p>

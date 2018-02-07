@@ -1,7 +1,8 @@
-Youre the Drummer!
+<p><strong>Youre the Drummer!</strong></p>
 
-FACEBOOK_LINK & TWITTER_LINK
+<p>FACEBOOK_LINK</p>
+<p>TWITTER_LINK</p>
 
-Score (0-16): 7
+<p>Score (0-16): 7</p>
 
-PICTURE
+<p>PICTURE</p>
