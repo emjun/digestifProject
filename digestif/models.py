@@ -16,14 +16,12 @@ class Block(models.Model):
     # block_layout = models.CharField(max_length=50)
     content = models.TextField()
     # benefits = models.CharField(max_length=500)
+    cp = models.ForeignKey('ConclusionPage')
     """
-    block_type refers to the kind of block that it is (e.g., Acknowledgements, Research Purpose, etc.)
-    block_layout refers to the basic layout of the block (used to populate a drag/drop elt, default block, etc.)
-    content JSON object has the following fields:
-        heading
-        body
-        # footnote <-- not sure we need to include this
-    benefits refers to the benefits that including this block gives researchers and participants (e.g., marketing, outreach, etc.)
+    block_type refers to the kind of block that it is (e.g., Acknowledgements, Research Goals, etc.)
+    path_name refers to the image of the particular block
+    content is the HTML describing this block
+    cp refers to the ConclusionPage object to which this Block points (Conclusion page it is associated with)
     """
 
     def __str__(self):

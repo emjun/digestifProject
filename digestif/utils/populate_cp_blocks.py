@@ -61,7 +61,8 @@ def populate():
             block_type = row[1],
             path_name = row[2],
             # block_layout = row[3],
-            content = row[3])
+            content = row[3],
+            cp = cp)
             # benefits = row[4],        )
 
         block.save()
