@@ -46,27 +46,23 @@ def populate():
     # Create all the Blocks
     # While creating, update the conclusion pages to point to the Blocks
 
-    # f_blocks = open({% static 'digestif/blocks.csv' %})
-    # reader = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
-    # row_count = 0 # keeps track of the number of rows read for a particular group of Blocks on the same conclusion page
-
     # Read a CSV file row by row
-    for row in reader_blocks:
+    for row_blocks in reader_blocks:
         # row[0] is the cp_id name for the ConclusionPage
-        cp = ConclusionPage.objects.get(pk='cp_' + row[0])
+        cp_blocks = ConclusionPage.objects.get(pk='cp_' + row_blocks[0])
 
         # Use the elements in the columns of each row to construct a Block instance
         block = Block(
             # block_id = 'block_' + cp.cp_id + '_' + row[1],
-            block_type = row[1],
-            path_name = row[2],
+            block_type = row_blocks[1],
+            path_name = row_blocks[2],
             # block_layout = row[3],
-            content = row[3],
-            cp = cp)
+            content = row_blocks[3],
+            cp = cp_blocks)
             # benefits = row[4],        )
 
         block.save()
-        cp.blocks.add(block)
+        cp_blocks.blocks.add(block)
 
 
         # What happens if a conclusion page does not have all the blocks??

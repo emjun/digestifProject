@@ -16,10 +16,10 @@ def index(request):
     return render(request, 'digestif/index.html') # show just plain index page
 
 def explore(request):
-    #populate()
+    populate()
     conclusion_pages = ConclusionPage.objects.order_by('platform') # get ConclusionPages ordered by platform name
     platforms = ConclusionPage.objects.order_by('platform').values('platform').distinct() # get unique set of platforms
-    acknowledgements = Block.objects.filter(block_type='acknowledgements')
+    acknowledgments = Block.objects.filter(block_type='acknowledgments')
     community_building = Block.objects.filter(block_type='community_building')
     experimental_design = Block.objects.filter(block_type='experimental_design')
     feedback = Block.objects.filter(block_type='feedback')
@@ -30,7 +30,7 @@ def explore(request):
     research_motivations = Block.objects.filter(block_type='research_motivations')
     share = Block.objects.filter(block_type='share')
     context = {'conclusion_pages' : conclusion_pages, 'platforms' : platforms,
-                'acknowledgements' : acknowledgements, 'community_building' : community_building,
+                'acknowledgments' : acknowledgments, 'community_building' : community_building,
                 'experimental_design' : experimental_design, 'feedback' : feedback,
                 'other_studies' : other_studies, 'personalized_results' : personalized_results,
                 'previous_research' : previous_research, 'research_goals' : research_goals,
