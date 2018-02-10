@@ -49,8 +49,8 @@
           {% load static %}
           <div id="blocksDiv">
             <!-- Create separate divs inside here to show the blocks, e.g., acknowledgementBlock, etc.? -->
-            <div id="acknowledgmentsDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgments</h1>
+            <div id="acknowledgments_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Acknowledgments Blocks</h1>
               <p class="text-muted">Acknowledgment blocks thank the participant for their time and data contribution.</p>
               {% for b in acknowledgments %}
                   {% if b.path_name != None %}
@@ -65,7 +65,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Acknowledgments', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -74,9 +74,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="researchPurposeDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Experimental Design</h1>
-              <p class="text-muted">CHANGE THISScore interpretation blocks explain to participants how their performance was scored and what this means: they often address the limitations of the experimental design that could compromise the accuracy of scores and/or how prescriptive the studies are.</p>
+            <div id="experimental_design_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Experimental Design Blocks</h1>
+              <p class="text-muted">Experimental design blocks tell participants why the online experiment was designed the way it was. These blocks can also explain how any personalized results were generated and the limitations of the study.</p>
               {% for b in experimental_design%}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -90,7 +90,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Experimental Design', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -99,9 +99,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="studySummaryDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback</h1>
-              <p class="text-muted">Study summary blocks tell participants how their data contributes to a research goal.</p>
+            <div id="feedback_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Feedback Blocks</h1>
+              <p class="text-muted">Feedback blocks allow participants to provide suggestions, ideas, and concerns about the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
               {% for b in feedback %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -115,7 +115,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Feedback', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -124,8 +124,8 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="scoreInterpretationDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies</h1>
+            <div id="other_studies_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Other Studies Blocks</h1>
               <p class="text-muted">Other studies blocks contain links to other studies on a platform, leveraging current traffic to attract more participation to other studies.</p>
               {% for b in other_studies %}
                   {% if b.path_name != None %}
@@ -140,7 +140,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Other Studies', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -149,10 +149,10 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="personalizedResultsDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results</h1>
+            <div id="personalized_results_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Personalized Results Blocks</h1>
               <!-- <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give something back for their contribution. These generated results are often used to advertise the study.</p> -->
-              <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give some insight into their performance/data to give them something back for contributing data. Personalized results are often used to advertise the study.</p>
+              <p class="text-muted">Personalized results blocks provide some sort of feedback to participants in order to give some insight into their performance/data to give them something back for contributing data. The promise of personalized results is often used to attract participants.</p>
               {% for b in personalized_results %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -166,7 +166,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Personalized Results', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -175,9 +175,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="socialComparisonDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Previous Research</h1>
-              <p class="text-muted">Social comparison blocks compare the performance of participants to their peers. By comparing participants to the average, social comparison can incentivize participants to put their full effort into the tasks.</p>
+            <div id="previous_research_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Previous Research Blocks</h1>
+              <p class="text-muted">Previous resources blocks allow researchers to share about their fields and previous research findings.</p>
               {% for b in previous_research %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -191,7 +191,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Previous Research', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -200,9 +200,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="shareDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Goals</h1>
-              <p class="text-muted">Share blocks allow participants to share their participation on social media, which can generate traffic for the study.</p>
+            <div id="research_goals_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Goals Blocks</h1>
+              <p class="text-muted">Research goals blocks give broad explanations of how the results of the study will contribute to various disciplines, or real work applications of the work that the study supports.</p>
               {% for b in research_goals %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -216,7 +216,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Research Goals', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" lass="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -225,9 +225,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="feedbackDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Motivations</h1>
-              <p class="text-muted">Feedback blocks allow participants to provide suggestions, ideas, and concerns about the tasks. This allows researchers to refine their studies iteratively based on feedback.</p>
+            <div id="research_motivations_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Research Motivations Blocks</h1>
+              <p class="text-muted">Research motivations blocks tell participants why data is being collected and the hypotheses that the study addresses.</p>
               {% for b in research_motivations %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -241,7 +241,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Research Motivations', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -250,9 +250,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="otherStudiesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share</h1>
-              <p class="text-muted"></p>
+            <div id="share_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Share Blocks</h1>
+              <p class="text-muted">Share blocks allow participants to share their participation on social media, which can generate traffic for the study.</p>
               {% for b in share %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -266,7 +266,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Share', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -275,9 +275,9 @@
                   {% endif %}
               {% endfor %}
             </div>
-            <div id="additionalResourcesDiv">
-              <h1 style="margin-top: 20px; margin-bottom: 15px;">Community Building</h1>
-              <p class="text-muted">Additional resources blocks allow researchers to share about their fields and previous research findings.</p>
+            <div id="community_building_div">
+              <h1 style="margin-top: 20px; margin-bottom: 15px;">Community Building Blocks</h1>
+              <p class="text-muted">Community building blocks enable participants to connect with researchers. Example block functionalities include joining a mailing list, or liking a study platform on social media.</p>
               {% for b in community_building %}
                   {% if b.path_name != None %}
                     {% with "digestif/"|add:b.path_name as path_name %}
@@ -291,7 +291,7 @@
                             <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Community Building', '{% static path_name %}')">{{b.cp.study}}</h4>
                           </div>
                           <div class="col-sm-auto">
-                            <button type="button" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                            <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
                           </div>
                         </div>
                       </div>
@@ -328,7 +328,7 @@
                                   <h4 class="card-title modalLink" style="cursor:pointer" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', 'Full Page', '{% static path_name %}')">{{cp.study}}</h4>
                                 </div>
                                 <div class="col-sm-auto">
-                                  <button type="button" id="#{{cp.cp_id}}btn" class="btn btn-outline-danger" onclick="store('full', '{{cp.cp_id}}', '{{cp.study}}', '{% static path_name %}', '{{cp.content}}', this )" value="unlike">&#9829;</button>
+                                  <button type="button" id="#{{cp.cp_id}}fullbtn" class="btn btn-outline-danger" onclick="store('full', '{{cp.cp_id}}', '{{cp.study}}', '{% static path_name %}', '{{cp.content}}', this )" value="unlike">&#9829;</button>
                                 </div>
                               </div>
                             </div>

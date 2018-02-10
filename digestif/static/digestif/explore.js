@@ -1,8 +1,8 @@
 // JSON of arrays of liked blocks to carry over from explore to create
 var liked_blocks;
-var blocks = new Array('full', 'acknowledgements', 'researchPurpose',
-'studySummary', 'scoreInterpretation', 'personalizedResults', 'socialComparison',
-'share', 'feedback', 'otherStudies', 'additionalResources');
+var blocks = new Array('full', 'acknowledgments', 'community_building',
+'experimental_design', 'feedback', 'other_studies', 'personalized_results',
+'previous_research', 'research_goals', 'research_motivations', 'share');
 
 $(document).ready(function () {
   liked_blocks = new Map();
@@ -13,7 +13,7 @@ $(document).ready(function () {
     if(blocklist != null) {
       liked_blocks.set(type, new Set(JSON.parse(blocklist)));
       for (let item of liked_blocks.get(type)) {
-        mark_like(document.getElementById('#' + item.id + 'btn'));
+        mark_like(document.getElementById('#' + item.id + type + 'btn'));
       }
     } else {
       liked_blocks.set(type, new Set());
@@ -30,7 +30,7 @@ function store(type, id, name, path, contents, obj) {
     liked_blocks.get(type).add(item);
 
     // somehow indicate to the user that it is liked
-    mark_like(obj, name);
+    mark_like(obj);
   } else {
     liked_blocks.get(type).forEach(function(todel){
       if(todel.id = id){
@@ -39,10 +39,10 @@ function store(type, id, name, path, contents, obj) {
     });
 
     // indicate to user that it has been un-liked
-    mark_unlike(obj, name);
+    mark_unlike(obj);
   }
   $(obj).popover('show');
-  setTimeout(function(){ $(obj).popover('hide'); }, 1500);
+  setTimeout(function(){ $(obj).popover('hide'); }, 2000);
   window.localStorage.setItem(type, JSON.stringify(Array.from(liked_blocks.get(type))));
 }
 
@@ -55,14 +55,14 @@ function show_detail(platform, study, block, path) {
   $('#detailModal').modal('show');
 }
 
-function mark_like(obj, name) {
+function mark_like(obj) {
   $(obj).attr('class', 'btn btn-danger');
   $(obj).attr('value', 'like');
-  $(obj).attr('data-content', "The content of " + name + " has been saved for your use on the create page");
+  $(obj).attr('data-content', "You have saved the content of this block for your use on the create page.");
 }
 
-function mark_unlike(obj, name) {
+function mark_unlike(obj) {
   $(obj).attr('class', 'btn btn-outline-danger');
   $(obj).attr('value', 'unlike');
-  $(obj).attr('data-content', "You have unsaved " + name);
+  $(obj).attr('data-content', "You have unsaved this block");
 }

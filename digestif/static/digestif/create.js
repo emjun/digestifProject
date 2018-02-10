@@ -1,7 +1,7 @@
 var liked_blocks;
-var blocks = new Array('full', 'acknowledgements', 'researchPurpose',
-'studySummary', 'scoreInterpretation', 'personalizedResults', 'socialComparison',
-'share', 'feedback', 'otherStudies', 'additionalResources');
+var blocks = new Array('full', 'acknowledgments', 'community_building',
+'experimental_design', 'feedback', 'other_studies', 'personalized_results',
+'previous_research', 'research_goals', 'research_motivations', 'share');
 var editors = [];
 
 $(document).ready(function () {
@@ -56,7 +56,7 @@ function populate_favorites() {
         liked_blocks.set(item.id, item.contents);
         cards += "<div id='" + item.id + "' class='page_element card' style='margin-bottom: 10px;'><img class='card-img-top' src='" + item.path + "'><div class='card-body'><h4 class='card-title'>" + item.name + "</h4></div></div>";
       }
-      document.getElementById(type).firstChild.innerHTML += cards;
+      document.getElementById(type).firstElementChild.innerHTML += cards;
     }
   }
 }
