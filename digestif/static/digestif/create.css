@@ -13,3 +13,8 @@
 #target-img {
   cursor:pointer;
 }
+
+a {
+  color: orange;
+  text-decoration-color: orange;
+}

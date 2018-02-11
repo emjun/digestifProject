@@ -24,3 +24,13 @@
 .modalLink img {
   cursor:pointer;
 }
+
+h3 {
+  color: orange;
+  text-decoration-color: orange;
+}
+
+a {
+  color: orange;
+  text-decoration-color: orange;
+}
