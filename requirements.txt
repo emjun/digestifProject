@@ -1,4 +1,4 @@
-django
+django==1.11.7
 mysqlclient
 django-mysql
 jsonfield
