@@ -34,3 +34,13 @@ a {
   color: orange;
   text-decoration-color: orange;
 }
+
+.modal-dialog {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}

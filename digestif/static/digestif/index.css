@@ -2,3 +2,8 @@
     top: 0;
     bottom: auto;
 }
+
+.alert:hover {
+  box-shadow: 0 0 8px orange;
+  color: orange;
+}

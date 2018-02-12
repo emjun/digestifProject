@@ -18,3 +18,11 @@ a {
   color: orange;
   text-decoration-color: orange;
 }
+
+.page_element {
+  cursor:pointer;
+}
+
+.handle {
+  cursor:pointer;
+}

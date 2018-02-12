@@ -19,6 +19,7 @@ $(document).ready(function () {
       liked_blocks.set(type, new Set());
     }
   }
+  prequestion();
   //$('[data-toggle="popover"]').popover( { trigger: 'manual' } );
 });
 
@@ -65,4 +66,12 @@ function mark_unlike(obj) {
   $(obj).attr('class', 'btn btn-outline-danger');
   $(obj).attr('value', 'unlike');
   $(obj).attr('data-content', "You have unsaved this block");
+}
+
+function prequestion() {
+  var firstVisit = window.localStorage.getItem("firstVisit");
+  if(firstVisit == null) {
+    $('#firstLoadModal').modal('show');
+    window.localStorage.setItem("firstVisit", "no");
+  }
 }
