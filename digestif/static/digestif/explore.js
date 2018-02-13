@@ -59,13 +59,15 @@ function show_detail(platform, study, block, path) {
 function mark_like(obj) {
   $(obj).attr('class', 'btn btn-danger');
   $(obj).attr('value', 'like');
-  $(obj).attr('data-content', "You have saved the content of this block for your use on the create page.");
+  $(obj).attr('data-content', "You saved the content of this block. Use it when you create a page.");
+  updateCount(1);
 }
 
 function mark_unlike(obj) {
   $(obj).attr('class', 'btn btn-outline-danger');
   $(obj).attr('value', 'unlike');
   $(obj).attr('data-content', "You have unsaved this block");
+  updateCount(-1);
 }
 
 function prequestion() {
@@ -74,4 +76,9 @@ function prequestion() {
     $('#firstLoadModal').modal('show');
     window.localStorage.setItem("firstVisit", "no");
   }
+}
+
+function updateCount(num){
+  alert(num);
+  // have some count variable and let it update with the num!
 }

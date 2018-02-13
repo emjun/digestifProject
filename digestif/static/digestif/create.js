@@ -35,7 +35,8 @@ function change_target() {
 
 function start(opt, knowledge) {
   $("#target-img").attr("src", "../../static/digestif/create/person" + opt + ".png");
-  $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  // $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  $("#pop").attr("data-content", "Remember! I have " + knowledge + " knowledge about your research. I still want to understand your page!");
   $('#preQuestionModal').modal('hide');
   window.localStorage.setItem("target", document.getElementById("target").innerHTML);
   $('[data-toggle="popover"]').popover();
@@ -104,7 +105,7 @@ function download_page() {
   text += "</body></html>"
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', 'conclusion_page.html');
+  element.setAttribute('download', 'digestif_page.html');
 
   element.style.display = 'none';
   document.body.appendChild(element);
