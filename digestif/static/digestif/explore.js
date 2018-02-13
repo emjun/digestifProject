@@ -79,6 +79,11 @@ function prequestion() {
 }
 
 function updateCount(num){
-  alert(num);
-  // have some count variable and let it update with the num!
+  // change count in navbar
+  curr_count = parseInt(document.getElementById('likeCount').innerHTML);
+  updated_count = curr_count + num;
+  document.getElementById('likeCount').innerHTML = updated_count;
+
+  //save in local localStorage
+  window.localStorage.setItem('likeCount', updated_count);
 }

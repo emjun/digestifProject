@@ -46,6 +46,10 @@ function start(opt, knowledge) {
 }
 
 function populate_favorites() {
+  like_count = window.localStorage.getItem('likeCount');
+
+  document.getElementById('likeCount').innerHTML = like_count;
+
   liked_blocks.set('default', "");
   // pull from local storage
   for(type of blocks) {

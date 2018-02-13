@@ -23,16 +23,25 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'digestif:create' %}">Create</a>
+            <!-- <div id="likeCount">0</div> -->
+            <!-- <div id="heart"></div> -->
               <!-- <a class="nav-link" href="./create.html">Create</a> -->
           </li>
       </ul>
+      <div class="navbar-text">
+         <!-- <p><span>&#9829; <span id="likeCount">0</span></span></p> -->
+         <button type="button" class="btn btn-primary" style="background-color: rgb(204, 68, 74); border-style: none">
+            You've &#9829;'d <span id="likeCount" class="badge badge-light">0</span> blocks!
+          </button>
+      </div>
     </div>
   </nav>
 
   <div style="height:25px;"></div>
 
   <div class="container">
-    <h6> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block, its <strong style="color:rgb(204, 68, 74);">content</strong> will be available for you to use on the create page.</h6>
+    <!-- <h6> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block in <i>Explore</i>, its <strong style="color:rgb(204, 68, 74);">content</strong> will be available for you to use when you <i>Create</i> a page.</h6> -->
+    <h6><span style="color:rgb(204, 68, 74);">&#9829;</span> blocks and pages as you <i>Explore</i>, use their <strong style="color:rgb(204, 68, 74);">content</strong> when you <i>Create</i>.</h6>
       <!-- Default: show Overview of Pages, show that the button is pressed down -->
       <!-- When click back and forth between two, show different divs with content -->
 
@@ -72,6 +81,8 @@
                                 </div>
                                 <div class="col-sm-auto">
                                   <button type="button" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="btn btn-outline-danger" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike">&#9829;</button>
+                                  <!-- <input type="checkbox" id="#{{b.cp.cp_id}}{{b.block_type}}btn" class="toggle-heart" onclick="store('{{b.block_type}}', '{{b.cp.cp_id}}', '{{b.cp.study}}', '{% static path_name %}', '{{b.content}}', this )" value="unlike"/> -->
+                                  <!-- <label for="#{{b.cp.cp_id}}{{b.block_type}}btn">❤</label> -->
                                 </div>
                               </div>
                             </div>
@@ -494,10 +505,10 @@
 
             <div style="height:10px;"></div>
             <h2><span style="color:rgb(204, 68, 74);">&#9829;</span> the blocks that inspire you!</h2>
-            <h5> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block, its <strong style="color:rgb(204, 68, 74);">content</strong> will be available for you to use on the create page.</h5>
-
+            <!-- <h5> If you <span style="color:rgb(204, 68, 74);">&#9829;</span> a page or a block, its <strong style="color:rgb(204, 68, 74);">content</strong> will be available for you to use on the create page.</h5> -->
+            <h6><span style="color:rgb(204, 68, 74);">&#9829;</span> blocks and pages as you <i>Explore</i>, use their <strong style="color:rgb(204, 68, 74);">content</strong> when you <i>Create</i>.</h6>
             <div style="height:10px;"></div>
-            <button type="button" class="btn btn-lg btn-outline-warning" data-dismiss="modal" aria-label="Close">Dismiss</button>
+            <button type="button" class="btn btn-lg btn-outline-warning" data-dismiss="modal" aria-label="Close">Got it!</button>
           </div>
         </div>
       </div>
