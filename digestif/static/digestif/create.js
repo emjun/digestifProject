@@ -28,6 +28,11 @@ function prequestion() {
   } else {
     document.getElementById("target").innerHTML = target;
   }
+
+  var optional_participant_info = window.localStorage.getItem('optional_participant_info');
+  if (!optional_participant_info) {
+    show_optional_participant_info();
+  }
 }
 
 function change_target() {
@@ -39,6 +44,8 @@ function start() {
   console.log(target_selection);
   console.log("optional participant info");
   console.log(document.getElementById("optional_participant").value);
+  window.localStorage.setItem('optional_participant_info', document.getElementById("optional_participant").value);
+  show_optional_participant_info();
   $('#preQuestionModal').modal('hide');
   window.localStorage.setItem("target", document.getElementById("target").innerHTML);
   $('[data-toggle="popover"]').popover();
@@ -52,6 +59,10 @@ function set_target(opt, knowledge) {
   $("#pop").attr("data-content", "Remember! I have " + knowledge + " knowledge about your research. I still want to understand your page!");
   $('#dismiss_modal').prop("disabled", false);
   target_selection = opt;
+}
+
+function show_optional_participant_info() {
+  document.getElementById("optional_participant_info").innerHTML = window.localStorage.getItem('optional_participant_info');
 }
 
 function populate_favorites() {

@@ -239,9 +239,14 @@
 
         <div class="col" style="overflow-y: scroll; height: 90%; margin-left: 20">
           <div id="target" class="row">
-            <div style="margin-left:auto; margin-right:0;">
-              <p class="text-muted" style="display: inline-block; text-align:right; margin-left:auto; margin-right:0;">I'm your curious participant!<br>Can I understand you?</p>
-              <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
+            <div class="row" style="margin-left:auto; margin-right:0;">
+              <div class="col-">
+                <p id="optional_participant_info" style="text-align: left"></p>
+              </div>
+              <div class="col">
+                <p class="text-muted" style="display: inline-block; text-align:right; margin-left:auto; margin-right:0;">I'm your curious participant!<br>Can I understand you?</p>
+                <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -307,13 +312,13 @@
             </div>
             <br/>
             <div class="row">
-              <h5>Optional: is there anything else you know about your participants?</h5>
+              <h5><i>Optional:</i> Anything else about your participants to keep in mind?</h5>
               <textarea rows="2" cols="200" id="optional_participant"></textarea>
             </div>
           </div>
           </div>
           <div class="modal-footer">
-            <button type="button" id="dismiss_modal" class="btn btn-primary btn-lg btn-block" disabled onclick="start()">Dismiss</button>
+            <button type="button" id="dismiss_modal" class="btn btn-primary btn-lg btn-block" disabled onclick="start()">Create!</button>
           </div>
         </div>
       </div>
