@@ -3,6 +3,7 @@ var blocks = new Array('full', 'acknowledgments', 'community_building',
 'experimental_design', 'feedback', 'other_studies', 'personalized_results',
 'previous_research', 'research_goals', 'research_motivations', 'share');
 var editors = [];
+var target_selection;
 
 $(document).ready(function () {
   prequestion()
@@ -33,16 +34,24 @@ function change_target() {
   $('#preQuestionModal').modal('show');
 }
 
-function start(opt, knowledge) {
-  $("#target-img").attr("src", "../../static/digestif/create/person" + opt + ".png");
-  // $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
-  $("#pop").attr("data-content", "Remember! I have " + knowledge + " knowledge about your research. I still want to understand your page!");
+function start() {
+  console.log("participant selection");
+  console.log(target_selection);
+  console.log("optional participant info");
+  console.log(document.getElementById("optional_participant").value);
   $('#preQuestionModal').modal('hide');
   window.localStorage.setItem("target", document.getElementById("target").innerHTML);
   $('[data-toggle="popover"]').popover();
   $('#pop').popover('show');
   setTimeout(function(){ $('#pop').popover('hide'); }, 1500);
+}
 
+function set_target(opt, knowledge) {
+  $("#target-img").attr("src", "../../static/digestif/create/person" + opt + ".png");
+  // $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  $("#pop").attr("data-content", "Remember! I have " + knowledge + " knowledge about your research. I still want to understand your page!");
+  $('#dismiss_modal').prop("disabled", false);
+  target_selection = opt;
 }
 
 function populate_favorites() {

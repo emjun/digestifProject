@@ -262,16 +262,14 @@
           <!-- <h5 class="modal-title" style="color:white;">Participants want to learn about your research!</h5> -->
         <!-- </div> -->
         <div class="modal-body">
-
-          <div style="height:10px;"></div>
-          <div>
           <!-- h4>How much knowledge does your target audience have about your field?</h4> -->
           <h2><strong>Participants want to learn about your research!</strong><br></h2>
-          <h5>Tell them in a way that they can understand.</h5>
+          <h6>Tell them in a way that they can understand.</h6>
           <!-- <p><i>In the future, Digestif will suggest text and information for you based on your participants.</i><p> -->
           <!-- <p>By telling us about how much you think your participants know about your research area, you contribute data to improving Digestif.</p> -->
-          <h4>How much knowledge do your participants have about your field?</h4>
-        </div>
+          <br/>
+          <h5>How much knowledge do your participants have about your field?</h5>
+
           <div style="height:10px;"></div>
 
           <div class="container">
@@ -279,7 +277,7 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Light" name="smileOp" value="Light" onclick="start('Light', 'NO')">
+                    <input type="radio" id="Light" name="smileOp" value="Light" onclick="set_target('Light', 'NO')">
                     <img src="../../static/digestif/create/personLight.png" style="height:50px;width=50px;">
                     None
                   </label>
@@ -288,7 +286,7 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Med" name="smileOp" value="Med" onclick="start('Med', 'ONLY SOME')">
+                    <input type="radio" id="Med" name="smileOp" value="Med" onclick="set_target('Med', 'ONLY SOME')">
                     <img src="../../static/digestif/create/personMed.png" style="height:50px;width=50px;">
                     Some
                   </label>
@@ -297,18 +295,22 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Dark" name="smileOp" value="Dark" onclick="start('Dark', 'LOTS OF')">
+                    <input type="radio" id="Dark" name="smileOp" value="Dark" onclick="set_target('Dark', 'LOTS OF')">
                     <img src="../../static/digestif/create/personDark.png" style="height:50px;width=50px;">
                     Lots
                   </label>
                 </div>
               </div>
             </div>
+            <br/>
+            <div class="row">
+              <h5>Optional: is there anything else you know about your participants?</h5>
+              <textarea rows="2" cols="200" id="optional_participant"></textarea>
+            </div>
           </div>
-
-
-          <div style="height:25px;"></div>
-
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="dismiss_modal" class="btn btn-primary btn-lg btn-block" disabled onclick="start()">Dismiss</button>
           </div>
         </div>
       </div>
