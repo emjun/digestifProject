@@ -5,9 +5,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'digestif/index.css' %}">
+    <script>
+      function updateLikes() {
+        like_count = window.localStorage.getItem('likeCount');
+        if (like_count == null) {
+          like_count = 0;
+        }
+        document.getElementById('likeCount').innerHTML = like_count;
+      }
+    </script>
     <title>Digestif</title>
 </head>
-<body>
+<body onload="updateLikes()">
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="{% url 'digestif:index' %}" style="color: orange">digestif</a>
 
@@ -25,6 +34,12 @@
               <!-- <a class="nav-link" href="./create.html">Create</a> -->
           </li>
       </ul>
+      <div class="navbar-text">
+         <!-- <p><span>&#9829; <span id="likeCount">0</span></span></p> -->
+         <button type="button" class="btn btn-primary" style="background-color: rgb(204, 68, 74); border-style: none">
+            You've &#9829;'d <span id="likeCount" class="badge badge-light">0</span> blocks!
+          </button>
+      </div>
     </div>
   </nav>
   <div style="height:25px;"></div>
@@ -33,7 +48,7 @@
     <div class="row align-items-center">
       <div class="col">
         <h1 style="color: orange;">digestif</h1>
-        <p class="text-muted">[dee-zhe-<span class="font-weight-bold">steef</span>] (noun)<br/>a tool that helps researchers support participant learning</p>
+        <p class="text-muted">[dee-zhe-<span class="font-weight-bold">steef</span>] (noun)<br/>a tool that supports scientific outreach and participant learning in online experiments</p>
         <p>Researchers conduct large-scale online experiments for more diverse and large samples.</p>
         <p>To do scientific outreach, iterate on experimental design, improve data quality, and attract more participants, researchers use <span class="font-italic font-weight-bold">digestif pages</span>.</p>
         <p>Digestif pages are at the end of online experiments and help participants learn and make sense of how they have just contributed to cutting edge research.</p>
@@ -113,6 +128,7 @@
   <div class="container">
     <div class="row" style="padding-top: 50px;">
       <h1 class="mx-auto" style="color: orange;">The Building Blocks of a Conclusion Page</h1>
+      <p class="mx-auto text-muted">All the blocks are optional. Researchers can choose based on their participants and goals.</p>
     </div>
     <div class="row" style="padding-top: 50px; padding-bottom: 50px;">
       <div class="col">
@@ -154,7 +170,10 @@
         </div>
         <div class="alert" style="background-color: white;">
           <h5>Community Building</h5>
-          <p>Community building blocks enable participants to connect with researchers. Example block functionalities include joining a mailing list, or liking a study platform on social media.</p>
+          <p>Community building blocks enable participants to connect with researchers and researchers to build longer-term relationships with participants. Example block functionalities include joining a mailing list, or liking a study platform on social media.</p>
+        </div>
+        <div class="row" style="padding-top: 50px;">
+          <h4 class="mx-auto"><a href="{% url 'digestif:explore' %}">See examples.</a></h4>
         </div>
       </div>
     </div>

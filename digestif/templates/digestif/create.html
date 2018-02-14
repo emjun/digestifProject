@@ -24,26 +24,33 @@
           <a class="nav-link" href="{% url 'digestif:create' %}" style="color:orange;">Create</a>
         </li>
       </ul>
+      <div class="navbar-text">
+         <!-- <p><span>&#9829; <span id="likeCount">0</span></span></p> -->
+         <button type="button" class="btn btn-primary" style="background-color: rgb(204, 68, 74); border-style: none">
+            You've &#9829;'d <span id="likeCount" class="badge badge-light">0</span> blocks!
+          </button>
+      </div>
     </div>
   </nav>
   <div style="height:25px;"></div>
   <div class="container">
       <div class="row" style="height: 90%">
-        <div class="col-">
-          <h3 style="color: orange; width: 300;">Blocks</h3>
+        <div class="col">
+          <h3 style="color: orange; width: 300;">&#9829;'d Blocks</h3>
           <p class="text-muted">Use these blocks to create your page</p>
         </div>
         <div class="col">
           <h3 style="color: orange;">Your Page!</h3>
           <p class="text-muted">Drop and edit your blocks here</p>
         </div>
-        <div id="target" class=".col-" style="width=70px;text-align: center;">
-          <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
-          <p class="text-muted" style="display: block;">Hi, I'm your target user</p>
-        </div>
-        <div class=".col-" style="padding-right: 15px; padding-left: 15px;">
+        <div class="col" style="padding-right: 15px; padding-left: 15px;">
           <button type="button" class="btn btn-outline-warning btn-lg" onclick="download_page()">Download</button>
+          <p class="text-muted">Get an HTML of your page</p>
         </div>
+        <!-- <div id="target" class="col" style="width=70px;text-align: center;">
+          <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
+          <p class="text-muted" style="display: block;">I'm your curious participant!<br>Can I understand you?</p>
+        </div> -->
         <div class="w-100"></div>
         <div class="col-" style="overflow-y: scroll; height: 90%;">
 
@@ -227,8 +234,16 @@
           </div>
         </div>
 
-        <div class="col" style="overflow-y: scroll; height: 90%;">
-          <div id="resultsPage" class="alert" style="background-color: rgb(254, 249, 236); min-height: 400px; width: 100%;"></div>
+        <div class="col" style="overflow-y: scroll; height: 90%; margin-left: 20">
+          <div id="target" class="row">
+            <div style="margin-left:auto; margin-right:0;">
+              <p class="text-muted" style="display: inline-block; text-align:right; margin-left:auto; margin-right:0;">I'm your curious participant!<br>Can I understand you?</p>
+              <a tabindex="0" id="pop" class="btn" role="button" onclick="change_target()" data-toggle="popover" data-placement="left" data-trigger="hover" title="Could I understand your page?" data-content=""><img id ="target-img" src="../../static/digestif/create/personLight.png" style="height:60px;width=60px;cursor:pointer;"/></a>
+            </div>
+          </div>
+          <div class="row">
+            <div id="resultsPage" class="alert" style="background-color: rgb(254, 249, 236); min-height: 400px; width: 100%;"></div>
+          </div>
         </div>
 
         <!-- On load, populate side blocks from local storage;
@@ -242,15 +257,21 @@
   <div class="modal fade" id="preQuestionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="overflow:scroll" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header" style="background-color:rgb(44,126,246);">
-          <h5 class="modal-title" style="color:white;">Select a target audience...</h5>
-        </div>
+        <!-- <div class="modal-header" style="background-color:rgb(44,126,246);"> -->
+          <!-- <h5 class="modal-title" style="color:white;">Select a target audience...</h5> -->
+          <!-- <h5 class="modal-title" style="color:white;">Participants want to learn about your research!</h5> -->
+        <!-- </div> -->
         <div class="modal-body">
 
           <div style="height:10px;"></div>
-
-          <h4>How much knowledge does your target audience have about your field?</h4>
-
+          <div>
+          <!-- h4>How much knowledge does your target audience have about your field?</h4> -->
+          <h2><strong>Participants want to learn about your research!</strong><br></h2>
+          <h5>Tell them in a way that they can understand.</h5>
+          <!-- <p><i>In the future, Digestif will suggest text and information for you based on your participants.</i><p> -->
+          <!-- <p>By telling us about how much you think your participants know about your research area, you contribute data to improving Digestif.</p> -->
+          <h4>How much knowledge do your participants have about your field?</h4>
+        </div>
           <div style="height:10px;"></div>
 
           <div class="container">
@@ -258,8 +279,8 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Light" name="smileOp" value="Light" onclick="start('Light', 'no')">
-                    <img src="../../static/digestif/create/circleLight.png" style="height:50px;width=50px;">
+                    <input type="radio" id="Light" name="smileOp" value="Light" onclick="start('Light', 'NO')">
+                    <img src="../../static/digestif/create/personLight.png" style="height:50px;width=50px;">
                     None
                   </label>
                 </div>
@@ -267,8 +288,8 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Med" name="smileOp" value="Med" onclick="start('Med', 'only some')">
-                    <img src="../../static/digestif/create/circleMed.png" style="height:50px;width=50px;">
+                    <input type="radio" id="Med" name="smileOp" value="Med" onclick="start('Med', 'ONLY SOME')">
+                    <img src="../../static/digestif/create/personMed.png" style="height:50px;width=50px;">
                     Some
                   </label>
                 </div>
@@ -276,8 +297,8 @@
               <div class="col">
                 <div class="radio">
                   <label>
-                    <input type="radio" id="Dark" name="smileOp" value="Dark" onclick="start('Dark', 'lots of')">
-                    <img src="../../static/digestif/create/circleDark.png" style="height:50px;width=50px;">
+                    <input type="radio" id="Dark" name="smileOp" value="Dark" onclick="start('Dark', 'LOTS OF')">
+                    <img src="../../static/digestif/create/personDark.png" style="height:50px;width=50px;">
                     Lots
                   </label>
                 </div>

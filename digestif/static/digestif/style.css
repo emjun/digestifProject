@@ -44,3 +44,33 @@ a {
   justify-content: center;
   text-align: center;
 }
+
+
+#text{
+    position:absolute;
+    z-index:3;
+    margin-left:35px;
+    margin-top:25px;
+    color:white;
+}
+
+.counter {
+  background-size: 32px 32px;
+  background-color: rgb(204, 68, 74);;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  height: 32px;
+  width: 32px;
+  z-index: 0;
+  -moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  text-align: center;
+}
+
+#likecount{
+  /* position: relative; */
+  /* left: 5px; */
+  color: #000000
+}

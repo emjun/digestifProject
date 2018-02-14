@@ -35,7 +35,8 @@ function change_target() {
 
 function start(opt, knowledge) {
   $("#target-img").attr("src", "../../static/digestif/create/person" + opt + ".png");
-  $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  // $("#pop").attr("data-content", "Remember, your target audience has " + knowledge + " knowledge about your research. Make sure they can understand your page!");
+  $("#pop").attr("data-content", "Remember! I have " + knowledge + " knowledge about your research. I still want to understand your page!");
   $('#preQuestionModal').modal('hide');
   window.localStorage.setItem("target", document.getElementById("target").innerHTML);
   $('[data-toggle="popover"]').popover();
@@ -45,6 +46,13 @@ function start(opt, knowledge) {
 }
 
 function populate_favorites() {
+  // sets liike count
+  like_count = window.localStorage.getItem('likeCount');
+  if (like_count == null) {
+    like_count = 0;
+  }
+  document.getElementById('likeCount').innerHTML = like_count;
+
   liked_blocks.set('default', "");
   // pull from local storage
   for(type of blocks) {
@@ -62,14 +70,17 @@ function populate_favorites() {
 }
 
 function populate_editor() {
-  var count = 0;
+  var i = 0;
   console.log(editors);
   if("page" in window.localStorage) {
     for(let item of JSON.parse(window.localStorage.getItem("page"))) {
       document.getElementById('resultsPage').innerHTML += "<div class='card page_element_placed' style='width: 100%; height: auto; margin-left: 0; margin-right: 0; margin-bottom: 10px;'><div class='card-header handle'>"+
                 "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
-                "<div id='no" + count + "' style='height: auto; border: none;'>" + item + "</div></div>";
-      editors.push( new Quill('#no' + count,
+                "<div id='no" + i + "' style='height: auto; border: none;'>" + item + "</div></div>";
+                i++;
+    }
+    for(j = 0; j < i; j++) {
+      editors.push( new Quill('#no' + j,
         { modules: { toolbar: [
           [{ header: [1, 2, false] }],
           ['bold', 'italic', 'underline'],
@@ -77,15 +88,13 @@ function populate_editor() {
         ]},
         placeholder: "This is an empty block. Fill it in however you'd like!",
         theme: 'snow'}));
-        editors[count].on('text-change', function(delta, oldDelta, source) {
-          save_page();
-          $( "#resultsPage" ).sortable( "refresh" );
-        });
-        count++;
-        console.log(editors);
+      editors[j].on('text-change', function(delta, oldDelta, source) {
+        save_page();
+        $( "#resultsPage" ).sortable( "refresh" );
+      });
     }
   }
-  window.localStorage.setItem("count", count);
+  window.localStorage.setItem("count", i);
 }
 
 function save_page() {
@@ -104,7 +113,7 @@ function download_page() {
   text += "</body></html>"
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', 'conclusion_page.html');
+  element.setAttribute('download', 'digestif_page.html');
 
   element.style.display = 'none';
   document.body.appendChild(element);
