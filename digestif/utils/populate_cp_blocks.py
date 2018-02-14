@@ -5,15 +5,17 @@
 import django
 import csv
 
+from django.conf import settings
 from digestif.models import ConclusionPage
 from digestif.models import Block
 
 
 # Create and load all the conclusion pages to the DB first
-f_cp = open('digestif/static/digestif/conclusionPages.csv');
+base_dir = settings.BASE_DIR
+f_cp = open(base_dir + '/digestif/static/digestif/conclusionPages.csv');
 reader_cp = csv.reader(f_cp, delimiter='|');
 
-f_blocks = open('digestif/static/digestif/blocks.csv');
+f_blocks = open(base_dir + '/digestif/static/digestif/blocks.csv');
 reader_blocks = csv.reader(f_blocks, delimiter='|') # use | as delimiter because body text on conclusion pages use commas
 
 def populate():
@@ -25,7 +27,7 @@ def populate():
     for row in reader_cp:
 
         # Read content from TXT file that contains all the content for the conclusion page
-        f_content = open('digestif/static/digestif/content/full/' + row[4], "r")
+        f_content = open(base_dir + '/digestif/static/digestif/content/full/' + row[4], "r")
         cp_content = f_content.read().splitlines() #strip all new lines
         # cp_content.replace("\n", "")
         # print(cp_content)
