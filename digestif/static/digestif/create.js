@@ -70,14 +70,17 @@ function populate_favorites() {
 }
 
 function populate_editor() {
-  var count = 0;
+  var i = 0;
   console.log(editors);
   if("page" in window.localStorage) {
     for(let item of JSON.parse(window.localStorage.getItem("page"))) {
       document.getElementById('resultsPage').innerHTML += "<div class='card page_element_placed' style='width: 100%; height: auto; margin-left: 0; margin-right: 0; margin-bottom: 10px;'><div class='card-header handle'>"+
                 "<button type='button' class='close' aria-label='Close' onclick='removeEl(this)'><span aria-hidden='true'>&times;</span></button></div>"+
-                "<div id='no" + count + "' style='height: auto; border: none;'>" + item + "</div></div>";
-      editors.push( new Quill('#no' + count,
+                "<div id='no" + i + "' style='height: auto; border: none;'>" + item + "</div></div>";
+                i++;
+    }
+    for(j = 0; j < i; j++) {
+      editors.push( new Quill('#no' + j,
         { modules: { toolbar: [
           [{ header: [1, 2, false] }],
           ['bold', 'italic', 'underline'],
@@ -85,15 +88,13 @@ function populate_editor() {
         ]},
         placeholder: "This is an empty block. Fill it in however you'd like!",
         theme: 'snow'}));
-        editors[count].on('text-change', function(delta, oldDelta, source) {
-          save_page();
-          $( "#resultsPage" ).sortable( "refresh" );
-        });
-        count++;
-        console.log(editors);
+      editors[j].on('text-change', function(delta, oldDelta, source) {
+        save_page();
+        $( "#resultsPage" ).sortable( "refresh" );
+      });
     }
   }
-  window.localStorage.setItem("count", count);
+  window.localStorage.setItem("count", i);
 }
 
 function save_page() {
