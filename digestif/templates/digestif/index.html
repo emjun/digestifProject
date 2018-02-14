@@ -8,7 +8,9 @@
     <script>
       function updateLikes() {
         like_count = window.localStorage.getItem('likeCount');
-
+        if (like_count == null) {
+          like_count = 0;
+        }
         document.getElementById('likeCount').innerHTML = like_count;
       }
     </script>

@@ -46,8 +46,11 @@ function start(opt, knowledge) {
 }
 
 function populate_favorites() {
+  // sets liike count
   like_count = window.localStorage.getItem('likeCount');
-
+  if (like_count == null) {
+    like_count = 0;
+  }
   document.getElementById('likeCount').innerHTML = like_count;
 
   liked_blocks.set('default', "");
