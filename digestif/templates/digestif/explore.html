@@ -70,7 +70,7 @@
                     {% for b in acknowledgments %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', '{{b.block_type}}', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Acknowledgments block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -109,7 +109,7 @@
                     {% for b in experimental_design%}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', '{{b.block_type}}', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Experimental design block of conclusion page from study {{b.cp.study}} on platform {{cp.platform}}." style="width: 100%" />
                             </div>
@@ -146,7 +146,7 @@
                     {% for b in feedback %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Feedback', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Feedback block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -183,7 +183,7 @@
                     {% for b in other_studies %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Other Studies', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Other studies block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -220,7 +220,7 @@
                     {% for b in personalized_results %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', '{{b.block_type}}', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Personalized results block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -257,7 +257,7 @@
                     {% for b in previous_research %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Previous Research', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Previous research block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -294,7 +294,7 @@
                     {% for b in research_goals %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Research Goals', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Research goals block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -331,7 +331,7 @@
                     {% for b in research_motivations %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Research Motivations', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Research motivations block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -368,7 +368,7 @@
                     {% for b in share %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Share', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Share block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -405,7 +405,7 @@
                     {% for b in community_building %}
                         {% if b.path_name != None %}
                           {% with "digestif/"|add:b.path_name as path_name %}
-                          <div class="blockContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                          <div class="blockContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                             <div class="card-img-top modalLink"  onclick="show_detail('{{b.cp.platform}}', '{{b.cp.study}}', 'Community Building', '{% static path_name %}')">
                               <img src="{% static path_name %}" alt="Additional resources block of conclusion page from study {{b.cp.study}} on platform {{b.cp.platform}}." style="width: 100%" />
                             </div>
@@ -453,7 +453,7 @@
                       {% for cp in conclusion_pages %}
                         {% if cp.platform == p.platform and cp.full_page != None %}
                           {% with "digestif/"|add:cp.full_page as path_name %}
-                            <div class="platformContainer card" style="width: 500px; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
+                            <div class="platformContainer card" style="width: 100%; display: inline-block; margin-bottom: 20px; margin-right: 10px; float: top;">
                               <div class="card-img-top modalLink" onclick="show_detail('{{cp.platform}}', '{{cp.study}}', 'Full Page', '{% static path_name %}')" style="height: 200px; overflow: hidden; background-color: gray;">
                                 <img src="{% static path_name %}" alt="Full conclusion page from study {{cp.study}} on platform {{cp.platform}}." style="width: 100%;">
                               </div>
