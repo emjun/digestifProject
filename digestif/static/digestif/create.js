@@ -69,11 +69,14 @@ function populate_favorites() {
     if(blocklist != null) {
       var cards = "";
       var b = JSON.parse(blocklist);
+      var count = 0;
       for (let item of b) {
         liked_blocks.set(item.id, item.contents);
         cards += "<div id='" + item.id + "' class='page_element card' style='margin-bottom: 10px;'><img class='card-img-top' src='" + item.path + "'><div class='card-body'><h4 class='card-title'>" + item.name + "</h4></div></div>";
+        count++;
       }
-      document.getElementById(type).firstElementChild.innerHTML += cards;
+      document.getElementById(type).firstElementChild.innerHTML = cards;
+      document.getElementById(type + "_heading").innerHTML += " (" + count + ")";
     }
   }
 }
